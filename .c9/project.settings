@@ -17,7 +17,14 @@
     "run": {
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "rentmydrip": {
+                    "command": "rails s",
+                    "name": "rentmydrip",
+                    "runner": "Ruby",
+                    "toolbar": true
+                }
+            }
         }
     },
     "welcome": {
