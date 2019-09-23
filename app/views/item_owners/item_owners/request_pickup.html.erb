@@ -1,0 +1,73 @@
+<section id="pickup-request">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4>Items to be picked up (max 3)</h4>
+            <hr>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Add an item (required)
+                    </button>
+                  </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <%= render 'item_owners/item_owners/pickup_requests/form' %>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Add a second item (optional)
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <%= render 'item_owners/item_owners/pickup_requests/form' %>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Add a third item (optional)
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <%= render 'item_owners/item_owners/pickup_requests/form' %>
+                  </div>
+                </div>
+              </div>
+            
+            <button class="btn btn-success btn-block" id="submit-pri-forms"
+                onclick="submitAllForms()">
+                Submit Request
+            </button>
+        </div>
+    </div>
+</section>
+
+<style type="text/css">
+    #pickup-request .card-header {
+        padding: .40rem 1.25rem !important;
+    }
+    
+    .accordion > .card:last-of-type {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    
+    #submit-pri-forms {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+</style>

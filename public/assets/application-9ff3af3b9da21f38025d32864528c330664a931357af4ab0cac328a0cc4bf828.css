@@ -1,0 +1,134 @@
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.btn-transparent {
+  color: #b8b8ba !important;
+  background-color: transparent !important;
+  border-color: #e7e7e9 !important;
+}
+
+/* line 8, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.dashboard-navigation button {
+  border-left: none;
+  border-right: none;
+  border-width: 0.5px !important;
+}
+
+@media (max-width: 992px) {
+  /* line 16, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+  /* line 20, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .btn {
+    border-radius: 0;
+    height: 50px;
+  }
+  /* line 25, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .dropdown-menu {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 34, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .dropdown-item {
+    color: #b8b8ba !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #e7e7e9;
+  }
+}
+/* line 2, /home/ubuntu/environment/app/assets/stylesheets/card.scss */
+.card .card-body {
+  padding: 30px 30px 50px;
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, input {
+  height: 50px !important;
+}
+
+/* line 5, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, input, textarea {
+  font-size: 16px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* line 11, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* line 15, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, .form-control {
+  border-radius: 3px;
+}
+/* line 2, /home/ubuntu/environment/app/assets/stylesheets/nav.scss */
+.nav-pills .nav-link {
+  background-color: transparent !important;
+  color: #b8b8ba !important;
+  padding: 0;
+  margin-bottom: 15px;
+}
+/* line 8, /home/ubuntu/environment/app/assets/stylesheets/nav.scss */
+.nav-pills .nav-link span {
+  width: 0;
+}
+/* line 14, /home/ubuntu/environment/app/assets/stylesheets/nav.scss */
+.nav-pills .nav-link:hover span, .nav-pills .active span {
+  border-bottom: 3px solid #e7e7e9;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* line 22, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+nav {
+  height: 75px;
+}
+
+/* line 26, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+body {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  min-height: 100vh;
+}
+/* line 31, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+body #io-body {
+  padding-top: 30px;
+}
+
+/* line 36, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.mobile-show {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* line 41, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+  .mobile-show {
+    display: block !important;
+  }
+
+  /* line 45, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+  .mobile-hide {
+    display: none !important;
+  }
+}

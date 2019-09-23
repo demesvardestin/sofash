@@ -1,0 +1,17 @@
+button.btn, input {
+    height: 50px !important;
+}
+
+button.btn, input, textarea {
+    font-size: 16px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+button.btn, .form-control {
+    border-radius: 3px;
+}
