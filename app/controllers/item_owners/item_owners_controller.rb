@@ -14,6 +14,7 @@ class ItemOwners::ItemOwnersController < ApplicationController
   
   def request_pickup
     @pri = PickupRequestItem.new
+    @pr = PickupRequest.find(params[:pickup_request_id])
   end
   
   def submit_pickup_request_items

@@ -1,22 +1,26 @@
-<%= form_for(@pri, :html => { :multipart => true, :id => "pri-#{@pri.object_id}"}) do |f| %>
+<%= form_for(@pri, :html => { :multipart => true }) do |f| %>
     <div class="field">
         <%= f.label :name %>
-        <%= f.text_field :item_name, class:"form-control", placeholder:"Yeezy Boost 750" %>
+        <%= f.text_field :item_name, class:"form-control", placeholder:"Yeezy Boost 750",
+            required: true %>
     </div>
     
     <div class="field">
         <%= f.label :brand %>
-        <%= f.text_field :item_brand, class:"form-control", placeholder:"Addidas" %>
+        <%= f.text_field :item_brand, class:"form-control", placeholder:"Addidas",
+            required: true %>
     </div>
     
     <div class="field">
         <%= f.label :description %>
-        <%= f.text_area :item_description, class:"form-control", placeholder:"Brief description of the item, such as size and color" %>
+        <%= f.text_area :item_description, class:"form-control", required: true,
+            placeholder:"Brief description of the item, such as size and color" %>
     </div>
     
     <div class="field">
         <%= f.label :condition %>
-        <%= f.text_area :item_condition, class:"form-control", placeholder:"ex: excellent, good, fair" %>
+        <%= f.text_area :item_condition, class:"form-control", required: true,
+            placeholder:"ex: excellent, good, fair" %>
     </div>
     
     <%= f.hidden_field :pickup_request_id, value:"#{params[:pickup_request_id]}" %>
