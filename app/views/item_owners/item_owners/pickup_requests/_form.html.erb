@@ -2,25 +2,26 @@
     <div class="field">
         <%= f.label :name %>
         <%= f.text_field :item_name, class:"form-control", placeholder:"Yeezy Boost 750",
-            required: true %>
+            required: true, disabled: pri_limit_reached?(@pr) %>
     </div>
     
     <div class="field">
         <%= f.label :brand %>
         <%= f.text_field :item_brand, class:"form-control", placeholder:"Addidas",
-            required: true %>
+            required: true, disabled: pri_limit_reached?(@pr) %>
     </div>
     
     <div class="field">
         <%= f.label :description %>
         <%= f.text_area :item_description, class:"form-control", required: true,
+            disabled: pri_limit_reached?(@pr),
             placeholder:"Brief description of the item, such as size and color" %>
     </div>
     
     <div class="field">
         <%= f.label :condition %>
         <%= f.text_area :item_condition, class:"form-control", required: true,
-            placeholder:"ex: excellent, good, fair" %>
+            placeholder:"ex: excellent, good, fair", disabled: pri_limit_reached?(@pr) %>
     </div>
     
     <%= f.hidden_field :pickup_request_id, value:"#{params[:pickup_request_id]}" %>

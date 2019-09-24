@@ -5035,3 +5035,1888 @@ Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
 Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 74.117.136.100 at 2019-09-24 16:58:53 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_base_navbar.html.erb (0.3ms)
+  Rendered layouts/_base_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 321ms (Views: 320.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 74.117.136.100 at 2019-09-24 16:58:55 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_base_navbar.html.erb (0.2ms)
+  Rendered layouts/_base_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 16:59:07 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/item_owners/sign_in" for 74.117.136.100 at 2019-09-24 16:59:07 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_base_navbar.html.erb (0.2ms)
+  Rendered layouts/_base_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 56ms (Views: 42.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/item_owners/sign_in" for 74.117.136.100 at 2019-09-24 16:59:17 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"scnTayKHYpWRXzsP1UpGHGjDFPMjcF16V/Mqrz+Em/i4yBRGtaz/AqnMbn6S7/bii/qYc7dmjmbtf/uafVKAqg==", "item_owner"=>{"email"=>"jane@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mItemOwner Load (1.0ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."email" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["email", "jane@email.com"], ["LIMIT", 1]]
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 170ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 16:59:17 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (3.0ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 16:59:24 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 16:59:28 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 3"], ["created_at", "2019-09-24 16:59:28.676970"], ["updated_at", "2019-09-24 16:59:28.676970"], ["item_owner_id", 3]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=3
+Completed 302 Found in 42ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 16:59:28 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (4.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 38.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:00:10 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:00:30 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:00:44 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:06:59 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:07:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (18.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (22.6ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:07:27 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.3ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 17:29:48 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 18:34:57 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 18:52:41 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 189ms (Views: 142.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 18:53:06 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ii+66O0Y3tyh5vov2hKI9nBV+gGYXBxlqsjqJLVy3cZMpCcOaYHjfx14Ew5NOm1hPnBpD8N226m+6u4LBs08WQ==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"some sneakers", "item_condition"=>"good", "pickup_request_id"=>"3"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "some sneakers"], ["item_condition", 0], ["created_at", "2019-09-24 18:53:06.439657"], ["updated_at", "2019-09-24 18:53:06.439657"], ["pickup_request_id", 3]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=3
+Completed 302 Found in 22ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 18:53:06 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.3ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=3" for 74.117.136.100 at 2019-09-24 18:59:19 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"3"}
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.6ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (26.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 3]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (44.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 932ms (Views: 889.1ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/pickup_requests/3" for 74.117.136.100 at 2019-09-24 18:59:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L7XRFnghYQBUmpNDf8qi9aY42YTqOB7OHVVLTOMexQzpPkzw/Lhco+gEemLo4kdi6B1KirES2QIJd09jUKEkkw==", "id"=>"3"}
+  [1m[36mPickupRequest Load (0.4ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 3]]
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "item_owners" WHERE "item_owners"."id" = ?[0m  [["id", 3]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 29ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 18:59:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/item_owners/sign_in" for 74.117.136.100 at 2019-09-24 18:59:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_base_navbar.html.erb (0.3ms)
+  Rendered layouts/_base_body.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/item_owners/sign_in" for 74.117.136.100 at 2019-09-24 19:01:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XBS090GgmM41JqnydYcu5+WSIwlQTfi1xD+5JI5sWov+881WZ+/wIRKc4Ze/vks0bPbgn5r8C7DMvrLIYZQ9Q==", "item_owner"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."email" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["email", "john@email.com"], ["LIMIT", 1]]
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 192ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:01:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (4.0ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:01:52 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (32.0ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (33.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:01:55 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:01:55.690963"], ["updated_at", "2019-09-24 19:01:55.690963"], ["item_owner_id", 2]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=4
+Completed 302 Found in 30ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/request-pickup?pickup_request_id=4" for 74.117.136.100 at 2019-09-24 19:01:55 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"4"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 4]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 4]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:02:10 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HpK9XCtPtu/jsTKuXcQwFxpUc+YTYGphb1wJwS6RlmCiDzaKdwsYxElvc2O896X5UV5oFVDOhhJeTbl1E8wPjA==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"some description", "item_condition"=>"good", "pickup_request_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "some description"], ["item_condition", 0], ["created_at", "2019-09-24 19:02:10.988238"], ["updated_at", "2019-09-24 19:02:10.988238"], ["pickup_request_id", 4]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=4
+Completed 302 Found in 22ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/request-pickup?pickup_request_id=4" for 74.117.136.100 at 2019-09-24 19:02:11 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"4"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 4]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 4]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pickup_requests/4" for 74.117.136.100 at 2019-09-24 19:02:13 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eRGXVTABAwCj6tQwruF2LYXcah7/oTOJJ9jgaTLrrgg9doFft0joyS0QRi2ENEn/tYYNcsyhD+9TSvnGQpdg2Q==", "id"=>"4"}
+  [1m[36mPickupRequest Load (0.2ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_request_items" WHERE "pickup_request_items"."id" = ?[0m  [["id", 5]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 4]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 22ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:02:13 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:03:42 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (5.5ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:03:46 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:03:46.141095"], ["updated_at", "2019-09-24 19:03:46.141095"], ["item_owner_id", 2]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=5
+Completed 302 Found in 20ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/request-pickup?pickup_request_id=5" for 74.117.136.100 at 2019-09-24 19:03:46 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"5"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 5]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 5]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:03:52 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VG/wRVaApZ/VIfM7Pe8Q87BXbg3nLzAOGJXoSD5m+aLo8nuTCsQLtH//svbc3IUd+111/qSB3H0phFj8AztgTg==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"something", "item_condition"=>"good", "pickup_request_id"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "something"], ["item_condition", 0], ["created_at", "2019-09-24 19:03:52.991656"], ["updated_at", "2019-09-24 19:03:52.991656"], ["pickup_request_id", 5]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=5
+Completed 302 Found in 23ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=5" for 74.117.136.100 at 2019-09-24 19:03:53 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"5"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 5]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 5]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pickup_requests/5" for 74.117.136.100 at 2019-09-24 19:03:54 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QF0Fmv4MEfSsroM4pnk+Q6QabdSrUvTe2szzTvWKm5sEOhOQeUX6PSJUESWMrAGRlEAKuJhSyLiuXurhhfZVSg==", "id"=>"5"}
+  [1m[36mPickupRequest Load (0.2ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 5]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pickup_request_items" WHERE "pickup_request_items"."id" = ?[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 5]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 21ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:03:54 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:19:06 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.6ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:19:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:19:09.549176"], ["updated_at", "2019-09-24 19:19:09.549176"], ["item_owner_id", 2]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=6
+Completed 302 Found in 21ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/request-pickup?pickup_request_id=6" for 74.117.136.100 at 2019-09-24 19:19:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"6"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 6]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 6]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:19:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ga9UTjfMjXs8YTGo5qiuHjSOs7ssAexGrmsXkkXQeWulMt+Ya4gjUJa/cGUHmzvwf4SoSG+vADWfeqcmeI3ghw==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"something", "item_condition"=>"good", "pickup_request_id"=>"6"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "something"], ["item_condition", 0], ["created_at", "2019-09-24 19:19:16.725683"], ["updated_at", "2019-09-24 19:19:16.725683"], ["pickup_request_id", 6]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=6
+Completed 302 Found in 22ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/request-pickup?pickup_request_id=6" for 74.117.136.100 at 2019-09-24 19:19:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"6"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 6]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 6]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pickup_requests/6" for 74.117.136.100 at 2019-09-24 19:19:18 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GBTkIWbxCciA3+AplQKgS+m1JkqVJjW04p7/cOw1Watcc/Ir4bjiAQ4lcjS/15+Z2e9BJqYmCdKWDObfnEmXeg==", "id"=>"6"}
+  [1m[36mPickupRequest Load (0.2ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 6]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pickup_request_items" WHERE "pickup_request_items"."id" = ?[0m  [["id", 7]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 6]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 21ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:19:18 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.6ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:21:59 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:22:01 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:22:01.994124"], ["updated_at", "2019-09-24 19:22:01.994124"], ["item_owner_id", 2]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=7
+Completed 302 Found in 22ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/request-pickup?pickup_request_id=7" for 74.117.136.100 at 2019-09-24 19:22:02 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"7"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 7]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 7]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:22:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mBDEMRjEX3Fr1wiErZMWUcwneEJzFiJ0Ao1Hp1T+jN4kjU/nRIDxWsEJSUlMoIO/hy1jsTC4zgcznPcTaaMVMg==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"adsfa", "item_condition"=>"good", "pickup_request_id"=>"7"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "adsfa"], ["item_condition", 0], ["created_at", "2019-09-24 19:22:09.637517"], ["updated_at", "2019-09-24 19:22:09.637517"], ["pickup_request_id", 7]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=7
+Completed 302 Found in 23ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/request-pickup?pickup_request_id=7" for 74.117.136.100 at 2019-09-24 19:22:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"7"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 7]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 7]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pickup_requests/7" for 74.117.136.100 at 2019-09-24 19:23:41 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hPCuK5D4NxWTEKURUebRhUE+W4fkxPaKWa3R5aN9cMPAl7ghF7Hc3B3qNwx7M+5XcWQ869fEyuwtP8hK0wG+Eg==", "id"=>"7"}
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 7]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pickup_request_items" WHERE "pickup_request_items"."id" = ?[0m  [["id", 8]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 7]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 20ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:23:41 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:24:30 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 52.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:24:33 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:24:33.706567"], ["updated_at", "2019-09-24 19:24:33.706567"], ["item_owner_id", 2]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=8
+Completed 302 Found in 24ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/request-pickup?pickup_request_id=8" for 74.117.136.100 at 2019-09-24 19:24:33 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"8"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 8]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 8]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=8" for 74.117.136.100 at 2019-09-24 19:27:15 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"8"}
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 8]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 8]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 74.117.136.100 at 2019-09-24 19:27:21 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:27:27 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.6ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:27:31 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:27:31.760843"], ["updated_at", "2019-09-24 19:27:31.760843"], ["item_owner_id", 2]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=9
+Completed 302 Found in 24ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:27:31 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:27:38 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A+YvV5TidFIYpcrksv2kFwMf+eu9I7kK5rQ9hZauN5+/e6SByKbaebJ7iylTzjH5SBXiGP6NVXnXpY0xq/Oucw==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"safda", "item_condition"=>"good", "pickup_request_id"=>"9"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "safda"], ["item_condition", 0], ["created_at", "2019-09-24 19:27:38.309834"], ["updated_at", "2019-09-24 19:27:38.309834"], ["pickup_request_id", 9]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=9
+Completed 302 Found in 20ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:27:38 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:30:38 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:30:40 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:00 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:04 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:13 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:18 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:31:18 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:32:12 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:32:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:32:19 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:32:21 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mItemOwner Load (0.3ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/pickup_requests/9" for 74.117.136.100 at 2019-09-24 19:32:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+Started GET "/request-pickup?pickup_request_id=9" for 74.117.136.100 at 2019-09-24 19:32:23 +0000
+  Parameters: {"authenticity_token"=>"QCrGgR7RA+Y7vfv9tr4zHwyGy8UDOTRL+8J2p9gVkT8ETdCLmZjoL7VHaeCcawzNPNysqTA5CC2PUG8IqGlf7g==", "id"=>"9"}
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mPickupRequest Load (0.2ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"pickup_request_id"=>"9"}
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pickup_request_items" WHERE "pickup_request_items"."id" = ?[0m  [["id", 9]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 9]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 29ms (ActiveRecord: 12.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 9]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (9.9ms)
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:32:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 81ms (Views: 74.6ms | ActiveRecord: 0.6ms)
+
+
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items"[0m
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT  "pickup_request_items".* FROM "pickup_request_items" ORDER BY "pickup_request_items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:33:03 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:35:57 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:45:43 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:48:22 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (3.1ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 41.2ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/item_owners/2" for 74.117.136.100 at 2019-09-24 19:48:34 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R/R+O1SYP5ZcmEGrkZFl1XqjpkVLMPYfXxAHsP+0CB8Dk2gx09HUX9Ji07a7RFoHSvnBKXgwynkrgh4fj8jGzg==", "item_owner"=>{"first_name"=>"John", "last_name"=>"Doe", "street_address"=>"123 Some Street Way", "city"=>"Some City", "state"=>"NY", "zipcode"=>"00000"}, "commit"=>"Update Profile Details", "next"=>"/initialize_prf", "id"=>"2"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "item_owners" SET "first_name" = ?, "last_name" = ?, "street_address" = ?, "city" = ?, "state" = ?, "zipcode" = ?, "updated_at" = ? WHERE "item_owners"."id" = ?[0m  [["first_name", "John"], ["last_name", "Doe"], ["street_address", "123 Some Street Way"], ["city", "Some City"], ["state", "NY"], ["zipcode", "00000"], ["updated_at", "2019-09-24 19:48:34.396983"], ["id", 2]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/initialize_prf
+Completed 302 Found in 23ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/initialize_prf" for 74.117.136.100 at 2019-09-24 19:48:34 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/initialize_prf"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [53 times] (17.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.8ms)
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:48:49 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (3.0ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:49:01 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/item_owners/2" for 74.117.136.100 at 2019-09-24 19:49:02 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRP8+GCnmJOYYT1MO48/trMjyqKL6uQLYDn3qzC2SoIZdOry5+5zWhabr1ERWgBkg3mtzrjq2G0Uq+4EQMqEUw==", "item_owner"=>{"first_name"=>"John", "last_name"=>"Doe", "street_address"=>"123 Some Street Way", "city"=>"Some City", "state"=>"NY", "zipcode"=>"00000"}, "commit"=>"Update Profile Details", "next"=>"/initialize-prf", "id"=>"2"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/initialize-prf
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:49:02 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:49:02.865148"], ["updated_at", "2019-09-24 19:49:02.865148"], ["item_owner_id", 2]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=10
+Completed 302 Found in 29ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=10" for 74.117.136.100 at 2019-09-24 19:49:02 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"10"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 43.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/request-pickup?pickup_request_id=10" for 74.117.136.100 at 2019-09-24 19:55:24 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"10"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pickup_requests/10" for 74.117.136.100 at 2019-09-24 19:55:25 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestsController#destroy as HTML
+Started GET "/request-pickup?pickup_request_id=10" for 74.117.136.100 at 2019-09-24 19:55:25 +0000
+  Parameters: {"authenticity_token"=>"Xmj/YPN/5SketzBvQuW5Ibg7CrROzCzirTwuJ0UnpToaD+lqdDYO4JBNonJoMIbziGFt2H3MEITZrjeINVtr6w==", "id"=>"10"}
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mPickupRequest Load (0.2ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"pickup_request_id"=>"10"}
+  [1m[36mPickupRequestItem Load (0.2ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  [1m[36mItemOwner Load (0.3ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "pickup_requests" WHERE "pickup_requests"."id" = ?[0m  [["id", 10]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 27ms (ActiveRecord: 13.8ms)
+
+
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 10]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.5ms)
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:55:25 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 55.7ms | ActiveRecord: 0.6ms)
+
+
+  Rendered item_owners/item_owners/_form.html.erb (3.0ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:57:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 57.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-09-24 19:57:37 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.8ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/complete-profile" for 74.117.136.100 at 2019-09-24 19:58:00 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#complete_profile as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/complete_profile.html.erb within layouts/application
+  Rendered item_owners/item_owners/_form.html.erb (2.7ms)
+  Rendered item_owners/item_owners/complete_profile.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/item_owners/2" for 74.117.136.100 at 2019-09-24 19:58:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z++r3UGD/C0WHT5FhYcWWR1e4Y3UMzrTmuiPM0YTMysjiL3XxsoX5JjnrFivUimLLQSG4eczBrXuepacNm/9+g==", "item_owner"=>{"first_name"=>"John", "last_name"=>"Doe", "street_address"=>"123 Some Street Way", "city"=>"Some City", "state"=>"NY", "zipcode"=>"00000"}, "commit"=>"Update Profile Details", "next"=>"/initialize-prf", "id"=>"2"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/initialize-prf
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/initialize-prf" for 74.117.136.100 at 2019-09-24 19:58:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#initialize_prf as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("description", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?)[0m  [["description", "new pickup request for io 2"], ["created_at", "2019-09-24 19:58:09.227784"], ["updated_at", "2019-09-24 19:58:09.227784"], ["item_owner_id", 2]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=11
+Completed 302 Found in 21ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 19:58:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:58:21 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0LdJFYS+CaVXwG6gEtUMTlQTJY3Q+33HLLBw1/q8WsiU0F8fA/fibNk6/L04ADOcZElC4eP7QaFYIml4isCUGQ==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"addidas", "item_description"=>"asdfas", "item_condition"=>"fair", "pickup_request_id"=>"11"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "addidas"], ["item_description", "asdfas"], ["item_condition", 0], ["created_at", "2019-09-24 19:58:21.996286"], ["updated_at", "2019-09-24 19:58:21.996286"], ["pickup_request_id", 11]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=11
+Completed 302 Found in 22ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 19:58:22 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:58:36 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4siei/SL87Lz/plL5+kXGK6keU4kyrlF1MTTPgN1+/qmr4iBc8IYe30EC1bNPCjKnv4eIhfKhSOgVsqRcwk1Kw==", "pickup_request_item"=>{"item_name"=>"yeezy", "item_brand"=>"nike", "item_description"=>"adfa", "item_condition"=>"good", "pickup_request_id"=>"11"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "yeezy"], ["item_brand", "nike"], ["item_description", "adfa"], ["item_condition", 0], ["created_at", "2019-09-24 19:58:36.313606"], ["updated_at", "2019-09-24 19:58:36.313606"], ["pickup_request_id", 11]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=11
+Completed 302 Found in 21ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 19:58:36 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pickup_request_items" for 74.117.136.100 at 2019-09-24 19:58:52 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::PickupRequestItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bgs78Z2BaWpi0y7Em7L0Im6wmCrJKtacKcNbb7ajWZ8qbC37GsiCo+wpvNmxZ8vwXur/Rvoq6vpdUULAxt+XTg==", "pickup_request_item"=>{"item_name"=>"airjordan", "item_brand"=>"nike", "item_description"=>"asfda", "item_condition"=>"excellent", "pickup_request_id"=>"11"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pickup_request_items" ("item_name", "item_brand", "item_description", "item_condition", "created_at", "updated_at", "pickup_request_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "airjordan"], ["item_brand", "nike"], ["item_description", "asfda"], ["item_condition", 0], ["created_at", "2019-09-24 19:58:52.080536"], ["updated_at", "2019-09-24 19:58:52.080536"], ["pickup_request_id", 11]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /home/ubuntu/environment/app/controllers/item_owners/pickup_request_items_controller.rb:7)
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/request-pickup?pickup_request_id=11
+Completed 302 Found in 21ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 19:58:52 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 19:59:15 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 20:32:34 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.7.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.4ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSubmittedToPickupRequests (20190924202841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "pickup_requests" ADD "submitted" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924202841"]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 20:32:49 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (128.6ms)
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (132.7ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `placeholder' for #<#<Class:0x00007f1965d9dea8>:0x00007f1965d9c698>):
+    15:         <%= f.label :description %>
+    16:         <%= f.text_area :item_description, class:"form-control", required: true,
+    17:             disabled: pri_limit_reached?(@pr)
+    18:             placeholder:"Brief description of the item, such as size and color" %>
+    19:     </div>
+    20:     
+    21:     <div class="field">
+  
+app/views/item_owners/item_owners/pickup_requests/_form.html.erb:18:in `block in _app_views_item_owners_item_owners_pickup_requests__form_html_erb___1837430999098238406_69873529923900'
+app/views/item_owners/item_owners/pickup_requests/_form.html.erb:1:in `_app_views_item_owners_item_owners_pickup_requests__form_html_erb___1837430999098238406_69873529923900'
+app/views/item_owners/item_owners/request_pickup.html.erb:14:in `_app_views_item_owners_item_owners_request_pickup_html_erb__663815124413692450_69873529844640'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 20:33:01 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (6.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 20:33:31 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (10.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/request-pickup?pickup_request_id=11" for 74.117.136.100 at 2019-09-24 20:37:30 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#request_pickup as HTML
+  Parameters: {"pickup_request_id"=>"11"}
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPickupRequest Load (0.1ms)[0m  [1m[34mSELECT  "pickup_requests".* FROM "pickup_requests" WHERE "pickup_requests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/request_pickup.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mPickupRequestItem Load (0.1ms)[0m  [1m[34mSELECT "pickup_request_items".* FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/pickup_requests/_form.html.erb (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pickup_request_items" WHERE "pickup_request_items"."pickup_request_id" = ?[0m  [["pickup_request_id", 11]]
+  Rendered item_owners/item_owners/request_pickup.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 80ms (Views: 49.3ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSubmittedToPickupRequests (20190924202841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apickup_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "item_owner_id" integer, "submitted" boolean DEFAULT 'f')[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "apickup_requests" ("id","description","created_at","updated_at","item_owner_id","submitted")
+                     SELECT "id","description","created_at","updated_at","item_owner_id","submitted" FROM "pickup_requests"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "pickup_requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "pickup_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "item_owner_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pickup_requests" ("id","description","created_at","updated_at","item_owner_id")
+                     SELECT "id","description","created_at","updated_at","item_owner_id" FROM "apickup_requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apickup_requests"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190924202841"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSubmittedToPickupRequests (20190924202841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "pickup_requests" ADD "submitted" boolean DEFAULT 'f'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "pickup_requests" ADD "confirmation_token" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924202841"]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m

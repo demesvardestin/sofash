@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190923194550) do
+ActiveRecord::Schema.define(version: 20190924202841) do
 
   create_table "inventory_items", force: :cascade do |t|
     t.string   "item_name"
@@ -83,9 +83,11 @@ ActiveRecord::Schema.define(version: 20190923194550) do
 
   create_table "pickup_requests", force: :cascade do |t|
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "item_owner_id"
+    t.boolean  "submitted",          default: false
+    t.string   "confirmation_token"
   end
 
   create_table "renters", force: :cascade do |t|

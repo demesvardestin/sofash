@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get '/io/dashboard', to: 'item_owners#dashboard', as: 'io_dashboard'
     get '/initialize-prf', to: 'item_owners#initialize_prf', as: 'initialize_prf'
     get '/request-pickup', to: 'item_owners#request_pickup'
+    post '/submit-pr', to: 'pickup_requests#submit_pr'
+    get '/pr-confirmation', to: 'pickup_requests#pr_confirmation'
     
     resources :item_owners
     resources :pickup_requests, only: [:create, :show, :destroy]

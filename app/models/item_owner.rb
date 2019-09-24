@@ -5,6 +5,6 @@ class ItemOwner < ApplicationRecord
          :recoverable, :rememberable, :validatable
  
   has_many :inventory_items
-  has_many :pickup_requests
+  has_many :pickup_requests, dependent: :destroy
   has_many :pickup_request_items, through: :pickup_requests
 end

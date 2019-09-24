@@ -26,7 +26,13 @@ class ItemOwners::ItemOwnersController < ApplicationController
     
     respond_to do |format|
       if @io.save
-        format.html { redirect_to io_dashboard_path, notice: "Profile details updated!" }
+        format.html do
+          if params[:next]
+            redirect_to params[:next]
+          else
+            redirect_to io_dashboard_path, notice: "Profile details updated!"
+          end
+        end
       else
         render :edit
       end
