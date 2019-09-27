@@ -1,3 +1,36 @@
 // Place all the styles related to the pickup_requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.pr-confirmation {
+    text-align: center;
+}
+
+.section-divider {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.section-avatar {
+    .img-container {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 75px;
+        border: 0.5px solid #e7e7e9;
+    }
+    
+    .profile-snapshot-container {
+        height: 100%;
+        vertical-align: middle !important;
+        
+        h4 {
+            vertical-align: middle !important;
+        }
+    }
+    
+    img {
+        height: 150px;
+    }
+}

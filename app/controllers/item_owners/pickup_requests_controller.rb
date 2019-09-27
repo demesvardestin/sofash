@@ -1,5 +1,5 @@
 class ItemOwners::PickupRequestsController < ApplicationController
-    before_action :set_pr
+    before_action :set_pr, except: :pr_confirmation
     before_action :set_io
     
     def destroy
@@ -9,13 +9,14 @@ class ItemOwners::PickupRequestsController < ApplicationController
     end
     
     def submit_pr
-        @io.pickup_request.update(submitted: true)
+        @pr.update(submitted: true)
         
         redirect_to pr_confirmation_path(:confirmation => @pr.confirmation_token),
             notice: "Your pickup request has been submitted!"
     end
     
     def pr_confirmation
+        @pr = PickupRequest.find_by(confirmation_token: params[:confirmation])
         
     end
     

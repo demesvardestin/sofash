@@ -11,7 +11,7 @@
               <hr>
               
               <div class="pri-form">
-                <%= render 'item_owners/item_owners/pickup_requests/form' %>
+                <%= render 'item_owners/pickup_requests/form' %>
               </div>
               
               <div class="row">
@@ -25,7 +25,7 @@
                 
                 <div class="col-lg-6">
                   <button class="btn btn-success btn-block" id="submit-pri-forms">
-                    <%= link_to "Submit Request", submit_pr_path, method: :post %>
+                    <%= link_to "Submit Request", submit_pr_path(:id => @pr.id), method: :post, style:"color: #fff; text-decoration: none;" %>
                   </button>
                 </div>
               </div>
