@@ -15,6 +15,10 @@ class PickupRequest < ApplicationRecord
         pickup_request_items.length
     end
     
+    def has_no_items
+        item_count == 0
+    end
+    
     protected
     
     def generate_token

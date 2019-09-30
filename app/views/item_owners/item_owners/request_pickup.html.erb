@@ -24,9 +24,17 @@
                 </div>
                 
                 <div class="col-lg-6">
-                  <button class="btn btn-success btn-block" id="submit-pri-forms">
-                    <%= link_to "Submit Request", submit_pr_path(:id => @pr.id), method: :post, style:"color: #fff; text-decoration: none;" %>
-                  </button>
+                  <% if @pr.has_no_items %>
+                    <button class="btn btn-success btn-block" id="submit-pri-forms"
+                      disabled title="Add an item first">
+                      Submit Request
+                    </button>
+                  <% else %>
+                    <button class="btn btn-success btn-block" id="submit-pri-forms">
+                      <%= link_to "Submit Request", submit_pr_path(:id => @pr.id),
+                        method: :post, style:"color: #fff; text-decoration: none;" %>
+                    </button>
+                  <% end %>
                 </div>
               </div>
               

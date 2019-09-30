@@ -11,4 +11,8 @@ class ItemOwner < ApplicationRecord
   def full_name
     first_name + " " + last_name
   end
+  
+  def item_count
+      inventory_items.length
+  end
 end

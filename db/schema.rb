@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190924202841) do
     t.boolean  "in_stock",         default: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "item_owner_id"
   end
 
   create_table "item_categories", force: :cascade do |t|
