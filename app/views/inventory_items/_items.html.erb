@@ -1,0 +1,24 @@
+<section id="inventory--items">
+    <div class="row">
+        <% if items.present? %>
+            <% items.each do |i| %>
+                <div class="col-md-3 item-column">
+                    <div class="card no-border img--container">
+                        <img src="https://s7d2.scene7.com/is/image/nu/51752335_041_b?$browse-regular$"
+                            title="<%= i.item_name %>">
+                            
+                        <div class="card-footer">
+                            something
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <div class="col-md-12">
+                <p>
+                    No items listed
+                </p>
+            </div>
+        <% end %>
+    </div>
+</section>
