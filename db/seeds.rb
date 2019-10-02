@@ -22,7 +22,7 @@ else
             item_condition: ["Excellent", "Good", "Fair"][rand(0..2)],
             item_value: ["100", "149.99", "199.99", "239.99", "399.99"][rand(0..5)],
             in_stock: true,
-            item_owner_id: [6, 4, 3][rand(0..2)]
+            item_owner_id: [6, 5, 3][rand(0..2)]
             )
     end
     

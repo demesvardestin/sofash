@@ -20,19 +20,68 @@
         cursor: pointer;
         // transition: width 0.25s;
         
+        .card-footer {
+            background-color: #fff;
+            border-color: #fff;
+            
+            p {
+                font-size: 14px;
+            }
+        }
+        
         img {
             width: inherit;
         }
     }
     
     .img--container:hover {
-        width: 110%;
+        width: 105%;
         height: auto;
         z-index: 10999 !important;
         position: absolute;
         box-shadow: 0 26px 54px -10px rgba(50,50,93,.25),
                     0 16px 32px -16px rgba(0,0,0,.3),
                     0 -12px 32px -12px rgba(0,0,0,.025);
-            
+        
+        .card-footer {
+            display: block;
+        }
+    }
+}
+
+.inventory-item {
+    nav {
+        height: 50px;
+        
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 0;
+        }
+    }
+    
+    .img--container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 5px;
+        margin: auto;
+        
+        li {
+            height: 50px;
+            width: 50px;
+            border: 1px solid #000;
+        }
+        
+        i {
+            color: #000;
+            font-size: 25px;
+        }
+    }
+    
+    .item-data {
+        div:not(:last-child) {
+            margin-bottom: 15px;
+        }
     }
 }

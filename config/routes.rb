@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :pickup_request_items, only: :create
   end
   
+  scope module: 'inventory_items' do
+    get '/item/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
+  end
+  
   get '/console', to: 'pages#console'
   root "pages#home"
 end

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190924202841) do
+ActiveRecord::Schema.define(version: 20191002025028) do
+
+  create_table "images", force: :cascade do |t|
+    t.text     "source"
+    t.string   "alt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "inventory_items", force: :cascade do |t|
     t.string   "item_name"
