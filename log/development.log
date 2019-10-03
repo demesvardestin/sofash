@@ -17910,3 +17910,890 @@ Migrating to CreateImages (20191002025028)
             FROM sqlite_temp_master
             WHERE name='index_renters_on_email' AND type='index'
 [0m
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 68.197.253.161 at 2019-10-03 00:52:31 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (3.5ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (3.0ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 1037ms (Views: 989.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/io/login" for 68.197.253.161 at 2019-10-03 00:54:05 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 848ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 68.197.253.161 at 2019-10-03 00:54:07 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  [1m[36mInventoryItem Load (24.7ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."item_owner_id" = ?[0m  [["item_owner_id", 4]]
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (44.6ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 24.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial inventory_items/_items with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ubuntu/environment/app/views"
+  * "/home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    130:                                         <h5>My Items</h5>
+    131:                                         <hr>
+    132:                                         
+    133:                                         <%= render partial: "/inventory_items/items",
+    134:                                             locals: { items: @io.inventory_items } %>
+    135:                                     </div>
+    136:                                     <div class="tab-pane fade" id="v-pills-earnings"
+  
+app/views/item_owners/item_owners/dashboard.html.erb:133:in `_app_views_item_owners_item_owners_dashboard_html_erb__2583442787342177693_69924494946080'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+Started GET "/io/dashboard" for 68.197.253.161 at 2019-10-03 00:54:09 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."item_owner_id" = ?[0m  [["item_owner_id", 4]]
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial inventory_items/_items with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ubuntu/environment/app/views"
+  * "/home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    130:                                         <h5>My Items</h5>
+    131:                                         <hr>
+    132:                                         
+    133:                                         <%= render partial: "/inventory_items/items",
+    134:                                             locals: { items: @io.inventory_items } %>
+    135:                                     </div>
+    136:                                     <div class="tab-pane fade" id="v-pills-earnings"
+  
+app/views/item_owners/item_owners/dashboard.html.erb:133:in `_app_views_item_owners_item_owners_dashboard_html_erb__2583442787342177693_69924563219260'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+Started GET "/io/dashboard" for 68.197.253.161 at 2019-10-03 00:55:22 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."item_owner_id" = ?[0m  [["item_owner_id", 4]]
+  Rendered inventory_items/inventory_items/_items.html.erb (0.6ms)
+  Rendered item_owners/item_owners/_form.html.erb (12.6ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item/512-Officia-tempora-voluptas-repellendus-error" for 68.197.253.161 at 2019-10-03 01:18:25 +0000
+Cannot render console from 68.197.253.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"512-Officia-tempora-voluptas-repellendus-error"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 512], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 48ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddInventoryItemIdToImages (20191003012453)
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "images" ADD "inventory_item_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191003012453"]]
+  [1m[35m (17.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m
+Started GET "/" for 74.117.136.100 at 2019-10-03 15:31:43 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_base_navbar.html.erb (0.3ms)
+  Rendered layouts/_base_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 372ms (Views: 370.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 74.117.136.100 at 2019-10-03 15:31:45 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_base_navbar.html.erb (0.3ms)
+  Rendered layouts/_base_body.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-10-03 15:32:01 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/item_owners/sign_in" for 74.117.136.100 at 2019-10-03 15:32:02 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (18.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.7ms)
+  Rendered layouts/_base_navbar.html.erb (0.3ms)
+  Rendered layouts/_base_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 88ms (Views: 74.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/item_owners/sign_in" for 74.117.136.100 at 2019-10-03 15:32:14 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UtnapiAxPPPq+6I5FInGzFeC/DjGhe0QRiOs08IryPr/XqSTmERy39sAtxzwRAzzH/n2OMePupb6l5vxiX7OsQ==", "item_owner"=>{"email"=>"dem@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mItemOwner Load (3.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."email" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["email", "dem@email.com"], ["LIMIT", 1]]
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/io/dashboard
+Completed 302 Found in 183ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/io/dashboard" for 74.117.136.100 at 2019-10-03 15:32:14 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemOwners::ItemOwnersController#dashboard as HTML
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering item_owners/item_owners/dashboard.html.erb within layouts/application
+  [1m[36mInventoryItem Load (28.8ms)[0m  [1m[34mSELECT "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."item_owner_id" = ?[0m  [["item_owner_id", 4]]
+  Rendered inventory_items/inventory_items/_items.html.erb (0.7ms)
+  Rendered item_owners/item_owners/_form.html.erb (2.9ms)
+  Rendered item_owners/item_owners/dashboard.html.erb within layouts/application (64.7ms)
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 102ms (Views: 69.1ms | ActiveRecord: 29.9ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:32:20 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.6ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:34:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.4ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 150ms (Views: 147.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:35:53 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:36:05 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:36:17 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 15:41:31 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by InventoryItems::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering inventory_items/inventory_items/show.html.erb within layouts/application
+  Rendered inventory_items/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeSourceToSourcesInImages (20191003154951)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeSourceToSourcesInImages (20191003154951)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aimages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sources" text, "alt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "inventory_item_id" integer)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "aimages" ("id","sources","alt","created_at","updated_at","inventory_item_id")
+                     SELECT "id","source","alt","created_at","updated_at","inventory_item_id" FROM "images"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sources" text, "alt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "inventory_item_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "images" ("id","sources","alt","created_at","updated_at","inventory_item_id")
+                     SELECT "id","sources","alt","created_at","updated_at","inventory_item_id" FROM "aimages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aimages"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191003154951"]]
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 16:45:44 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Workflow::InventoryItemsController):
+  
+actionpack (5.0.7.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.7.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.7.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 16:46:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering workflow/inventory_items/show.html.erb within layouts/application
+  Rendered workflow/inventory_items/show.html.erb within layouts/application (0.5ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 58.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/item/511-Eos-sed-error-sapiente-et" for 74.117.136.100 at 2019-10-03 16:52:33 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#show as HTML
+  Parameters: {"slug"=>"511-Eos-sed-error-sapiente-et"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 511], ["LIMIT", 1]]
+  Rendering workflow/inventory_items/show.html.erb within layouts/application
+  Rendered workflow/inventory_items/show.html.erb within layouts/application (0.6ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.6ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeItemValueColumnInInventoryItems (20191003172638)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ainventory_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_name" varchar, "item_brand" varchar, "item_make" varchar, "item_description" text, "item_condition" integer, "market_value" varchar, "in_stock" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "item_owner_id" integer)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "ainventory_items" ("id","item_name","item_brand","item_make","item_description","item_condition","market_value","in_stock","created_at","updated_at","item_owner_id")
+                     SELECT "id","item_name","item_brand","item_make","item_description","item_condition","item_value","in_stock","created_at","updated_at","item_owner_id" FROM "inventory_items"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE "inventory_items"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "inventory_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_name" varchar, "item_brand" varchar, "item_make" varchar, "item_description" text, "item_condition" integer, "market_value" varchar, "in_stock" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "item_owner_id" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "inventory_items" ("id","item_name","item_brand","item_make","item_description","item_condition","market_value","in_stock","created_at","updated_at","item_owner_id")
+                     SELECT "id","item_name","item_brand","item_make","item_description","item_condition","market_value","in_stock","created_at","updated_at","item_owner_id" FROM "ainventory_items"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ainventory_items"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191003172638"]]
+  [1m[35m (17.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_item_owners_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_renters_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_renters_on_email' AND type='index'
+[0m
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 17:31:36 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Workflow::InventoryItemsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Workflow::InventoryItemsController::Item):
+  
+app/controllers/workflow/inventory_items_controller.rb:5:in `new'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.1ms)
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 17:31:51 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (99.7ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (101.2ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `count' for #<#<Class:0x00007f1ab209d200>:0x00007f1ab20b2dd0>
+Did you mean?  concat):
+    21:     <div class="field">
+    22:         <%= f.label :description %>
+    23:         <%= f.text_field :item_description, class: "form-control",
+    24:             value: "#{ Faker::Lorem.paragraphs(count 2) }" %>
+    25:     </div>
+    26:     
+    27:     <div class="field">
+  
+app/views/workflow/inventory_items/_form.html.erb:24:in `block in _app_views_workflow_inventory_items__form_html_erb__294295356475435431_69876316511460'
+app/views/workflow/inventory_items/_form.html.erb:1:in `_app_views_workflow_inventory_items__form_html_erb__294295356475435431_69876316511460'
+app/views/workflow/inventory_items/new.html.erb:4:in `_app_views_workflow_inventory_items_new_html_erb___1719324972433955269_69876316434040'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 17:32:05 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (28.3ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (unknown keyword: count):
+    21:     <div class="field">
+    22:         <%= f.label :description %>
+    23:         <%= f.text_field :item_description, class: "form-control",
+    24:             value: "#{ Faker::Lorem.paragraphs(count: 2) }" %>
+    25:     </div>
+    26:     
+    27:     <div class="field">
+  
+app/views/workflow/inventory_items/_form.html.erb:24:in `block in _app_views_workflow_inventory_items__form_html_erb__294295356475435431_69876325599960'
+app/views/workflow/inventory_items/_form.html.erb:1:in `_app_views_workflow_inventory_items__form_html_erb__294295356475435431_69876325599960'
+app/views/workflow/inventory_items/new.html.erb:4:in `_app_views_workflow_inventory_items_new_html_erb___1719324972433955269_69876325431020'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.5ms)
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 17:32:16 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (5.2ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (7.4ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 116ms (Views: 114.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 17:32:27 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (5.7ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (6.9ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 19:57:34 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (5.2ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (6.5ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 20:42:38 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (927.6ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (930.3ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 3920ms (Views: 3902.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 20:43:52 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (3.8ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (5.0ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 20:44:17 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (3.7ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (4.8ms)
+  [1m[36mItemOwner Load (0.4ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 120ms (Views: 119.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventory_items/new" for 74.117.136.100 at 2019-10-03 20:44:23 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#new as HTML
+  Rendering workflow/inventory_items/new.html.erb within layouts/application
+  Rendered workflow/inventory_items/_form.html.erb (3.7ms)
+  Rendered workflow/inventory_items/new.html.erb within layouts/application (4.9ms)
+  [1m[36mItemOwner Load (0.2ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inventory_items" for 74.117.136.100 at 2019-10-03 20:45:43 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+stfKve825Yv414TztRsGLTYSLa84Uyar4xzCJ/b8TeNeXxD5lbXTfxjRDsBSR18UL67izEE8sxKbpniSvZZyA==", "inventory_item"=>{"item_name"=>"Illo quas sunt officiis neque", "item_brand"=>"Nike", "item_condition"=>"Good", "item_description"=>"<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>", "market_value"=>"300", "in_stock"=>"true", "item_owner_id"=>"4"}, "commit"=>"Add item"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/workflow/inventory_items_controller.rb:37:in `set_item'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+Started POST "/inventory_items" for 74.117.136.100 at 2019-10-03 20:46:22 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+stfKve825Yv414TztRsGLTYSLa84Uyar4xzCJ/b8TeNeXxD5lbXTfxjRDsBSR18UL67izEE8sxKbpniSvZZyA==", "inventory_item"=>{"item_name"=>"Illo quas sunt officiis neque", "item_brand"=>"Nike", "item_condition"=>"Good", "item_description"=>"<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>", "market_value"=>"300", "in_stock"=>"true", "item_owner_id"=>"4"}, "commit"=>"Add item"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "inventory_items" ("item_name", "item_brand", "item_description", "item_condition", "market_value", "in_stock", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "Illo quas sunt officiis neque"], ["item_brand", "Nike"], ["item_description", "<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>"], ["item_condition", 0], ["market_value", "300"], ["in_stock", "t"], ["created_at", "2019-10-03 20:46:22.491662"], ["updated_at", "2019-10-03 20:46:22.491662"], ["item_owner_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `production' for "development":ActiveSupport::StringInquirer):
+  
+app/uploaders/image_uploader.rb:7:in `<class:ImageUploader>'
+app/uploaders/image_uploader.rb:1:in `<top (required)>'
+app/models/image.rb:3:in `<class:Image>'
+app/models/image.rb:1:in `<top (required)>'
+app/models/inventory_item.rb:12:in `initialize_image_attachment'
+app/controllers/workflow/inventory_items_controller.rb:12:in `block in create'
+app/controllers/workflow/inventory_items_controller.rb:11:in `create'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+Started POST "/inventory_items" for 74.117.136.100 at 2019-10-03 20:47:08 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+stfKve825Yv414TztRsGLTYSLa84Uyar4xzCJ/b8TeNeXxD5lbXTfxjRDsBSR18UL67izEE8sxKbpniSvZZyA==", "inventory_item"=>{"item_name"=>"Illo quas sunt officiis neque", "item_brand"=>"Nike", "item_condition"=>"Good", "item_description"=>"<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>", "market_value"=>"300", "in_stock"=>"true", "item_owner_id"=>"4"}, "commit"=>"Add item"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "inventory_items" ("item_name", "item_brand", "item_description", "item_condition", "market_value", "in_stock", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "Illo quas sunt officiis neque"], ["item_brand", "Nike"], ["item_description", "<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>"], ["item_condition", 0], ["market_value", "300"], ["in_stock", "t"], ["created_at", "2019-10-03 20:47:09.021269"], ["updated_at", "2019-10-03 20:47:09.021269"], ["item_owner_id", 4]]
+  [1m[36mInventoryItem Load (0.2ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1011], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `source`):
+  
+app/models/inventory_item.rb:12:in `initialize_image_attachment'
+app/controllers/workflow/inventory_items_controller.rb:12:in `block in create'
+app/controllers/workflow/inventory_items_controller.rb:11:in `create'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+Started POST "/inventory_items" for 74.117.136.100 at 2019-10-03 20:49:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::InventoryItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+stfKve825Yv414TztRsGLTYSLa84Uyar4xzCJ/b8TeNeXxD5lbXTfxjRDsBSR18UL67izEE8sxKbpniSvZZyA==", "inventory_item"=>{"item_name"=>"Illo quas sunt officiis neque", "item_brand"=>"Nike", "item_condition"=>"Good", "item_description"=>"<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>", "market_value"=>"300", "in_stock"=>"true", "item_owner_id"=>"4"}, "commit"=>"Add item"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "inventory_items" ("item_name", "item_brand", "item_description", "item_condition", "market_value", "in_stock", "created_at", "updated_at", "item_owner_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_name", "Illo quas sunt officiis neque"], ["item_brand", "Nike"], ["item_description", "<p><strong>Something</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Else</strong></p>\r\n<p>[\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"][\"Quasi placeat tenetur. Fuga saepe dolor. Voluptates illo eos.\", \"Amet totam optio. Et repellendus et. Laborum quis iure.\"]</p>"], ["item_condition", 0], ["market_value", "300"], ["in_stock", "t"], ["created_at", "2019-10-03 20:49:09.800851"], ["updated_at", "2019-10-03 20:49:09.800851"], ["item_owner_id", 4]]
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1011], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "inventory_item_id") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-03 20:49:09.814057"], ["updated_at", "2019-10-03 20:49:09.814057"], ["inventory_item_id", 1011]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://219706c72a7a42c9bacdf6691b81ca7c.vfs.cloud9.us-east-1.amazonaws.com/attach-images?id=1011
+Completed 302 Found in 44ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/attach-images?id=1011" for 74.117.136.100 at 2019-10-03 20:49:09 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::ImagesController#new as HTML
+  Parameters: {"id"=>"1011"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1011], ["LIMIT", 1]]
+  Rendering workflow/images/new.html.erb within layouts/application
+  Rendered workflow/images/_form.html.erb (0.6ms)
+  Rendered workflow/images/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ubuntu/environment/app/views/workflow/images/_form.html.erb:9: syntax error, unexpected ')', expecting '}'
+...-with": "Attaching images..." );@output_buffer.safe_append='
+...                              ^
+/home/ubuntu/environment/app/views/workflow/images/_form.html.erb:11: syntax error, unexpected end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+          ^~~
+/home/ubuntu/environment/app/views/workflow/images/_form.html.erb:12: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ubuntu/environment/app/views/workflow/images/_form.html.erb:14: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/workflow/images/_form.html.erb:9: syntax error, unexpected ')', expecting '}'
+app/views/workflow/images/_form.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/workflow/images/_form.html.erb:12: syntax error, unexpected ensure, expecting ')'
+app/views/workflow/images/_form.html.erb:14: syntax error, unexpected end, expecting ')'
+app/views/workflow/images/new.html.erb:4:in `_app_views_workflow_images_new_html_erb___2020275666065595787_70033449750260'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.5ms)
+Started GET "/attach-images?id=1011" for 74.117.136.100 at 2019-10-03 20:49:29 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::ImagesController#new as HTML
+  Parameters: {"id"=>"1011"}
+  [1m[36mInventoryItem Load (0.1ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" WHERE "inventory_items"."id" = ? LIMIT ?[0m  [["id", 1011], ["LIMIT", 1]]
+  Rendering workflow/images/new.html.erb within layouts/application
+  Rendered workflow/images/_form.html.erb (2.7ms)
+  Rendered workflow/images/new.html.erb within layouts/application (4.0ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "inventory_items"[0m
+  [1m[36mInventoryItem Load (0.3ms)[0m  [1m[34mSELECT  "inventory_items".* FROM "inventory_items" ORDER BY "inventory_items"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "images"[0m
+Started POST "/images" for 74.117.136.100 at 2019-10-03 20:57:44 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtMlNrEz96zmkOcXqWneF1liLT74qjfKClj1TtoqyWbZYQZfoNn7dzUQ/T9m9K9zvQTeA3VPiZzvuh+kDwdhmQ==", "image"=>{"sources"=>[#<ActionDispatch::Http::UploadedFile:0x00007f63dd676608 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-1o4zsth.jpeg>, @original_filename="evening_landscape.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"evening_landscape.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007f63dd676540 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-b23uu5.jpg>, @original_filename="morning_image.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"morning_image.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Attach images"}
+Unpermitted parameter: sources
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering workflow/images/new.html.erb within layouts/application
+  Rendered workflow/images/_form.html.erb (1.1ms)
+  Rendered workflow/images/new.html.erb within layouts/application (2.2ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.4ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 406 Not Acceptable in 70ms (Views: 54.5ms | ActiveRecord: 1.4ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/workflow/images_controller.rb:11:in `create'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+Started POST "/images" for 74.117.136.100 at 2019-10-03 20:59:29 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtMlNrEz96zmkOcXqWneF1liLT74qjfKClj1TtoqyWbZYQZfoNn7dzUQ/T9m9K9zvQTeA3VPiZzvuh+kDwdhmQ==", "image"=>{"sources"=>[#<ActionDispatch::Http::UploadedFile:0x00007f63de00ea08 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-1sh1t89.jpeg>, @original_filename="evening_landscape.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"evening_landscape.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007f63de00e990 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-jfoqtv.jpg>, @original_filename="morning_image.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"morning_image.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Attach images"}
+Unpermitted parameter: sources
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering workflow/images/new.html.erb within layouts/application
+  Rendered workflow/images/_form.html.erb (3.1ms)
+  Rendered workflow/images/new.html.erb within layouts/application (4.2ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.7ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 406 Not Acceptable in 129ms (Views: 106.0ms | ActiveRecord: 1.5ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/workflow/images_controller.rb:11:in `create'
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.8ms)
+Started POST "/images" for 74.117.136.100 at 2019-10-03 20:59:56 +0000
+Cannot render console from 74.117.136.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Workflow::ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtMlNrEz96zmkOcXqWneF1liLT74qjfKClj1TtoqyWbZYQZfoNn7dzUQ/T9m9K9zvQTeA3VPiZzvuh+kDwdhmQ==", "image"=>{"sources"=>[#<ActionDispatch::Http::UploadedFile:0x00007f63f0cb29f0 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-efds5w.jpeg>, @original_filename="evening_landscape.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"evening_landscape.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007f63f0cb29a0 @tempfile=#<Tempfile:/tmp/RackMultipart20191003-14458-58y69d.jpg>, @original_filename="morning_image.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[sources][]\"; filename=\"morning_image.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Attach images"}
+Unpermitted parameter: sources
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering workflow/images/new.html.erb within layouts/application
+  Rendered workflow/images/_form.html.erb (1.1ms)
+  Rendered workflow/images/new.html.erb within layouts/application (2.3ms)
+  [1m[36mItemOwner Load (0.1ms)[0m  [1m[34mSELECT  "item_owners".* FROM "item_owners" WHERE "item_owners"."id" = ? ORDER BY "item_owners"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_io_navbar.html.erb (0.5ms)
+  Rendered layouts/_io_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 55.6ms | ActiveRecord: 1.5ms)
+
+

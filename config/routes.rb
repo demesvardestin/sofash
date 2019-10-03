@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :workflow do
+    get 'images/attach_images'
+  end
+
   devise_for :renters
   
   devise_for :item_owners, :controllers => { :registrations => "authentication/item_owners/registrations" }
@@ -25,10 +29,12 @@ Rails.application.routes.draw do
     resources :pickup_request_items, only: :create
   end
   
-  scope module: 'inventory_items' do
+  scope module: 'workflow' do
+    resources :inventory_items, :images
+    
+    get '/attach-images', to: 'images#new'
     get '/item/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
   end
   
-  get '/console', to: 'pages#console'
   root "pages#home"
 end

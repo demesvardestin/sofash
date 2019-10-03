@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191002025028) do
+ActiveRecord::Schema.define(version: 20191003172638) do
 
   create_table "images", force: :cascade do |t|
-    t.text     "source"
+    t.text     "sources"
     t.string   "alt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "inventory_item_id"
   end
 
   create_table "inventory_items", force: :cascade do |t|
@@ -25,7 +26,7 @@ ActiveRecord::Schema.define(version: 20191002025028) do
     t.string   "item_make"
     t.text     "item_description"
     t.integer  "item_condition"
-    t.string   "item_value"
+    t.string   "market_value"
     t.boolean  "in_stock",         default: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false

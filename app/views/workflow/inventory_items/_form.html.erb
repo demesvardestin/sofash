@@ -1,0 +1,51 @@
+<%= form_for(@item, :html => { :multipart => true }) do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :item_name, class: "form-control",
+            placeholder: "Item name",
+            value: "#{ Faker::Lorem.words(number: 5).join(" ") }" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :brand %>
+        <%= f.text_field :item_brand, class: "form-control",
+            placeholder: "Item brand", value: "#{ Faker::Lorem.word }" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :condition %>
+        <%= f.text_field :item_condition, class: "form-control",
+            placeholder: "Item condition" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :item_description, class: "form-control tinymce",
+            value: "#{ Faker::Lorem.paragraphs(number: 2) }" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :market_value %>
+        <%= f.text_field :market_value, class: "form-control",
+            placeholder: "Market value" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :in_stock %>
+        <%= f.text_field :in_stock, class: "form-control",
+            placeholder: "Item condition" %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :item_owner %>
+        <%= f.text_field :item_owner_id, class: "form-control",
+            placeholder: "Item owner" %>
+    </div>
+    
+    <div class="actions">
+        <%= f.submit "Add item", class:"btn btn-primary btn-block",
+            data: { "disable-with": "adding item..." } %>
+    </div>
+<% end %>
+
+<%= tinymce %>

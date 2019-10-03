@@ -1,0 +1,2 @@
+module Workflow::ImagesHelper
+end

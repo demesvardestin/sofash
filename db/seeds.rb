@@ -16,7 +16,7 @@ else
     
     500.times.each do
         InventoryItem.create(
-            item_name: Faker::Lorem.sentence(word_count: 5),
+            item_name: Faker::Lorem.words(number: 5).join(" "),
             item_brand: Faker::Lorem.word,
             item_description: Faker::Lorem.paragraph(sentence_count: 15),
             item_condition: ["Excellent", "Good", "Fair"][rand(0..2)],

@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'faker'
 gem 'carrierwave', '~> 2.0'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
