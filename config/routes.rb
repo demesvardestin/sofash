@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  namespace :workflow do
-    get 'images/attach_images'
+  devise_for :renters, :controllers => { :registrations => "authentication/renters/registrations" }
+  devise_scope :item_owner do
+    get '/login', to: 'devise/sessions#new'
+    get '/register', to: 'devise/registrations#new'
+    get '/password/settings', to: 'authentication/renters/registrations#edit'
+    get '/retrieve/password', to: 'devise/passwords#new'
   end
-
-  devise_for :renters
+  authenticated :renter do
+    root 'pages#home', as: :authenticated_renter_root
+  end
   
   devise_for :item_owners, :controllers => { :registrations => "authentication/item_owners/registrations" }
   devise_scope :item_owner do
@@ -13,7 +18,7 @@ Rails.application.routes.draw do
     get '/retrieve/password', to: 'devise/passwords#new'
   end
   authenticated :item_owner do
-    root 'item_owners/item_owners#dashboard', as: :authenticated_user_root
+    root 'item_owners/item_owners#dashboard', as: :authenticated_item_owner_root
   end
   
   scope module: 'item_owners' do
