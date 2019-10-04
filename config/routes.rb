@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :inventory_items, :images
     
     get '/attach-images', to: 'images#new'
-    get '/item/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
+    get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
   end
   
   root "pages#home"

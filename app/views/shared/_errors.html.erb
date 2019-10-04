@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+    <div id="error_explanation" class="alert alert-warning" role="alert">
+        <h2>The following <%= pluralize(object.errors.count, object.class.name.downcase) %> occurred:</h2>
+
+        <ul>
+            <% object.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

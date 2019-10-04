@@ -7,7 +7,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <%= link_to "Logout", destroy_item_owner_session_path, class:"btn btn-secondary", method: :delete %>
+                    <input type="search" class="form-control" placeholder="search">
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/cart" class="btn btn-secondary btn-transparent">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <%= link_to destroy_item_owner_session_path, class:"btn btn-primary", method: :delete do %>
+                        My Account <i class="fas fa-angle-down"></i>
+                    <% end %>
                 </li>
             </ul>
         </div>

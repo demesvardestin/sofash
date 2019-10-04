@@ -1,9 +1,10 @@
 class InventoryItem < ApplicationRecord
-    has_one :images
+    has_one :image
+    
     after_create :initialize_image_attachment
     
     def slug
-        id.to_s << "-" << item_name.split(" ").join("-")[0..-2]
+        item_name.split(" ").join("-")[0..-2]
     end
     
     protected

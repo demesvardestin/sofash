@@ -35,7 +35,6 @@ class Workflow::InventoryItemsController < ApplicationController
         end
     
         def set_item
-            id = params[:slug].split("-")[0]
-            @item = InventoryItem.find_by(id: id)
+            @item = InventoryItem.find_by(id: params[:id])
         end
 end

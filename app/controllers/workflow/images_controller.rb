@@ -22,8 +22,8 @@ class Workflow::ImagesController < ApplicationController
     def image_params
       params.require(:image)
       .permit(
-        :sources,
-        :inventory_item_id
+        :inventory_item_id,
+        { sources: [] }
         )
     end
   

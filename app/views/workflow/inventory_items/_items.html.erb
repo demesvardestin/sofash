@@ -3,7 +3,7 @@
         <% if items.present? %>
             <% items.each do |i| %>
                 <div class="col-md-3 item-column">
-                    <a href="/item/<%= i.slug %>">
+                    <a href="/item/<%= i.id %>/<%= i.slug %>">
                         <div class="card no-border img--container">
                             <img src="https://s7d2.scene7.com/is/image/nu/51752335_041_b?$browse-regular$"
                                 title="<%= i.item_name %>">
