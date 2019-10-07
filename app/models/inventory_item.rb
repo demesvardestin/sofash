@@ -4,7 +4,7 @@ class InventoryItem < ApplicationRecord
     after_create :initialize_image_attachment
     
     def slug
-        item_name.split(" ").join("-")[0..-2]
+        item_name.split(" ").join("-")
     end
     
     def availability
@@ -18,6 +18,10 @@ class InventoryItem < ApplicationRecord
     
     def self.latest_arrivals
         last 8
+    end
+    
+    def condition
+        ["Excellent", "Good", "Fair"][item_condition]
     end
     
     protected

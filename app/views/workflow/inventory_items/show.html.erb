@@ -3,9 +3,11 @@
         <div class="col-md-7">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Browse</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <%= @item.item_name %>
+                </li>
               </ol>
             </nav>
         </div>
@@ -14,27 +16,29 @@
     <div class="row">
         <div class="col-md-7">
             <div class="img--container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <% @item.image.sources.length.times do |t| %>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="<%= t %>" class="<%= "active" if t == 0 %>"></li>
-                        <% end %>
-                    </ol>
-                    <div class="carousel-inner">
-                        <% @item.image.sources.each do |s| %>
-                            <div class="carousel-item <%= "active" if s == @item.image.sources.first %>">
-                              <img src="<%= s.url %>"
-                                class="d-block w-100" alt="<%= @item.item_name %>">
-                            </div>
-                        <% end %>
-                    </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <i class="fas fa-angle-left"></i>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <i class="fas fa-angle-right"></i>
-                  </a>
-                </div>
+                <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
+                <!--    <ol class="carousel-indicators">-->
+                <!--        <% @item.image.sources.length.times do |t| %>-->
+                <!--            <li data-target="#carouselExampleIndicators" data-slide-to="<%= t %>" class="<%= "active" if t == 0 %>"></li>-->
+                <!--        <% end %>-->
+                <!--    </ol>-->
+                <!--    <div class="carousel-inner">-->
+                <!--        <% @item.image.sources.each do |s| %>-->
+                <!--            <div class="carousel-item <%= "active" if s == @item.image.sources.first %>">-->
+                <!--              <img src="<%= s.url %>"-->
+                <!--                class="d-block w-100" alt="<%= @item.item_name %>">-->
+                <!--            </div>-->
+                <!--        <% end %>-->
+                <!--    </div>-->
+                <!--  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
+                <!--    <i class="fas fa-angle-left"></i>-->
+                <!--  </a>-->
+                <!--  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
+                <!--    <i class="fas fa-angle-right"></i>-->
+                <!--  </a>-->
+                <!--</div>-->
+                <img src="<%= @item.image.first_source %>" class="d-block w-100"
+                    alt="<%= @item.item_name %>">
             </div>
         </div>
         
@@ -49,7 +53,9 @@
                 <div class="item-name">
                     <p>
                         <strong>
-                            <%= @item.item_brand %>
+                            <a href="/brand/<%= @item.item_brand %>">
+                                <%= @item.item_brand %>
+                            </a>
                         </strong>
                     </p>
                 </div>
@@ -57,39 +63,58 @@
                 <div class="item-size">
                     <p>
                         Size: US L/EU M
+                        <span class="badge badge-<%= availability_color_for @item %>">
+                            <%= @item.availability %>
+                        </span>
                     </p>
                 </div>
                 
-                <div class="item-price">
-                    <h5>
-                        Market Value: $<%= @item.market_value %>
-                    </h5>
-                <div>
+                <div class="item-market-value">
+                    <p>
+                        Estimated Market Value: $<%= @item.market_value %>
+                    </p>
+                </div>
+                
+                <div class="item-condition">
+                    <p>
+                        Condition: <%= @item.condition %>
+                    </p>
+                </div>
                 
                 <hr>
                 
                 <div class="item-actions">
-                    <button class="btn btn-primary btn-block">
-                        ADD TO CART
+                    <button class="btn btn-theme btn-block">
+                        <span>
+                            Add to cart
+                        </span>
+                        <span class="no-display">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
                     </button>
-                    <button class="btn btn-secondary btn-block">
-                        <i class="far fa-heart"></i> Save
+                    <button class="btn btn-theme-outline btn-block">
+                        <span>
+                            Save
+                        </span>
+                        <span class="no-display">
+                            <i class="far fa-heart"></i>
+                        </span>
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="item-description">
+                <h6>
+                    Description
+                </h6>
                 
-                <hr>
-                
-                <div class="item-description">
-                    <h5>
-                        Description
-                    </h5>
-                    
-                    <p>
-                        <%= sanitize @item.item_description %>
-                    </p>
-                </div>
-                
-                <hr>
+                <p>
+                    <%= sanitize @item.item_description %>
+                </p>
             </div>
         </div>
     </div>

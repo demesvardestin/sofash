@@ -1,7 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="base-navbar">
     <div class="container">
+        <button class="btn btn-link btn-transparent navbar-toggler"
+            id="cart-icon" onclick="toggleBox('cart-box')">
+            <i class="fas fa-shopping-bag"></i>
+        </button>
+        
         <a class="navbar-brand" href="/">driprent</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+        <button class="navbar-toggler mobile-menu-button" type="button"
+            onclick="$('#mobile-menu').fadeIn();">
+            <div class="ham-menu-wrapper">
+                <div class="ham-menu" id="stack1"></div>
+                <div class="ham-menu" id="stack2"></div>
+                <div class="ham-menu" id="stack3"></div>
+            </div>
+            
             <span class="navbar-toggler-icon"></span>
         </button>
         
@@ -35,7 +48,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <%= link_to login_path, class:"btn btn-nav", id:"signin-btn" do %>
+                    <%= link_to login_path, class:"btn btn-theme-outline", id:"signin-btn" do %>
                         Sign in
                     <% end %>
                 </li>
@@ -58,6 +71,56 @@
                 </li>
             </ul>
         </div>
+    </div>
+    
+    <div id="mobile-menu">
+        <header>
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="float-left">
+                        Menu
+                    </h6>
+                    
+                    <h6 class="float-right">
+                        <a class="cursor-pointer" onclick="$('#mobile-menu').fadeOut();">
+                            <i class="fas fa-times"></i> Close
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </header>
+        
+        <section id="menu-body">
+            <a href="/login">
+                <div>
+                    Signin
+                </div>
+            </a>
+            
+            <a href="/register">
+                <div>
+                    Register
+                </div>
+            </a>
+            
+            <a href="/register">
+                <div>
+                    Lister login
+                </div>
+            </a>
+            
+            <a href="/io/register">
+                <div>
+                    List on DripRent
+                </div>
+            </a>
+            
+            <a href="/faq">
+                <div>
+                    FAQ
+                </div>
+            </a>
+        </section>
     </div>
 </nav>
 

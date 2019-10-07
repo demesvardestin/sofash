@@ -15,7 +15,7 @@
  */
 
 :root {
-  --main-font-color: #7f7f7f;
+  --main-font-color: #001833;
   --main-bg-color: #7f7f7f;
   --nav-font-size: 15px
 }
@@ -30,7 +30,6 @@ nav {
 
 body {
     padding-top: 75px;
-    padding-bottom: 15px;
     min-height: 100vh;
     
     #io-body {
@@ -69,7 +68,12 @@ h1, h2, h3, h4, h5, h6, p {
 #base-body, #io-body, #renter-body {
     bottom: 0;
     padding-bottom: 0;
+    padding-top: 30px;
     margin-bottom: 0;
+}
+
+.no-display {
+    display: none !important;
 }
 
 @media (max-width: 992px) {

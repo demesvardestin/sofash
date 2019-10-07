@@ -33,15 +33,17 @@ else
         item = InventoryItem.create(
             item_name: names[rand(0..4)],
             item_brand: brands[rand(0..5)],
-            item_description: Faker::Lorem.paragraph(sentence_count: 15),
-            item_condition: ["Excellent", "Good", "Fair"][rand(0..2)],
+            item_description: Faker::Lorem.paragraph(sentence_count: 18),
+            item_condition: [rand(0..2)],
             market_value: ["100", "149.99", "199.99", "239.99", "399.99"][rand(0..5)],
             in_stock: [true, false][0..1],
             item_owner_id: [6, 5, 3][rand(0..2)]
             )
         
+        rand_img1 = sources[rand(0..3)]
+        rand_img2 = sources[rand(0..3)]
         image = Image.find_by(inventory_item_id: item.id)
-        image.update!(first_source: sources[rand(0..3)])
+        image.update!(first_source: rand_img1, sources: [rand_img1, rand_img2])
     end
     
 end

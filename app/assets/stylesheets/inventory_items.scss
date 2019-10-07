@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// INDEX
 #inventory--items {
     .item-column {
         margin: 15px 0;
@@ -52,23 +54,32 @@
     }
 }
 
+
+// SHOW
 .inventory-item {
     nav {
         height: 50px;
+        border-bottom: none !important;
         
         .breadcrumb {
-            background-color: transparent;
+            background-color: transparent !important;
             padding: 0;
             margin-bottom: 0;
+            
+            li:not(:first-child)::before {
+                content: ">";
+            }
         }
     }
     
     .img--container {
         width: 100%;
-        height: auto;
+        height: 100%;
         overflow: hidden;
         border-radius: 5px;
         margin: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
         
         li {
             height: 50px;
@@ -80,11 +91,42 @@
             color: #000 !important;
             font-size: 25px;
         }
+        
+        img {
+            vertical-align: middle !important;
+            width: 90% !important;
+        }
     }
     
     .item-data {
         div:not(:last-child) {
             margin-bottom: 15px;
+        }
+        
+        .item-name {
+            h5 {
+                color: #000;
+            }
+        }
+    }
+    
+    .item-description {
+        padding: 25px 0;
+    }
+    
+    .item-actions {
+        .btn {
+            transition: display 0.50s;
+        }
+        
+        .btn:hover {
+            span:first-child {
+                display: none;
+            }
+            
+            span:last-child {
+                display: inline;
+            }
         }
     }
 }
@@ -117,6 +159,12 @@
         .col-md-3, .col-md-2 {
             width: 50%;
             display: inline-block;
+        }
+    }
+    
+    .inventory-item {
+        .item-data {
+            margin-top: 15px;
         }
     }
 }
