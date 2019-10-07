@@ -1,0 +1,56 @@
+#first-banner {
+    height: 300px;
+    border: none;
+    border-bottom: 1px solid #e7e7e9;
+}
+
+#second-banner {
+    height: 300px;
+    border-top: 1px solid #e7e7e9;
+    border-bottom: 1px solid #e7e7e9;
+}
+
+#latest-arrivals, #popular-right-now {
+    padding: 25px 0;
+}
+
+.home-page > section:not(:first-child) {
+    margin-bottom: 15px;
+}
+
+#browse-by-brand {
+    padding: 15px 0;
+    
+    h6 {
+        margin-bottom: 15px;
+    }
+    
+    .brand-box {
+        img {
+            width: 95%;
+        }
+    }
+    
+    .prop-asset {
+        width: 200px;
+        border: 1px solid #e7e7e9;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .brand-box:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    
+    .prop-asset {
+        border-width: 2px !important;
+    }
+    
+    #browse-by-brand {
+        .col-md-2 {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}

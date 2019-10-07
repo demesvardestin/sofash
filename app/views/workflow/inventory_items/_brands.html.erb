@@ -1,0 +1,18 @@
+<div class="row">
+    <% brands.each do |name, logo| %>
+        <div class="col-md-2 brand-box">
+            <a href="/brand/<%= name %>">
+                <img src="<%= logo %>" alt="<%= name %>"
+                    class="<%= "prop-asset" if logo.starts_with?("/") %>">
+            </a>
+        </div>
+    <% end %>
+    
+    <div class="col-md-12 mobile-show">
+        <button class="btn btn-link btn-block">
+            <%= link_to brands_path do %>
+                View all <i class="fas fa-long-arrow-alt-right"></i>
+            <% end %>
+        </button>
+    </div>
+</div>

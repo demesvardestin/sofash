@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :renters, :controllers => { :registrations => "authentication/renters/registrations" }
-  devise_scope :item_owner do
+  devise_scope :renter do
     get '/login', to: 'devise/sessions#new'
     get '/register', to: 'devise/registrations#new'
     get '/password/settings', to: 'authentication/renters/registrations#edit'
     get '/retrieve/password', to: 'devise/passwords#new'
   end
   authenticated :renter do
-    root 'pages#home', as: :authenticated_renter_root
+    root 'pages#index', as: :authenticated_renter_root
   end
   
   devise_for :item_owners, :controllers => { :registrations => "authentication/item_owners/registrations" }
@@ -41,5 +41,8 @@ Rails.application.routes.draw do
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
   end
   
-  root "pages#home"
+  get '/browse', to: 'pages#browse'
+  get '/brands', to: 'pages#brands'
+  get '/popular', to: 'pages#popular'
+  root "pages#index"
 end

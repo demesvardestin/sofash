@@ -1,14 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="base-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">driprent</a>
+        <a class="navbar-brand" href="/">driprent</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        
+        <div class="collapse navbar-collapse justify-content-center middle-nav"
+            id="navbarNavSearch">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <input type="search" placeholder="Search an item" id="navbar-search"
+                        onfocusin="toggleBox('search-results-box')"
+                        onfocusout="toggleBox('search-results-box')">
+                    
+                    <div id="search-results-box">
+                        lets put something here
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="collapse navbar-collapse justify-content-end right-nav" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="/io/register" class="btn btn-link">
-                        Sell on WeDrip
+                        List on DripRent
                     </a>
                 </li>
                 
@@ -19,17 +35,34 @@
                 </li>
                 
                 <li class="nav-item">
-                    <%= link_to login_path, class:"btn btn-primary" do %>
-                        Login
+                    <%= link_to login_path, class:"btn btn-nav", id:"signin-btn" do %>
+                        Sign in
                     <% end %>
                 </li>
                 
                 <li class="nav-item">
-                    <a href="/cart" class="btn btn-link btn-transparent">
-                        <i class="fas fa-shopping-cart"></i>
+                    <hr>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="btn btn-link btn-transparent cursor-pointer"
+                        id="cart-icon" onclick="toggleBox('cart-box')">
+                        <i class="fas fa-shopping-bag"></i>
                     </a>
+                    
+                    <div id="cart-box">
+                        <div id="cart-box-body">
+                            lets put something here
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script type="text/javascript">
+    toggleBox = (id) => {
+        $(`#${id}`).toggleClass("active");
+    };
+</script>

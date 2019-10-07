@@ -1,4 +1,19 @@
 class PagesController < ApplicationController
-  def home
-  end
+    
+    def index
+        @items = InventoryItem.latest_arrivals
+    end
+    
+    def browse
+        
+    end
+    
+    def popular
+        
+    end
+    
+    def brands
+        
+    end
+    
 end

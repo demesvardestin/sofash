@@ -6,4 +6,5 @@ class Renter < ApplicationRecord
   
   has_many :orders    
   has_many :inventory_items, through: :orders
+  has_many :carts
 end

@@ -1,8 +1,8 @@
-button.btn, input {
+button.btn, input.form-control {
     height: 50px !important;
 }
 
-button.btn, input, textarea {
+button.btn, input.form-control, textarea {
     font-size: 16px !important;
     outline: none !important;
     box-shadow: none !important;
@@ -14,4 +14,11 @@ button.btn, input, textarea {
 
 button.btn, .form-control {
     border-radius: 3px;
+}
+
+#newsletter-form {
+    input {
+        outline: none !important;
+        text-shadow: none !important;
+    }
 }
