@@ -4,7 +4,7 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Browse</a></li>
+                <li class="breadcrumb-item"><a href="/browse">Browse</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <%= @item.item_name %>
                 </li>
@@ -115,6 +115,18 @@
                 <p>
                     <%= sanitize @item.item_description %>
                 </p>
+            </div>
+            
+            <hr>
+            
+            <div class="item-reviews">
+                <h6>Reviews</h6>
+            </div>
+            
+            <hr>
+            
+            <div class="item-recommendations">
+                <h6>More like this</h6>
             </div>
         </div>
     </div>
