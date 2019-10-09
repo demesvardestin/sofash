@@ -1,7 +1,7 @@
 class Workflow::CartsController < ApplicationController
   
   def add
-    @cart_size = 1
+    @cart = initialize_cart_for
     
     render :layout => false
   end
