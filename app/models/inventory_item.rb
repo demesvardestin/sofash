@@ -1,5 +1,6 @@
 class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
+    has_many :item_orders
     
     after_create :initialize_image_attachment
     

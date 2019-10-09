@@ -4,7 +4,7 @@ class Renter < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :orders    
-  has_many :inventory_items, through: :orders
+  has_many :item_orders    
+  has_many :inventory_items, through: :item_orders
   has_many :carts
 end
