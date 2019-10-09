@@ -50,7 +50,11 @@ module ApplicationHelper
         return ""
     end
     
+    def current_cart
+        Cart.find_by(renter_email: current_or_guest_renter.email, checked_out: false)
+    end
+    
     def cart_size
-        0
+        current_cart.size
     end
 end

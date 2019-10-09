@@ -199,8 +199,12 @@ nav {
     right: 0;
     bottom: 0;
     opacity: 0.97;
-    background-color: #000;
+    background-color: #003166;
     padding-top: 75px;
+    
+    #overlay-search-close h3 {
+        color: #fff !important;
+    }
 }
 
 #search-results-box {

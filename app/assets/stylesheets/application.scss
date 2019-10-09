@@ -46,8 +46,12 @@ hr {
     border-color: #eeeeef;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+p {
     color: #616162;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--main-font-color);
 }
 
 .no-border {

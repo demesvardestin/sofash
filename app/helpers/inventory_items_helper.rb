@@ -19,4 +19,19 @@ module InventoryItemsHelper
             "danger"
         end
     end
+    
+    def is_in_cart(item)
+        current_cart.item_orders.exists?(inventory_item_id: item.id)
+    end
+    
+    def is_in_favorites(item)
+        if !current_or_guest_renter.guest
+            favorites = current_renter.item_favorites.map(&:inventory_item_id)
+            if favorites.include?(item.id)
+                return true
+            end
+        end
+        
+        return false
+    end
 end
