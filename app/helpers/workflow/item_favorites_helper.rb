@@ -1,0 +1,2 @@
+module Workflow::ItemFavoritesHelper
+end

@@ -49,4 +49,8 @@ module ApplicationHelper
         
         return ""
     end
+    
+    def cart_size
+        0
+    end
 end

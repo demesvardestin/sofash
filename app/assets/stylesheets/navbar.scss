@@ -2,7 +2,7 @@ nav {
     background-color: #fff !important;
     border-bottom: 1px solid #e7e7e9;
     
-    a.btn-link {
+    a.btn-link:not(#cart-icon) {
         color: var(--main-font-color) !important;
         font-size: var(--nav-font-size) !important;
         font-weight: 600;
@@ -131,24 +131,22 @@ nav {
     
     #cart-icon {
         border: none !important;
+        color: var(--main-font-color) !important;
+        font-weight: 600;
         font-size: 18px;
+        
+        .cart-size {
+            top: 8px;
+            right: 10px;
+            border-radius: 15px;
+            background-color: #e5f1ff;
+        }
         
     }
     
     .middle-nav {
         ul, li {
             width: 100%;
-        }
-        
-        #navbar-search {
-            height: 45px;
-            width: 100%;
-            border-radius: 25px;
-            outline: none;
-            box-shadow: none;
-            border: 1px solid #e7e7e9;
-            padding-left: 20px;
-            padding-right: 20px;
         }
     }
     
@@ -166,27 +164,55 @@ nav {
     }
 }
 
-#navbar-search:focus {
-    border-top-left-radius: 5px !important;
-    border-top-right-radius: 5px !important;
+#overlay-search-bar, #navbar-search {
+    height: 45px;
+    width: 100%;
+    border-radius: 25px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #e7e7e9;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0 !important;
+}
+
+#overlay-search-bar {
+    border-radius: 5px !important;
+}
+
+#overlay-search-bar:focus {
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-    box-shadow: 0 0 5px 3px #e7e7e9 !important;
+}
+
+#overlay-search.active {
+    display: block;
+}
+
+#overlay-search {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.97;
+    background-color: #000;
+    padding-top: 75px;
 }
 
 #search-results-box {
     display: none;
-    position: absolute;
-    z-index: 1050;
     background-color: #fff;
     min-height: 300px;
     height: 300px;
-    width: 450px;
+    width: 100%;
     border: 0.5px solid #e7e7e9;
     border-top: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 5px 5px 3px #e7e7e9 !important;
     padding: 15px 20px;
 }
 
@@ -215,7 +241,7 @@ nav {
 }
 
 #cart-box-body {
-    margin-top: 22px;
+    margin-top: 17px;
     height: 300px;
     width: 300px;
     background-color: #fff;

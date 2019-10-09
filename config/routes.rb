@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :workflow do
+    get 'item_favorites/new'
+  end
+
+  get 'carts/add'
+
   devise_for :renters, :controllers => { :registrations => "authentication/renters/registrations" }
   devise_scope :renter do
     get '/login', to: 'devise/sessions#new'
@@ -39,6 +45,8 @@ Rails.application.routes.draw do
     
     get '/attach-images', to: 'images#new'
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
+    get '/add_to_cart', to: 'carts#add'
+    post '/favorite', to: 'item_favorites#create'
   end
   
   get '/browse', to: 'pages#browse'

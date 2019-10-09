@@ -1,21 +1,60 @@
-<h2>Sign up</h2>
+<style> 
+  nav, footer {
+    display: none !important;
+  }
+  
+  body {
+    padding: 0;
+  }
+  
+  #base-body {
+    height: 100vh;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+</style>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", data: { :disable_with => "creating your account..." } %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<section id="signup-section">
+  <section id="left-panel">
+    
+  </section>
+  
+  <section id="right-panel">
+    <div class="form-wrapper">
+      <div class="form-main">
+        <header align="center">
+          <a href="/" class="navbar-brand">DripRent</a>
+          <h5>Let's get you started</h5>
+        </header>
+        
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+              class:"form-control", placeholder:"Email" %>
+          </div>
+        
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "new-password",
+              class:"form-control", placeholder:"Password" %>
+          </div>
+        
+          <div class="actions">
+            <%= f.submit "Sign up", class:"btn btn-theme btn-block", data: { "disable-with": "Creating your account..." } %>
+          </div>
+        <% end %>
+        
+        <hr>
+        <p align="center">
+          <a href="/login">Already have an account? Sign in</a> <br />
+          <a href="/renters/password/new">Forgot your password?</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</section>

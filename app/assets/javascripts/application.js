@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require tinymce
 //= require_tree .
+
+
+toggleBox = (id) => {
+    $(`#${id}`).toggleClass("active");
+};

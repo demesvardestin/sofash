@@ -1,0 +1,11 @@
+toggleBox('cart-box');
+
+$('#add-to-cart-div').html(`
+    <button class="btn btn-theme btn-block" disabled>
+        Added to cart <i class="fas fa-check"></i>
+    </button>
+`);
+
+$('.cart-size').text(`
+    <%= @cart_size %>
+`);

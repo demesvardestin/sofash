@@ -1,0 +1,868 @@
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.btn-transparent {
+  color: #b8b8ba !important;
+  background-color: transparent !important;
+  border-color: #e7e7e9 !important;
+}
+
+/* line 8, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.dashboard-navigation button {
+  border-left: none;
+  border-right: none;
+  border-width: 0.5px !important;
+}
+
+/* line 15, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.btn-theme, .btn-theme:hover {
+  background-color: #001833;
+  border-color: #001833;
+  color: #fff;
+}
+
+/* line 21, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+.btn-theme-outline, .btn-theme-outline:hover {
+  background-color: transparent;
+  border-color: #001833;
+  color: #001833;
+}
+
+@media (max-width: 992px) {
+  /* line 28, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+  /* line 32, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .btn {
+    border-radius: 0;
+    height: 50px;
+  }
+  /* line 37, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .dropdown-menu {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 46, /home/ubuntu/environment/app/assets/stylesheets/button.scss */
+  .dashboard-navigation .dropdown-item {
+    color: #b8b8ba !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #e7e7e9;
+  }
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/card.scss */
+.card {
+  border-color: #eeeeef;
+}
+/* line 4, /home/ubuntu/environment/app/assets/stylesheets/card.scss */
+.card .card-body {
+  padding: 30px 30px 50px;
+}
+
+@media (max-width: 992px) {
+  /* line 10, /home/ubuntu/environment/app/assets/stylesheets/card.scss */
+  .card:not(.item--img--container) {
+    border: none;
+  }
+  /* line 13, /home/ubuntu/environment/app/assets/stylesheets/card.scss */
+  .card:not(.item--img--container) .card-body {
+    padding: 0;
+  }
+}
+/* line 2, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#login-section header, #signup-section header {
+  margin-bottom: 25px;
+}
+/* line 6, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#login-section a, #signup-section a {
+  color: var(--main-font-color);
+}
+
+/* line 11, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#signup-section {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+/* line 15, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#signup-section #left-panel {
+  float: left;
+  height: inherit;
+  border-right: 1px solid #e7e7e9;
+  width: 50%;
+}
+/* line 22, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#signup-section #right-panel {
+  float: right;
+  width: 50%;
+  height: inherit;
+}
+/* line 27, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#signup-section #right-panel .form-wrapper {
+  display: table;
+  padding: 0 100px;
+  height: inherit;
+  width: 100%;
+}
+/* line 33, /home/ubuntu/environment/app/assets/stylesheets/devise.scss */
+#signup-section #right-panel .form-wrapper .form-main {
+  display: table-cell !important;
+  vertical-align: middle !important;
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 0 30px;
+  margin-top: 40px;
+  color: #003166;
+}
+/* line 9, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup {
+  min-height: 100px;
+  margin-bottom: 25px;
+  background-color: #e5f1ff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+/* line 16, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup hr {
+  height: 1px;
+  border-color: #7f7f7f;
+  background-color: #7f7f7f;
+}
+/* line 22, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup h5 {
+  color: #4c4c4c;
+}
+/* line 26, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup #list-with-us {
+  text-align: left !important;
+}
+/* line 29, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup #list-with-us .col-md-12 {
+  margin-bottom: 15px;
+}
+/* line 33, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup #list-with-us h6 {
+  color: #7f7f7f;
+}
+/* line 37, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer #newsletter-signup #list-with-us i {
+  font-size: 20px;
+}
+/* line 44, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer .social-links a:not(:last-child) {
+  margin-right: 20px;
+}
+/* line 48, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer .social-links a {
+  font-size: 17px;
+}
+/* line 53, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer a {
+  color: #003166;
+}
+/* line 57, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer h6 {
+  margin-bottom: 20px;
+}
+/* line 61, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+/* line 66, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+footer .copyright-column {
+  color: #003166;
+}
+
+@media (max-width: 992px) {
+  /* line 72, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+  footer {
+    padding-bottom: 0;
+    text-align: center;
+  }
+  /* line 76, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+  footer .copyright-column {
+    text-align: center !important;
+  }
+  /* line 80, /home/ubuntu/environment/app/assets/stylesheets/footer.scss */
+  footer .col-md-4:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, input.form-control, input.btn {
+  height: 50px !important;
+}
+
+/* line 5, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, input.form-control, textarea {
+  font-size: 16px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* line 11, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* line 15, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+button.btn, .form-control {
+  border-radius: 3px;
+}
+
+/* line 20, /home/ubuntu/environment/app/assets/stylesheets/form.scss */
+#newsletter-form input {
+  outline: none !important;
+  text-shadow: none !important;
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#first-banner {
+  height: 300px;
+  border: none;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+/* line 7, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#second-banner {
+  height: 300px;
+  border-top: 1px solid #e7e7e9;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+/* line 13, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#latest-arrivals, #popular-right-now {
+  padding: 25px 0;
+}
+
+/* line 17, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+.home-page > section:not(:first-child) {
+  margin-bottom: 15px;
+}
+
+/* line 21, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#browse-by-brand {
+  padding: 15px 0;
+}
+/* line 24, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#browse-by-brand h6 {
+  margin-bottom: 15px;
+}
+/* line 29, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#browse-by-brand .brand-box img {
+  width: 95%;
+}
+/* line 34, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+#browse-by-brand .prop-asset {
+  width: 200px;
+  border: 1px solid #e7e7e9;
+}
+
+@media (max-width: 992px) {
+  /* line 42, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+  .brand-box:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  /* line 46, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+  .prop-asset {
+    border-width: 2px !important;
+  }
+
+  /* line 51, /home/ubuntu/environment/app/assets/stylesheets/home.scss */
+  #browse-by-brand .col-md-2 {
+    width: 50%;
+    display: inline-block;
+  }
+}
+/* line 8, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .item-column {
+  margin: 15px 0;
+}
+/* line 12, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container {
+  margin: auto !important;
+  width: auto;
+  min-height: 150px;
+  border-radius: 5px !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 21, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container h6 {
+  color: #191919 !important;
+}
+/* line 25, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container .card-body {
+  max-height: 163px;
+}
+/* line 29, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container .card-footer {
+  border-top: none;
+  background-color: #fbfbfb;
+}
+/* line 33, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container .card-footer p {
+  font-size: 14px;
+}
+/* line 37, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container .card-footer div {
+  color: var(--main-font-color);
+}
+/* line 42, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container img {
+  width: 100%;
+}
+/* line 47, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+#inventory--items .img--container:hover {
+  z-index: 10999 !important;
+  position: absolute;
+  border: none;
+  box-shadow: 0 26px 54px -10px rgba(50, 50, 93, 0.25), 0 16px 32px -16px rgba(0, 0, 0, 0.3), 0 -12px 32px -12px rgba(0, 0, 0, 0.025);
+}
+
+/* line 60, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item nav {
+  height: 50px;
+  border-bottom: none !important;
+}
+/* line 64, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item nav .breadcrumb {
+  background-color: transparent !important;
+  padding: 0;
+  margin-bottom: 0;
+}
+/* line 69, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item nav .breadcrumb li:not(:first-child)::before {
+  content: ">";
+}
+/* line 75, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .img--container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/* line 84, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .img--container li {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #000;
+}
+/* line 90, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .img--container i {
+  color: #000 !important;
+  font-size: 25px;
+}
+/* line 95, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .img--container img {
+  vertical-align: middle !important;
+  width: 90% !important;
+}
+/* line 102, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-data div:not(:last-child) {
+  margin-bottom: 15px;
+}
+/* line 107, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-data .item-name h5 {
+  color: #000;
+}
+/* line 113, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-description {
+  padding: 25px 0;
+}
+/* line 118, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-actions .btn {
+  transition: display 0.50s;
+  margin-bottom: 15px;
+}
+/* line 124, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-actions .btn:hover span:first-child {
+  display: none;
+}
+/* line 128, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.inventory-item .item-actions .btn:hover span:last-child {
+  display: inline !important;
+}
+
+/* line 135, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.tinymce {
+  min-height: 500px;
+}
+
+/* line 139, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.badge-success {
+  background-color: transparent;
+  color: #28a745;
+  border: 0.5px solid #28a745;
+}
+
+/* line 145, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+.badge-danger {
+  background-color: transparent;
+  color: #dc3545;
+  border: 0.5px solid #dc3545;
+}
+
+@media (max-width: 992px) {
+  /* line 155, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+  #inventory--items .img--container .card-body {
+    max-height: 215px;
+  }
+  /* line 160, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+  #inventory--items .col-md-3, #inventory--items .col-md-2 {
+    width: 50%;
+    display: inline-block;
+  }
+
+  /* line 167, /home/ubuntu/environment/app/assets/stylesheets/inventory_items.scss */
+  .inventory-item .item-data {
+    margin-top: 15px;
+  }
+}
+/* line 1, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav {
+  background-color: #fff !important;
+  border-bottom: 1px solid #e7e7e9;
+}
+/* line 5, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav a.btn-link:not(#cart-icon) {
+  color: var(--main-font-color) !important;
+  font-size: var(--nav-font-size) !important;
+  font-weight: 600;
+}
+/* line 11, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu {
+  display: none;
+  transition: display 2s;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #fff;
+  z-index: 9999;
+}
+/* line 24, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu header {
+  height: 75px;
+  padding: 28px 15px;
+  border-bottom: 1px solid #e7e7e9;
+}
+/* line 29, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu header h6 {
+  margin: auto !important;
+}
+/* line 35, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu #menu-body div {
+  padding: 30px 15px;
+  font-size: 20px;
+}
+/* line 40, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu #menu-body a {
+  color: var(--main-font-color);
+}
+/* line 43, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav #mobile-menu #menu-body a div {
+  border-bottom: 1px solid #e7e7e9;
+}
+/* line 50, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  height: 39px;
+}
+/* line 56, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler span {
+  height: 0;
+}
+/* line 60, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler .ham-menu {
+  width: 100%;
+  height: 3px;
+  background-color: #003166;
+  transition: width 0.55s;
+}
+/* line 67, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler .ham-menu-wrapper {
+  margin-top: 10px;
+}
+/* line 71, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler #stack1, nav .navbar-toggler #stack2 {
+  margin-bottom: 5px;
+}
+/* line 75, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler #stack3 {
+  width: 60%;
+  transition: width 0.15s;
+}
+/* line 80, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler #stack2 {
+  width: 80%;
+  transition: width 0.35s;
+}
+/* line 87, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+nav .navbar-toggler:focus #stack1, nav .navbar-toggler:focus #stack2, nav .navbar-toggler:focus #stack3 {
+  width: 0;
+}
+
+/* line 94, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+.nav-pills .nav-link {
+  background-color: transparent !important;
+  color: #b8b8ba !important;
+  padding: 0;
+  margin-bottom: 15px;
+}
+/* line 100, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+.nav-pills .nav-link span {
+  width: 0;
+}
+/* line 106, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+.nav-pills .nav-link:hover span, .nav-pills .active span {
+  color: #616162;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #616162;
+}
+
+/* line 115, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar hr {
+  width: 1px;
+  height: 100%;
+  background-color: #b2b2b2;
+  border-color: #b2b2b2;
+  margin-top: 0;
+}
+/* line 123, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar .nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+/* line 127, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar .btn-link {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 132, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar #cart-icon {
+  border: none !important;
+  color: var(--main-font-color) !important;
+  font-weight: 600;
+  font-size: 18px;
+}
+/* line 138, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar #cart-icon .cart-size {
+  top: 8px;
+  right: 10px;
+  border-radius: 15px;
+  background-color: #e5f1ff;
+}
+/* line 148, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar .middle-nav ul, #base-navbar .middle-nav li {
+  width: 100%;
+}
+/* line 153, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar .btn-nav {
+  background-color: #fff;
+  border-color: var(--main-font-color);
+  font-size: var(--nav-font-size);
+  color: var(--main-font-color);
+  transition: all 0.25s;
+}
+/* line 161, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#base-navbar .btn-nav:hover {
+  background-color: var(--main-bg-color);
+  color: #fff;
+}
+
+/* line 167, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#overlay-search-bar, #navbar-search {
+  height: 45px;
+  width: 100%;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #e7e7e9;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0 !important;
+}
+
+/* line 179, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#overlay-search-bar {
+  border-radius: 5px !important;
+}
+
+/* line 183, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#overlay-search-bar:focus {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* line 188, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#overlay-search.active {
+  display: block;
+}
+
+/* line 192, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#overlay-search {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  max-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.97;
+  background-color: #000;
+  padding-top: 75px;
+}
+
+/* line 206, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#search-results-box {
+  display: none;
+  background-color: #fff;
+  min-height: 300px;
+  height: 300px;
+  width: 100%;
+  border: 0.5px solid #e7e7e9;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 15px 20px;
+}
+
+/* line 219, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#search-results-box.active {
+  display: block !important;
+}
+
+/* line 223, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#cart-box.active {
+  position: absolute;
+  right: 25px;
+  display: block;
+}
+/* line 228, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#cart-box.active #triangle {
+  border-bottom: 15px solid #e7e7e9;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  width: 0;
+  height: 0;
+  margin-left: auto;
+}
+
+/* line 239, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#cart-box {
+  display: none;
+}
+
+/* line 243, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+#cart-box-body {
+  margin-top: 17px;
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #e7e7e9;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 15px;
+}
+
+@media (min-width: 1023px) and (max-width: 1199px) {
+  /* line 255, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+  #search-results-box {
+    width: 360.3px !important;
+  }
+}
+@media (max-width: 992px) {
+  /* line 261, /home/ubuntu/environment/app/assets/stylesheets/navbar.scss */
+  #cart-icon {
+    color: var(--main-font-color) !important;
+    font-size: 25px !important;
+  }
+}
+/* line 6, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.pr-confirmation {
+  text-align: center;
+}
+
+/* line 10, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.section-divider {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 16, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.section-avatar .img--container {
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #f5f5f6;
+  border-radius: 60px;
+  overflow: hidden;
+}
+/* line 25, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.section-avatar .profile-snapshot-container {
+  height: 100%;
+  padding-top: 5%;
+}
+/* line 30, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.section-avatar .privacy-settings-btn-container {
+  padding-top: 30%;
+}
+/* line 34, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+.section-avatar img {
+  height: 120px;
+}
+
+@media (max-width: 992px) {
+  /* line 40, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-avatar {
+    text-align: center !important;
+  }
+  /* line 43, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-avatar .img--container {
+    justify-content: center;
+  }
+  /* line 47, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-avatar .profile-snapshot-container {
+    padding-top: 5%;
+    padding-bottom: 1px;
+  }
+  /* line 52, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-avatar .privacy-settings-btn-container {
+    padding: 0 0 15px;
+  }
+
+  /* line 57, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-divider {
+    display: none;
+  }
+
+  /* line 61, /home/ubuntu/environment/app/assets/stylesheets/pickup_requests.scss */
+  .section-dashboard_content {
+    padding-top: 15px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+:root {
+  --main-font-color: #003166;
+  --main-bg-color: #7f7f7f;
+  --nav-font-size: 15px ;
+}
+
+/* line 24, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+html, body {
+  overflow-x: hidden !important;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* line 29, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+nav {
+  height: 75px;
+}
+
+/* line 33, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+body {
+  padding-top: 75px;
+  min-height: 100vh;
+}
+/* line 37, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+body #io-body {
+  padding-top: 30px;
+}
+
+/* line 42, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.mobile-show {
+  display: none;
+}
+
+/* line 46, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+hr {
+  border-color: #eeeeef;
+}
+
+/* line 50, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+h1, h2, h3, h4, h5, h6, p {
+  color: #616162;
+}
+
+/* line 54, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.no-border {
+  border: none;
+}
+
+/* line 58, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.float-left {
+  float: left;
+}
+
+/* line 62, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.float-right {
+  float: right;
+}
+
+/* line 66, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* line 70, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+#base-body, #io-body, #renter-body {
+  bottom: 0;
+  padding-bottom: 0;
+  padding-top: 30px;
+  margin-bottom: 0;
+}
+
+/* line 77, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+.no-display {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  /* line 82, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+  .mobile-show {
+    display: block;
+  }
+
+  /* line 86, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+  .mobile-hide {
+    display: none !important;
+  }
+
+  /* line 90, /home/ubuntu/environment/app/assets/stylesheets/application.scss */
+  #navbarNavSearch {
+    display: none;
+  }
+}
