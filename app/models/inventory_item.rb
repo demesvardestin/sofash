@@ -8,6 +8,10 @@ class InventoryItem < ApplicationRecord
         item_name.split(" ").join("-")
     end
     
+    def url
+        "/item/#{id}/#{slug}"
+    end
+    
     def availability
         case in_stock
         when true

@@ -5,7 +5,7 @@
         </button>
     <% else %>
         <%= link_to add_to_cart_path(:item_id => item.id), remote: true do %>
-            <button class="btn btn-theme btn-block">
+            <button class="btn btn-theme btn-block" onclick="showSpinner(this)">
                 <span>
                     Add to cart
                 </span>
@@ -35,3 +35,13 @@
         <% end %>
     <% end %>
 </div>
+
+<script>
+    showSpinner = (elem) => {
+        elem.innerHTML = `
+            <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        `;
+    }
+</script>

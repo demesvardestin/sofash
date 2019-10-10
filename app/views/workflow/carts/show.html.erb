@@ -1,0 +1,42 @@
+<section id="cart-section">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Items in your cart</h5>
+                    <hr>
+                    
+                    <% @cart.item_orders.each do |o| %>
+                        <div class="row item-order">
+                            <div class="float-left text-center">
+                                <img src="<%= o.inventory_item.image.first_source %>"
+                                    title="<%= o.inventory_item.item_name %>"
+                                    alt="<%= o.inventory_item.item_name %>">
+                            </div>
+                            <div class="float-right">
+                                <a href="<%= o.inventory_item.url %>">
+                                    <h6>
+                                        <strong>
+                                            <%= o.inventory_item.item_name %>
+                                        </strong>
+                                    </h6>
+                                </a>
+                                
+                                <%= link_to item_order_path(o),
+                                    method: :destroy, remote: true do %>
+                                    remove from cart
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                    
+                    <hr>
+                    
+                    <button class="btn btn-theme btn-block">
+                        Proceed to checkout <i class="fas fa-long-arrow-alt-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -42,10 +42,12 @@ Rails.application.routes.draw do
   
   scope module: 'workflow' do
     resources :inventory_items, :images
+    resources :item_orders, only: :destroy
     
     get '/attach-images', to: 'images#new'
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
     get '/add_to_cart', to: 'carts#add'
+    get '/cart', to: 'carts#show'
     post '/favorite', to: 'item_favorites#create'
   end
   

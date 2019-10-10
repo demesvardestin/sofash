@@ -51,7 +51,13 @@ module ApplicationHelper
     end
     
     def current_cart
-        Cart.find_by(renter_email: current_or_guest_renter.email, checked_out: false)
+        @cart = Cart.find_by(renter_email: current_or_guest_renter.email)
+        
+        if @cart.nil?
+            @cart = Cart.create(renter_email: current_or_guest_renter.email)
+        end
+        
+        return @cart
     end
     
     def cart_size

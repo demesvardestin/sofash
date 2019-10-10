@@ -1,3 +1,53 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#cart-section {
+    img {
+        height: 50px;
+        width: auto;
+    }
+    
+    .item-order:not(:last-child) {
+        margin-bottom: 25px;
+    }
+    
+    .item-order {
+        margin: 0;
+        
+        img {
+            width: 100%;
+        }
+        
+        .float-left {
+            width: 25%;
+            border: 1px solid #e7e7e9;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .float-right {
+            width: 75%;
+            border: 1px solid #e7e7e9;
+            border-left: none;
+            padding: 10px 15px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .item-order {
+        margin: 0;
+        
+        .float-left {
+            width: 30% !important;
+        }
+        
+        .float-right {
+            width: 70% !important;
+        }
+    }
+}
