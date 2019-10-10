@@ -47,7 +47,9 @@ Rails.application.routes.draw do
     get '/attach-images', to: 'images#new'
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
     get '/add_to_cart', to: 'carts#add'
+    get '/remove_from_cart', to: 'carts#remove'
     get '/cart', to: 'carts#show'
+    get '/checkout', to: 'carts#checkout'
     post '/favorite', to: 'item_favorites#create'
   end
   

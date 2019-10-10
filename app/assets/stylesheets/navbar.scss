@@ -265,5 +265,14 @@ nav {
     #cart-icon {
         color: var(--main-font-color) !important;
         font-size: 25px !important;
+        
+        .cart-size {
+            top: 5px;
+            right: 10px;
+            border-radius: 15px;
+            background-color: #e5f1ff;
+            height: 21px;
+            font-size: 14px;
+        }
     }
 }

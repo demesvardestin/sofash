@@ -3,40 +3,28 @@
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h5>Items in your cart</h5>
-                    <hr>
-                    
-                    <% @cart.item_orders.each do |o| %>
-                        <div class="row item-order">
-                            <div class="float-left text-center">
-                                <img src="<%= o.inventory_item.image.first_source %>"
-                                    title="<%= o.inventory_item.item_name %>"
-                                    alt="<%= o.inventory_item.item_name %>">
-                            </div>
-                            <div class="float-right">
-                                <a href="<%= o.inventory_item.url %>">
-                                    <h6>
-                                        <strong>
-                                            <%= o.inventory_item.item_name %>
-                                        </strong>
-                                    </h6>
-                                </a>
-                                
-                                <%= link_to item_order_path(o),
-                                    method: :destroy, remote: true do %>
-                                    remove from cart
-                                <% end %>
-                            </div>
-                        </div>
-                    <% end %>
+                    <h5 align="center">Items in your cart</h5>
                     
                     <hr>
                     
-                    <button class="btn btn-theme btn-block">
-                        Proceed to checkout <i class="fas fa-long-arrow-alt-right"></i>
-                    </button>
+                    <div id="cart-content">
+                        <%= render "cart_content" %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    let loader = `
+            <div class="spinner-border text-primary" role="status"
+                style="height: 1rem; width: 1rem;">
+              <span class="sr-only">Loading...</span>
+            </div>
+        `;
+        
+    displayLoaderForRemoveBtn = (elem) => {
+        elem.innerHTML = loader;
+    };
+</script>

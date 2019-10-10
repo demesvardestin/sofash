@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="base-navbar">
     <div class="container">
         <button class="btn btn-link btn-transparent navbar-toggler"
-            id="cart-icon" onclick="toggleBox('cart-box')">
+            id="cart-icon" onclick="window.location.href='/cart';">
             <i class="fas fa-shopping-bag"></i>
+            <span class="badge badge-light cart-size">
+                <%= cart_size %>
+            </span>
         </button>
         
         <a class="navbar-brand" href="/">driprent</a>

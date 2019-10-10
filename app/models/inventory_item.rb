@@ -29,6 +29,11 @@ class InventoryItem < ApplicationRecord
         ["Excellent", "Good", "Fair"][item_condition]
     end
     
+    ## Pricing will be determined by consignor
+    def rental_price
+        (market_value.to_f * 0.10).round(2)
+    end
+    
     protected
     
         def initialize_image_attachment

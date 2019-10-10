@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #cart-section {
+    
     img {
         height: 50px;
         width: auto;
@@ -35,6 +36,22 @@
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
+        
+        #remove-from-cart {
+            font-size: 14px;
+        }
+    }
+}
+
+#checkoutBtn {
+    i {
+        transition: margin-left 0.5s;
+    }
+}
+
+#checkoutBtn:hover {
+    i {
+        margin-left: 10px;
     }
 }
 

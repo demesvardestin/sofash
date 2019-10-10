@@ -1,0 +1,42 @@
+<% if @cart.is_not_empty %>
+    <% @cart.item_orders.each do |o| %>
+        <div class="row item-order">
+            <div class="float-left text-center">
+                <img src="<%= o.inventory_item.image.first_source %>"
+                    title="<%= o.inventory_item.item_name %>"
+                    alt="<%= o.inventory_item.item_name %>">
+            </div>
+            <div class="float-right">
+                <a href="<%= o.inventory_item.url %>">
+                    <h6>
+                        <strong>
+                            <%= o.inventory_item.item_name %>
+                        </strong>
+                    </h6>
+                </a>
+                
+                <span class="rental_price">
+                    <%= number_to_currency o.inventory_item.rental_price %>
+                </span>
+                
+                <%= link_to remove_from_cart_path(:order_id => o.id),
+                    onclick:"displayLoaderForRemoveBtn(this)",
+                    id:"remove-from-cart", remote: true do %>
+                    remove
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    
+    <hr>
+    
+    <a href="/checkout" style="text-decoration: none;">
+        <button class="btn btn-theme btn-block" id="checkoutBtn">
+            Proceed to checkout <i class="fas fa-long-arrow-alt-right"></i>
+        </button>
+    </a>
+<% else %>
+    <p align="center">
+        You cart is empty. We should <a href="/browse">change that</a>.
+    </p>
+<% end %>
