@@ -1,12 +1,14 @@
 <% if @cart.is_not_empty %>
     <% @cart.item_orders.each do |o| %>
-        <div class="row item-order">
-            <div class="float-left text-center">
-                <img src="<%= o.inventory_item.image.first_source %>"
-                    title="<%= o.inventory_item.item_name %>"
-                    alt="<%= o.inventory_item.item_name %>">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-container">
+                    <img src="<%= o.inventory_item.image.first_source %>"
+                        title="<%= o.inventory_item.item_name %>"
+                        alt="<%= o.inventory_item.item_name %>">
+                </div>
             </div>
-            <div class="float-right">
+            <div class="col-md-6">
                 <a href="<%= o.inventory_item.url %>">
                     <h6>
                         <strong>
@@ -15,10 +17,42 @@
                     </h6>
                 </a>
                 
-                <span class="rental_price">
-                    <%= number_to_currency o.inventory_item.rental_price %>
-                </span>
+                <div class="item-name">
+                    <p>
+                        <strong>
+                            <a href="/brand/<%= o.inventory_item.item_brand %>">
+                                <%= o.inventory_item.item_brand %>
+                            </a>
+                        </strong>
+                    </p>
+                </div>
                 
+                <div class="item-size">
+                    <p>
+                        Size: US L/EU M
+                    </p>
+                </div>
+                
+                <div class="item-market-value">
+                    <p>
+                        Estimated Market Value: $<%= o.inventory_item.market_value %>
+                    </p>
+                </div>
+                
+                <div class="item-condition">
+                    <p>
+                        Condition: <%= o.inventory_item.condition %>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <span class="rental_price">
+                    <strong>
+                        <%= number_to_currency o.inventory_item.rental_price %>
+                    </strong>
+                </span>
+                -
                 <%= link_to remove_from_cart_path(:order_id => o.id),
                     onclick:"displayLoaderForRemoveBtn(this)",
                     id:"remove-from-cart", remote: true do %>
@@ -26,6 +60,10 @@
                 <% end %>
             </div>
         </div>
+        
+        <% unless o == @cart.item_orders.last %>
+            <hr class="hr">
+        <% end %>
     <% end %>
     
     <hr>
