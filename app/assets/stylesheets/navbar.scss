@@ -8,6 +8,12 @@ nav {
         font-weight: 600;
     }
     
+    .navbar-brand {
+        font-family: 'Allerta Stencil', sans-serif;
+        color: var(--main-font-color) !important;
+        font-size: 25px;
+    }
+    
     #mobile-menu {
         display: none;
         transition: display 2s;
