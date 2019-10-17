@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 .goodbye-modal {
     
     .modal-content {;
-        top: calc((100vh - 200px)/3);
+        top: calc((100vh - 400px)/2);
         border-color: #fff;
     }
     
@@ -93,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .modal-body {
+        max-height: 400px;
         text-align: center;
         padding-top: 45px;
         padding-bottom: 75px;
