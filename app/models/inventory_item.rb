@@ -4,6 +4,10 @@ class InventoryItem < ApplicationRecord
     
     after_create :initialize_image_attachment
     
+    def self.search(parameter)
+        where("item_name LIKE '%#{parameter}%' OR item_brand LIKE '%#{parameter}%' or item_description LIKE '%#{parameter}%'")
+    end
+        
     def slug
         item_name.split(" ").join("-")
     end

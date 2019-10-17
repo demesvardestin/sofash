@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     resources :inventory_items, :images
     resources :item_orders, only: :destroy
     
+    get '/search', to: 'inventory_items#search'
     get '/attach-images', to: 'images#new'
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
     get '/add_to_cart', to: 'carts#add'

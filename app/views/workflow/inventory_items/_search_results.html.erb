@@ -1,0 +1,47 @@
+<div id="search-result-items">
+    <a onclick="hideSearchBox()">
+        <div class="row">
+            <div class="col-md-12" id="close-results"
+                style="font-style: 14px !important;">
+                <i class="fas fa-times-circle"></i>
+                Close
+            </div>
+        </div>
+    </a>
+    
+    <% if @snapshot_items.present? %>
+        <div id="search-results-present">
+            <% @snapshot_items.each do |item| %>
+                <a href="/item/<%= item.id %>/<%= item.slug %>">
+                    <div class="row">
+                        <div class="col-md-12 item">
+                            <span>
+                                <img src="<%= item.image.first_source %>"
+                                    style="width: 50px; height auto;">
+                            </span>
+                            
+                            <span style="margin-left: 10px;">
+                                <%= item.item_name %>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            <% end %>
+            
+            <a href="/browse?query=<%= @query %>">
+                <div class="row">
+                    <div class="col-md-12" id="all-results">
+                        All results (<%= @items.length %>)
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <% else %>
+        <div class="row">
+            <div class="col-md-12">
+                <span>No results</span>
+            </div>
+        </div>
+    <% end %>
+</div>

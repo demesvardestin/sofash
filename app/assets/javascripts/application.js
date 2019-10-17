@@ -16,7 +16,47 @@
 //= require tinymce
 //= require_tree .
 
+console.log('DripRent has suspended all operations, effective September 1st.');
 
 toggleBox = (id) => {
     $(`#${id}`).toggleClass("active");
 };
+
+$(document).on("turbolinks:load", function() {
+    let goodbyeBtn = document.querySelector('#goodbye-btn');
+    let modalOpen = document.querySelector('body');
+    let searchBox = document.querySelector('#search-results-box');
+    
+    goodbyeBtn.click();
+    
+    modalOpen.addEventListener('click', e => {
+        goodbyeBtn.click();
+    });
+    
+    displaySearchBox = (elem) => {
+        let inputWidth = elem.offsetWidth;
+        
+        searchBox.style.width = `${inputWidth}px`;
+        if (!searchBox.classList.contains("active")) {
+            searchBox.classList.add('active');
+        }
+    }
+    
+    hideSearchBox = () => {
+        $('#search-results-box').toggleClass('active');
+        $("#navbar-search").toggleClass('active');
+    }
+    
+    submitFormWithQuery = (elem, query) => {
+        displaySearchBox(elem);
+        
+        if (query == "") {
+            hideSearchBox(elem);
+            elem.classList.remove('active');
+        } else {
+            elem.classList.add('active');
+        }
+        
+        $.get("/search", { query: query });
+    };
+})
