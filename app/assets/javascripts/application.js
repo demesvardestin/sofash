@@ -23,9 +23,9 @@ toggleBox = (id) => {
 };
 
 $(document).on("turbolinks:load", function() {
-    let goodbyeBtn = document.querySelector('#goodbye-btn');
-    let modalOpen = document.querySelector('body');
-    let searchBox = document.querySelector('#search-results-box');
+    // let goodbyeBtn = document.querySelector('#goodbye-btn');
+    // let modalOpen = document.querySelector('body');
+    // let searchBox = document.querySelector('#search-results-box');
     
     goodbyeBtn.click();
     
