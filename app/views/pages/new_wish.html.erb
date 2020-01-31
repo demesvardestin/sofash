@@ -1,0 +1,73 @@
+<section id="new-wish-section">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card image-upload-card">
+                <input type="file" id="image-input" style="display: none;">
+                <img id="image" src="#" alt="image" style="display: none;" />
+                
+                <div class="card-body image-upload-card-body">
+                    <a class="cursor-pointer" onclick="$('#image-input').click();">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Share a new fit</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="actions" style="display: none;" id="actions">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-danger btn-block"
+                            onclick="cancelUpload()">
+                            Cancel
+                        </button>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <a href="">
+                            <button class="btn btn-outline-success btn-block">
+                                Continue <i class="fas fa-angle-right"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            <div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    let container = document.querySelector('.image-upload-card-body');
+    // let imageInput = document.querySelector('#image-input');
+    let image = document.querySelector('#image');
+    let actions = document.querySelector('#actions');
+    
+    let readURL = (input) => {
+        if (input.files && input.files[0]) {
+            let reader = new FileReader();
+            
+            reader.onload = function(e) {
+                container.style.display = 'none';
+                
+                image.style.display = 'block';
+                image.style.width = '100%';
+                image.style.height = 'auto';
+                image.setAttribute('src', e.target.result);
+                
+                actions.style.display = 'block';
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+    
+    let cancelUpload = () => {
+        image.style.display = 'none';
+        actions.style.display = 'none';
+        
+        container.style.display = 'block';
+    };
+    
+    $("#image-input").change(function() {
+        readURL(this);
+    });
+</script>

@@ -1,45 +1,111 @@
-<footer>
-    <section id="newsletter-signup">
-        <div class="container">
-            <div class="row" id="list-with-us">
-                <div class="col-md-12">
-                    <h5>
-                        Become a consignor in 3 easy steps
-                    </h5>
+<% unless @io %>
+    <footer>
+        <section id="newsletter-signup">
+            <div class="container">
+                <!--<div class="row" id="list-with-us">-->
+                <!--    <div class="col-md-12">-->
+                <!--        <h5>-->
+                <!--            Become a consignor in 3 easy steps-->
+                <!--        </h5>-->
+                <!--    </div>-->
+                    
+                <!--    <div class="col-md-4">-->
+                <!--        <div>-->
+                            <!--<i class="fas fa-file-alt"></i>-->
+                <!--        </div>-->
+                        
+                <!--        <h6>Signup</h6>-->
+                        
+                <!--        <p>-->
+                <!--            Create an account for free and fill out your profile-->
+                <!--            information.-->
+                <!--        </p>-->
+                <!--    </div>-->
+                <!--    <div class="col-md-4">-->
+                <!--        <div>-->
+                            <!--<i class="fas fa-truck-pickup"></i>-->
+                <!--        </div>-->
+                        
+                <!--        <h6>Request a pickup</h6>-->
+                        
+                <!--        <p>-->
+                <!--            Request a free in-home pickup for a maximum of 3 items.-->
+                <!--        </p>-->
+                <!--    </div>-->
+                <!--    <div class="col-md-4">-->
+                <!--        <div>-->
+                            <!--<i class="fas fa-dollar-sign"></i>-->
+                <!--        </div>-->
+                        
+                <!--        <h6>Get paid</h6>-->
+                        
+                <!--        <p>-->
+                <!--            Earn money every time any of your items gets rented out.-->
+                <!--        </p>-->
+                <!--    </div>-->
+                <!--</div>-->
+                
+                <!--<div class="row">-->
+                <!--    <div class="col-md-12">-->
+                <!--        <hr>-->
+                <!--    </div>-->
+                <!--</div>-->
+                
+                <div class="row">
+                    <div class="col-md-9">
+                        <h5>
+                            Want to be notified of new listings?
+                        </h5>
+                        
+                        <p>
+                            We'll send exclusive content,
+                            new listing notifications, and new feature announcements,
+                            directly to your inbox!
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <%= render "shared/newsletter_form" %>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6 style="color: #6683a3 !important;">CONSIGN</h6>
+                    
+                    <p>
+                        <a href="/io/login">Login</a>
+                    </p>
+                    <p>
+                        <a href="/press">Register</a>
+                    </p>
+                    <p>
+                        <a href="/listing-terms">Listing terms</a>
+                    </p>
                 </div>
                 
                 <div class="col-md-4">
-                    <div>
-                        <!--<i class="fas fa-file-alt"></i>-->
-                    </div>
-                    
-                    <h6>Signup</h6>
+                    <h6 style="color: #6683a3 !important;">RENT</h6>
                     
                     <p>
-                        Create an account for free and fill out your profile
-                        information.
+                        <a href="/r/login">Login</a>
+                    </p>
+                    <p>
+                        <a href="/io/login">Rental terms</a>
                     </p>
                 </div>
+                
                 <div class="col-md-4">
-                    <div>
-                        <!--<i class="fas fa-truck-pickup"></i>-->
-                    </div>
-                    
-                    <h6>Request a pickup</h6>
+                    <h6 style="color: #6683a3 !important;">ABOUT</h6>
                     
                     <p>
-                        Request a free in-home pickup for a maximum of 3 items.
+                        <a href="/service">Our service</a>
                     </p>
-                </div>
-                <div class="col-md-4">
-                    <div>
-                        <!--<i class="fas fa-dollar-sign"></i>-->
-                    </div>
-                    
-                    <h6>Get paid</h6>
-                    
                     <p>
-                        Earn money every time any of your items gets rented out.
+                        <a href="/press">Press</a>
                     </p>
                 </div>
             </div>
@@ -51,93 +117,29 @@
             </div>
             
             <div class="row">
-                <div class="col-md-9">
-                    <h5>
-                        Want to be notified of new listings?
-                    </h5>
-                    
-                    <p>
-                        We'll send exclusive content,
-                        new listing notifications, and new feature announcements,
-                        directly to your inbox!
+                <div class="col-md-3">
+                    <p class="social-links">
+                        <a href="https://instagram.com/driprent"
+                            target="_blank" class="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/driprent"
+                            target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:hi@driprent.com"
+                            target="_blank">
+                            <i class="far fa-envelope"></i>
+                        </a>
                     </p>
                 </div>
                 
-                <div class="col-md-3">
-                    <%= render "shared/newsletter_form" %>
+                <div class="col-md-4 offset-md-5 copyright-column" align="right">
+                    <p>
+                        &copy; 2019 DripRent. All Rights Reserved
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h6 style="color: #6683a3 !important;">CONSIGN</h6>
-                
-                <p>
-                    <a href="/io/login">Login</a>
-                </p>
-                <p>
-                    <a href="/press">Register</a>
-                </p>
-                <p>
-                    <a href="/listing-terms">Listing terms</a>
-                </p>
-            </div>
-            
-            <div class="col-md-4">
-                <h6 style="color: #6683a3 !important;">RENT</h6>
-                
-                <p>
-                    <a href="/r/login">Login</a>
-                </p>
-                <p>
-                    <a href="/io/login">Rental terms</a>
-                </p>
-            </div>
-            
-            <div class="col-md-4">
-                <h6 style="color: #6683a3 !important;">ABOUT</h6>
-                
-                <p>
-                    <a href="/service">Our service</a>
-                </p>
-                <p>
-                    <a href="/press">Press</a>
-                </p>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-3">
-                <p class="social-links">
-                    <a href="https://instagram.com/driprent"
-                        target="_blank" class="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://twitter.com/driprent"
-                        target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="mailto:hi@driprent.com"
-                        target="_blank">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                </p>
-            </div>
-            
-            <div class="col-md-4 offset-md-5 copyright-column" align="right">
-                <p>
-                    &copy; 2019 DripRent. All Rights Reserved
-                </p>
-            </div>
-        </div>
-    </section>
-</footer>
+        </section>
+    </footer>
+<% end %>

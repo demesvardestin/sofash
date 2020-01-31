@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get '/io/login', to: 'devise/sessions#new'
     get '/io/register', to: 'devise/registrations#new'
     get '/password/settings', to: 'authentication/item_owners/registrations#edit'
-    get '/retrieve/password', to: 'devise/passwords#new'
+    get '/io/retrieve/password', to: 'devise/passwords#new'
   end
   authenticated :item_owner do
     root 'item_owners/item_owners#dashboard', as: :authenticated_item_owner_root
@@ -57,5 +57,6 @@ Rails.application.routes.draw do
   get '/browse', to: 'pages#browse'
   get '/brands', to: 'pages#brands'
   get '/popular', to: 'pages#popular'
+  get '/new-wish', to: 'pages#new_wish'
   root "pages#index"
 end

@@ -3,9 +3,18 @@ button.btn, input.form-control, input.btn {
 }
 
 button.btn, input.form-control, textarea {
-    font-size: 16px !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+form {
+    label, .form-control, .btn {
+        font-size: 1rem !important;
+    }
+}
+
+.form-control {
+    border-radius: 0.5px !important;
 }
 
 .form-control {

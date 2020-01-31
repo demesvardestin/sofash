@@ -1,27 +1,171 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">driprent</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <input type="search" class="form-control" placeholder="search">
-                </li>
+<% if @io.profile_complete %>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="base-navbar"
+        onscroll="triggerBoxShadow(this)">
+        <div class="container">
+            <button class="btn btn-link btn-transparent navbar-toggler"
+                id="cart-icon" onclick="window.location.href='/cart';">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge badge-light cart-size">
+                    <%= cart_size %>
+                </span>
+            </button>
+            
+            <a class="navbar-brand" href="/">
+                <img src="/images/brand/navbar_logo.png" height="80">
+            </a>
+            
+            <button class="navbar-toggler mobile-menu-button" type="button"
+                onclick="$('#mobile-menu').fadeIn();">
+                <div class="ham-menu-wrapper">
+                    <div class="ham-menu" id="stack1"></div>
+                    <div class="ham-menu" id="stack2"></div>
+                    <div class="ham-menu" id="stack3"></div>
+                </div>
                 
-                <li class="nav-item">
-                    <a href="/cart" class="btn btn-secondary btn-transparent">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <%= link_to destroy_item_owner_session_path, class:"btn btn-primary", method: :delete do %>
-                        My Account <i class="fas fa-angle-down"></i>
-                    <% end %>
-                </li>
-            </ul>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-center middle-nav"
+                id="navbarNavSearch">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <input type="search" placeholder="Search for an item" id="navbar-search"
+                            autocomplete="off" oninput="submitFormWithQuery(this, this.value)">
+                            
+                        <div id="search-results-box"></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="collapse navbar-collapse justify-content-end right-nav" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <%= link_to destroy_item_owner_session_path, class:"btn btn-theme-outline", method: :delete do %>
+                            My Account <i class="fas fa-angle-down"></i>
+                        <% end %>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <hr>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="btn btn-link btn-transparent" id="cart-icon"
+                            href="/cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge badge-light cart-size">
+                                <%= cart_size %>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+        
+        <div id="mobile-menu">
+            <header>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="float-left">
+                            Menu
+                        </h6>
+                        
+                        <h6 class="float-right">
+                            <a class="cursor-pointer" onclick="$('#mobile-menu').fadeOut();">
+                                <i class="fas fa-times"></i> Close
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="menu-body">
+                <a onclick="$('#search-panel').fadeIn()">
+                    <div>
+                        <i class="fas fa-search"></i> Search
+                    </div>
+                </a>
+                
+                <a href="/login">
+                    <div>
+                        Signin
+                    </div>
+                </a>
+                
+                <a href="/register">
+                    <div>
+                        Register
+                    </div>
+                </a>
+                
+                <a href="/register">
+                    <div>
+                        Consignor login
+                    </div>
+                </a>
+                
+                <a href="/io/register">
+                    <div>
+                        Consign with us
+                    </div>
+                </a>
+                
+                <a href="/faq">
+                    <div>
+                        FAQ
+                    </div>
+                </a>
+            </section>
+        </div>
+        
+        <div id="search-panel">
+            <header>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="float-left">
+                            Search
+                        </h6>
+                        
+                        <h6 class="float-right">
+                            <a class="cursor-pointer" onclick="$('#search-panel').fadeOut();">
+                                <i class="fas fa-times"></i> Close
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+            </header>
+            
+            <section>
+                <input type="search" placeholder="Search an item" id="mobile-search"
+                    autocomplete="off" oninput="submitFormWithQuery(this, this.value)"
+                    autofocus="true">
+                <div id="mobile-search-results-box"></div>
+            </section>
+        </div>
+    </nav>
+<% else %>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="base-navbar"
+        onscroll="triggerBoxShadow(this)">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/images/brand/navbar_logo.png" height="80">
+            </a>
+            
+            <% link_to destroy_item_owner_session_path, class:"btn btn-theme-outline", method: :delete do %>
+                <button class="navbar-toggler mobile-menu-button" type="button">
+                    Log out
+                </button>
+            <% end %>
+            
+            <div class="collapse navbar-collapse justify-content-end right-nav" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <%= link_to destroy_item_owner_session_path, class:"btn btn-theme-outline", method: :delete do %>
+                            Log out <i class="fas fa-long-arrow-alt-right"></i>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<% end %>

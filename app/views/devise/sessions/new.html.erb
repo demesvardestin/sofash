@@ -2,10 +2,6 @@
   nav, footer {
     display: none !important;
   }
-  
-  body {
-    background-color: #f9fcff;
-  }
 </style>
 
 <section id="login-section">
@@ -13,9 +9,11 @@
     <div class="col-md-4 offset-md-4">
       
       <header align="center">
-        <a href="/" class="navbar-brand">DripRent</a>
+        <a class="navbar-brand" href="/">
+          <img src="/images/brand/navbar_logo.png" height="80">
+        </a>
         
-        <h5>Welcome back</h5>
+        <h5>Welcome back!</h5>
       </header>
       
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -36,8 +34,8 @@
       
       <hr>
       <p align="center">
-        <a href="/register">Don't have an account? Sign up</a> <br />
-        <a href="/renters/password/new">Forgot your password?</a>
+        <a href="<%= registration_path_for_resource resource_name %>">Don't have an account? Sign up</a> <br />
+        <a href="<%= new_password_path_for_resource resource_name %>">Forgot your password?</a>
       </p>
     </div>
   </div>

@@ -13,6 +13,12 @@
 }
 
 .btn-theme, .btn-theme:hover {
+    background-color: #192f47;
+    border-color: #192f47;
+    color: #fff;
+}
+
+.btn-theme:hover {
     background-color: #001833;
     border-color: #001833;
     color: #fff;
@@ -20,8 +26,12 @@
 
 .btn-theme-outline, .btn-theme-outline:hover {
     background-color: transparent;
-    border-color: #001833;
-    color: #001833;
+    border-color: #192f47;
+    color: #192f47;
+}
+
+.btn {
+    border-radius: 0.5px !important;
 }
 
 @media (max-width: 992px) {
@@ -30,7 +40,7 @@
         margin-right: -15px !important;
         
         .btn {
-            border-radius: 0;
+            border-radius: 0 !important;
             height: 50px;
         }
         

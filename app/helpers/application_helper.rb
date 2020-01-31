@@ -63,4 +63,31 @@ module ApplicationHelper
     def cart_size
         current_cart.size
     end
+    
+    def login_path_for_resource(resource)
+        case resource.to_s
+        when "item_owner"
+            "/io/login"
+        when "renter"
+            "/login"
+        end
+    end
+    
+    def registration_path_for_resource(resource)
+        case resource.to_s
+        when "item_owner"
+            "/io/register"
+        when "renter"
+            "/register"
+        end
+    end
+    
+    def new_password_path_for_resource(resource)
+        case resource.to_s
+        when "item_owner"
+            "/io/retrieve-password"
+        when "renter"
+            "/retrieve-password"
+        end
+    end
 end

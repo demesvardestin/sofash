@@ -27,7 +27,9 @@
     <div class="form-wrapper">
       <div class="form-main">
         <header align="center">
-          <a href="/" class="navbar-brand">DripRent</a>
+          <a class="navbar-brand" href="/">
+            <img src="/images/brand/navbar_logo.png" height="80">
+          </a>
           <h5>Let's get you started</h5>
         </header>
         
@@ -51,10 +53,12 @@
         
         <hr>
         <p align="center">
-          <a href="/login">Already have an account? Sign in</a> <br />
-          <a href="/renters/password/new">Forgot your password?</a>
+          <a href="<%= login_path_for_resource resource_name %>">Already have an account? Sign in</a> <br />
+          <a href="<%= new_password_path_for_resource resource_name %>">Forgot your password?</a>
         </p>
       </div>
     </div>
   </section>
 </section>
+
+<script>console.log("<%= resource_name %>")</script>

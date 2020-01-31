@@ -3,10 +3,12 @@
         <div class="col-lg-6 offset-md-3">
           <div class="card">
             <div class="card-body">
-              <h5>
+              <h6>
                 Request a pickup:
-                <%= pluralize(@pr.pickup_request_items.count, "item") %> added
-              </h5>
+                <span class="text-muted">
+                  <%= pluralize(@pr.pickup_request_items.count, "item") %> added
+                </span>
+              </h6>
               
               <hr>
               

@@ -11,6 +11,11 @@ class ItemOwner < ApplicationRecord
   end
   
   def item_count
-      inventory_items.length
+    inventory_items.length
+  end
+  
+  def profile_complete
+    # attrs = 
+    false
   end
 end
