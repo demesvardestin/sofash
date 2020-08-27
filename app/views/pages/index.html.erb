@@ -17,71 +17,13 @@
     
     <section id="popular-right-now">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h6 class="float-left">
-                        Popular right now
-                    </h6>
-                    
-                    <h6 class="float-right">
-                        <a href="/popular">
-                            View all <i class="fas fa-angle-right"></i>
-                        </a>
-                    </h6>
-                </div>
-            </div>
-            
             <div class="item-list">
                 <%= render partial: "workflow/inventory_items/popular", locals: { items: @items } %>
             </div>
         </div>
     </section>
     
-    <section id="latest-arrivals">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h6 class="float-left">
-                        Latest drip
-                    </h6>
-                    
-                    <h6 class="float-right">
-                        <a href="/browse">
-                            View all <i class="fas fa-angle-right"></i>
-                        </a>
-                    </h6>
-                </div>
-            </div>
-            
-            <div class="item-list">
-                <%= render partial: "workflow/inventory_items/items", locals: { items: @items } %>
-            </div>
-        </div>
-    </section>
-    
     <section class="second-banner">
         <%= render "second_banner" %>
-    </section>
-    
-    <section id="browse-by-brand">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h6 class="float-left">
-                        Browse by brand
-                    </h6>
-                    
-                    <h6 class="float-right">
-                        <a href="/brands">
-                            View all <i class="fas fa-angle-right"></i>
-                        </a>
-                    </h6>
-                </div>
-            </div>
-            
-            <div class="item-list">
-                <%= render partial: "workflow/inventory_items/brands", locals: { brands: brands } %>
-            </div>
-        </div>
     </section>
 </section>

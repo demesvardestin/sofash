@@ -33,19 +33,6 @@ $(document).on("turbolinks:load", function() {
     //     goodbyeBtn.click();
     // });
     
-    triggerBoxShadow = (elem) => {
-        const body = document.querySelector('body');
-        const nav = document.querySelector("nav.navbar");
-        let scrollTop = body.scrollTop;
-        let navHeight = nav.offsetHeight;
-        
-        if (scrollTop > navHeight) {
-            nav.classList.add('box-shadow');
-        } else {
-            nav.classList.remove('box-shadow');
-        }
-    };
-    
     displaySearchBox = (elem) => {
         let inputWidth = elem.offsetWidth;
         
@@ -72,4 +59,4 @@ $(document).on("turbolinks:load", function() {
         
         $.get("/search", { query: query });
     };
-})
+});

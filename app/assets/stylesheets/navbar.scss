@@ -1,7 +1,7 @@
 nav.navbar {
-    background-color: #fff !important;
-    border-bottom: 1px solid #e7e7e9;
+    background-color: transparent !important;
     overflow-y: hidden;
+    z-index: 9999;
     
     a.btn-link:not(#cart-icon) {
         color: var(--main-font-color) !important;

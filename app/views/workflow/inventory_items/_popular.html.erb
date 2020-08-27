@@ -2,12 +2,11 @@
     <div class="row">
         <% if items.present? %>
             <% items.each do |i| %>
-                <div class="col-md-2 item-column <%= "mobile-show" if items.index(i) > 5 %>">
+                <div class="col-md-3 item-column <%= "mobile-show" if items.index(i) > 5 %>">
                     <a href="/item/<%= i.id %>/<%= i.slug %>">
                         <div class="card img--container item--img--container">
                             <div class="card-body">
-                                <img src="<%= i.image.first_source %>"
-                                    title="<%= i.item_name %>">
+                                
                             </div>
                                 
                             <div class="card-footer">

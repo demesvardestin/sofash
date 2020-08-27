@@ -1,10 +1,9 @@
 #first-banner {
-    min-height: 400px;
+    min-height: 45vh;
     border: none;
-    background-image: url("/images/banners/first_banner.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #396afc;
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    background: linear-gradient(to right, #2948ff, #396afc);
     text-align: center;
     display: table;
     width: 100%;
@@ -27,6 +26,35 @@
         h1, h4 {
             margin-bottom: 15px;
         }
+    }
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+    margin-bottom: 20px;
+  
+    &::before,
+        &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-repeat: repeat-x;
+    }
+      
+    &::before {
+        height: 10px;
+        background-size: 20px 20px;
+        background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+    }
+    
+    &::after {
+        height: 15px;
+        background-size: 40px 20px;
+        background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
     }
 }
 

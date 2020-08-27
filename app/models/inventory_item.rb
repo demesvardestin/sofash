@@ -26,7 +26,7 @@ class InventoryItem < ApplicationRecord
     end
     
     def self.latest_arrivals
-        last 8
+        last 4
     end
     
     def condition
