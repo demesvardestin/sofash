@@ -1,3 +1,20 @@
+<style>
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+    
+    .carousel-indicators li {
+        min-height: 30px;
+        background: url("<%= @item.image.first_source %>");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    img {
+        border-radius: 10px;
+    }
+</style>
+
 <section id="inventory-item-<%= @item.id %>" class="inventory-item">
     <div class="row">
         <div class="col-md-7">
@@ -15,30 +32,35 @@
     
     <div class="row">
         <div class="col-md-7">
-            <div class="img--container">
-                <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
-                <!--    <ol class="carousel-indicators">-->
-                <!--        <% @item.image.sources.length.times do |t| %>-->
-                <!--            <li data-target="#carouselExampleIndicators" data-slide-to="<%= t %>" class="<%= "active" if t == 0 %>"></li>-->
-                <!--        <% end %>-->
-                <!--    </ol>-->
-                <!--    <div class="carousel-inner">-->
-                <!--        <% @item.image.sources.each do |s| %>-->
-                <!--            <div class="carousel-item <%= "active" if s == @item.image.sources.first %>">-->
-                <!--              <img src="<%= s.url %>"-->
-                <!--                class="d-block w-100" alt="<%= @item.item_name %>">-->
-                <!--            </div>-->
-                <!--        <% end %>-->
-                <!--    </div>-->
-                <!--  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
-                <!--    <i class="fas fa-angle-left"></i>-->
-                <!--  </a>-->
-                <!--  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
-                <!--    <i class="fas fa-angle-right"></i>-->
-                <!--  </a>-->
-                <!--</div>-->
-                <img src="<%= @item.image.first_source %>" class="d-block w-100"
-                    alt="<%= @item.item_name %>">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="60000">
+                  <img src="https://wearwardrobe.s3.amazonaws.com/uploads/photo/image/17351/medium_IMG_4116.png" class="d-block w-100"
+                    alt="<%= @item.item_name %>" style="filter: brightness(50%);">
+                </div>
+                <div class="carousel-item" data-interval="60000">
+                  <img src="https://wearwardrobe.s3.amazonaws.com/uploads/photo/image/17351/medium_IMG_4116.png" class="d-block w-100"
+                    alt="<%= @item.item_name %>" style="filter: brightness(40%);">
+                </div>
+                <div class="carousel-item" data-interval="60000">
+                  <img src="https://wearwardrobe.s3.amazonaws.com/uploads/photo/image/17351/medium_IMG_4116.png" class="d-block w-100"
+                    alt="<%= @item.item_name %>" style="filter: brightness(30%);">
+                </div>
+                
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleFade" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleFade" data-slide-to="2"></li>
+                </ol>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
         </div>
         
