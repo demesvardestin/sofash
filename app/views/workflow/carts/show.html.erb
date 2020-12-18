@@ -1,14 +1,60 @@
 <section id="cart-section">
+    <div class="modal fade" id="rentalPeriodCalendarModal" tabindex="-1"
+        aria-labelledby="rentalPeriodCalendarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-1">
             <div class="card">
                 <div class="card-body">
-                    <h5 align="center">Items in your cart</h5>
+                    <h4>
+                        <strong>Items in your cart</strong>
+                    </h4>
                     
                     <hr>
                     
                     <div id="cart-content">
                         <%= render "cart_content" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4>
+                        <strong>Rental Period</strong>
+                    </h4>
+                    
+                    <hr>
+                    
+                    <div id="date-time-picker">
+                        <%= render 'common/datetime_picker' %>
+                    </div>
+                    
+                    <div id="proceed-to-checkout">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-block" id="checkoutBtn"
+                                onclick="$('#item-order-form').submit(); window.location.href='/checkout';">
+                                Proceed to checkout <i class="fas fa-long-arrow-alt-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

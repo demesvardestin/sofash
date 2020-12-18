@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require tinymce
+//= require bootstrap-datepicker
 //= require_tree .
 
 console.log('DripRent has suspended all operations, effective September 1st.');
@@ -33,30 +34,15 @@ $(document).on("turbolinks:load", function() {
     //     goodbyeBtn.click();
     // });
     
-    displaySearchBox = (elem) => {
-        let inputWidth = elem.offsetWidth;
-        
-        searchBox.style.width = `${inputWidth}px`;
-        if (!searchBox.classList.contains("active")) {
-            searchBox.classList.add('active');
-        }
-    };
+    function hideTimes() {
+        $('#times').hide();
+    }
     
-    hideSearchBox = () => {
-        $('#search-results-box').toggleClass('active');
-        $("#navbar-search").toggleClass('active');
-    };
-    
-    submitFormWithQuery = (elem, query) => {
-        displaySearchBox(elem);
+    function chooseTime(elem) {
+        var hour = elem.id.split("-")[1];
+        $('#chosen-time').text(hour);
+        updateReservationParams();
         
-        if (query == "") {
-            hideSearchBox(elem);
-            elem.classList.remove('active');
-        } else {
-            elem.classList.add('active');
-        }
-        
-        $.get("/search", { query: query });
-    };
+        hideTimes();
+    }
 });

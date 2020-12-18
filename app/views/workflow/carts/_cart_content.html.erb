@@ -1,78 +1,64 @@
 <% if @cart.is_not_empty %>
-    <% @cart.item_orders.each do |o| %>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="img-container">
-                    <img src="<%= o.inventory_item.image.first_source %>"
-                        title="<%= o.inventory_item.item_name %>"
-                        alt="<%= o.inventory_item.item_name %>">
-                </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="img-container">
+                <img src="<%= @cart.item_order.inventory_item.image.sources[0].url %>"
+                    title="<%= @cart.item_order.inventory_item.item_name %>"
+                    alt="<%= @cart.item_order.inventory_item.item_name %>">
             </div>
-            <div class="col-md-6">
-                <a href="<%= o.inventory_item.url %>">
-                    <h6>
-                        <strong>
-                            <%= o.inventory_item.item_name %>
-                        </strong>
-                    </h6>
-                </a>
-                
-                <div class="item-name">
-                    <p>
-                        <strong>
-                            <a href="/brand/<%= o.inventory_item.item_brand %>">
-                                <%= o.inventory_item.item_brand %>
-                            </a>
-                        </strong>
-                    </p>
-                </div>
-                
-                <div class="item-size">
-                    <p>
-                        Size: US L/EU M
-                    </p>
-                </div>
-                
-                <div class="item-market-value">
-                    <p>
-                        Estimated Market Value: $<%= o.inventory_item.market_value %>
-                    </p>
-                </div>
-                
-                <div class="item-condition">
-                    <p>
-                        Condition: <%= o.inventory_item.condition %>
-                    </p>
-                </div>
+        </div>
+        <div class="col-md-6">
+            <a href="<%= @cart.item_order.inventory_item.url %>">
+                <h6>
+                    <strong>
+                        <%= @cart.item_order.inventory_item.item_name %>
+                    </strong>
+                </h6>
+            </a>
+            
+            <div class="item-name">
+                <p class="aligned-left">
+                    <strong>
+                        <a href="/brand/<%= @cart.item_order.inventory_item.item_brand %>">
+                            <%= @cart.item_order.inventory_item.item_brand %>
+                        </a>
+                    </strong>
+                </p>
             </div>
             
-            <div class="col-md-2">
-                <span class="rental_price">
-                    <strong>
-                        <%= number_to_currency o.inventory_item.rental_price %>
-                    </strong>
-                </span>
-                -
-                <%= link_to remove_from_cart_path(:order_id => o.id),
-                    onclick:"displayLoaderForRemoveBtn(this)",
-                    id:"remove-from-cart", remote: true do %>
-                    remove
-                <% end %>
+            <div class="item-size">
+                <p class="aligned-left">
+                    Size: US L/EU M
+                </p>
+            </div>
+            
+            <div class="item-market-value">
+                <p class="aligned-left">
+                    Estimated Market Value: $<%= @cart.item_order.inventory_item.market_value %>
+                </p>
+            </div>
+            
+            <div class="item-condition">
+                <p class="aligned-left">
+                    Condition: <%= @cart.item_order.inventory_item.condition %>
+                </p>
             </div>
         </div>
         
-        <% unless o == @cart.item_orders.last %>
-            <hr class="hr">
-        <% end %>
-    <% end %>
-    
-    <hr>
-    
-    <a href="/checkout" style="text-decoration: none;">
-        <button class="btn btn-theme btn-block" id="checkoutBtn">
-            Proceed to checkout <i class="fas fa-long-arrow-alt-right"></i>
-        </button>
-    </a>
+        <div class="col-md-2">
+            <span class="rental_price">
+                <strong>
+                    <%= number_to_currency @cart.item_order.inventory_item.rental_price %>
+                </strong>
+            </span>
+            -
+            <%= link_to remove_from_cart_path(:order_id => @cart.item_order.id),
+                onclick:"displayLoaderForRemoveBtn(this)",
+                id:"remove-from-cart", remote: true do %>
+                remove
+            <% end %>
+        </div>
+    </div>
 <% else %>
     <p align="center">
         You cart is empty. We should <a href="/browse">change that</a>.

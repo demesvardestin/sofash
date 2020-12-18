@@ -31,7 +31,11 @@
 }
 
 .btn {
-    border-radius: 7px !important;
+    border-radius: 7px;
+}
+
+.btn-pill {
+    border-radius: 25px !important;
 }
 
 @media (max-width: 992px) {

@@ -14,6 +14,7 @@ gem 'devise-guests'
 gem 'faker'
 gem 'carrierwave', '~> 2.0'
 gem 'tinymce-rails'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

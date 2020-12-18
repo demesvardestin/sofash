@@ -33,7 +33,7 @@ body {
     min-height: 100vh;
     
     #io-body {
-        padding-top: 30px;
+        padding-top: calc(75px + 20px);
     }
 }
 
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .box-shadow {
-    box-shadow: 0 26px 54px -20px rgba(50,50,93,.25) !important;
+    box-shadow: 0 26px 54px -10px rgba(50,50,93,.25) !important;
 }
 
 
@@ -158,6 +158,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (min-width: 765px) {
+@media (min-width: 765px) and (max-width: 1024px) {
     
 }

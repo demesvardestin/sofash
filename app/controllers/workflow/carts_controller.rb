@@ -18,6 +18,13 @@ class Workflow::CartsController < ApplicationController
     render :reload
   end
   
+  def update
+    @order = ItemOrder.find(params[:id])
+    @order.update(item_order_params)
+    
+    redirect_to "/checkout"
+  end
+  
   def checkout
     
   end
@@ -44,6 +51,10 @@ class Workflow::CartsController < ApplicationController
     end
     
     return cart
+  end
+  
+  def item_order_params
+    params.require(:item_order).permit(:order_total)
   end
   
 end

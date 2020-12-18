@@ -2,7 +2,6 @@ class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
     has_many :item_orders
     
-    after_create :initialize_image_attachment
     
     def self.search(parameter)
         where("item_name LIKE '%#{parameter}%' OR item_brand LIKE '%#{parameter}%' or item_description LIKE '%#{parameter}%'")
@@ -34,13 +33,14 @@ class InventoryItem < ApplicationRecord
     end
     
     ## Pricing will be determined by consignor
+    
     def rental_price
-        (market_value.to_f * 0.10).round(2)
+        20.0
+    end
+    
+    def rental_costs
+        "$#{rental_price} for 4 days"
     end
     
     protected
-    
-        def initialize_image_attachment
-            Image.create(inventory_item_id: self.id)
-        end
 end
