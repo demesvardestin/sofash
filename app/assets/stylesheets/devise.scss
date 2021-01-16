@@ -11,33 +11,3 @@
         margin-right: 0;
     }
 }
-
-#signup-section {
-    width: 100vw !important;
-    height: 100vh !important;
-    
-    #left-panel {
-        float: left;
-        height: inherit;
-        border-right: 1px solid #e7e7e9;
-        width: 50%;
-    }
-    
-    #right-panel {
-        float: right;
-        width: 50%;
-        height: inherit;
-        
-        .form-wrapper {
-            display: table;
-            padding: 0 100px;
-            height: inherit;
-            width: 100%;
-            
-            .form-main {
-                display: table-cell !important;
-                vertical-align: middle !important;
-            }
-        }
-    }
-}

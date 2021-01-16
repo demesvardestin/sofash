@@ -61,7 +61,7 @@ module ApplicationHelper
     end
     
     def cart_size
-        current_cart.size
+        # current_cart.size
     end
     
     def login_path_for_resource(resource)

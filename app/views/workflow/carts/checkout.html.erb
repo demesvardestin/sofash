@@ -1,111 +1,136 @@
 <section id="checkout">
     <div class="row">
-        <div class="col-md-12">
-            <h6>
-              <i class="fas fa-lock"></i> Secure checkout
-            </h6>
-            
-            <hr>
-            
+        <div class="col-md-6 offset-md-1">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 cart-details">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="img-container">
-                                        <img src="<%= @cart.item_order.inventory_item.image.sources[0].url %>"
-                                            title="<%= @cart.item_order.inventory_item.item_name %>"
-                                            alt="<%= @cart.item_order.inventory_item.item_name %>">
-                                    </div>
+                    <h5>
+                      <strong>
+                          <i class="fas fa-lock"></i> Item Details
+                      </strong>
+                    </h5>
+                    
+                    <hr>
+                    
+                    <div class="cart-details">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="img-container">
+                                    <img src="<%= @cart.item_order.inventory_item.image.sources[0].url %>"
+                                        title="<%= @cart.item_order.inventory_item.item_name %>"
+                                        alt="<%= @cart.item_order.inventory_item.item_name %>">
                                 </div>
-                                <div class="col-md-6">
-                                    <a href="<%= @cart.item_order.inventory_item.url %>">
-                                        <h6>
-                                            <strong>
-                                                <%= @cart.item_order.inventory_item.item_name %>
-                                            </strong>
-                                        </h6>
-                                    </a>
-                                    
-                                    <div class="item-name">
-                                        <p>
-                                            <strong>
-                                                <a href="/brand/<%= @cart.item_order.inventory_item.item_brand %>">
-                                                    <%= @cart.item_order.inventory_item.item_brand %>
-                                                </a>
-                                            </strong>
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="item-size">
-                                        <p>
-                                            Size: US L/EU M
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="item-market-value">
-                                        <p>
-                                            Estimated Market Value: $<%= @cart.item_order.inventory_item.market_value %>
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="item-condition">
-                                        <p>
-                                            Condition: <%= @cart.item_order.inventory_item.condition %>
-                                        </p>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="<%= @cart.item_order.inventory_item.url %>">
+                                    <h6>
+                                        <strong>
+                                            <%= @cart.item_order.inventory_item.item_name %>
+                                        </strong>
+                                    </h6>
+                                </a>
+                                
+                                <div class="item-name">
+                                    <p>
+                                        <strong>
+                                            <a href="/brand/<%= @cart.item_order.inventory_item.item_brand %>">
+                                                <%= @cart.item_order.inventory_item.item_brand %>
+                                            </a>
+                                        </strong>
+                                    </p>
                                 </div>
                                 
-                                <div class="col-md-2">
-                                    <span class="rental_price">
-                                        <strong>
-                                            <%= number_to_currency @cart.item_order.inventory_item.rental_price %>
-                                        </strong>
-                                    </span>
+                                <div class="item-size">
+                                    <p>
+                                        Size: US L/EU M
+                                    </p>
+                                </div>
+                                
+                                <div class="item-market-value">
+                                    <p>
+                                        Estimated Market Value: $<%= @cart.item_order.inventory_item.market_value %>
+                                    </p>
+                                </div>
+                                
+                                <div class="item-condition">
+                                    <p>
+                                        Condition: <%= @cart.item_order.inventory_item.condition %>
+                                    </p>
+                                </div>
+                                
+                                <div class="item-description">
+                                    <p>
+                                        Description: <%= sanitize @cart.item_order.inventory_item.item_description %>
+                                    </p>
+                                </div>
+                                
+                                <div class="item-rental-period">
+                                    <p>
+                                        Rental Period: <%= "3 days" %>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                                <span class="rental_price">
+                                    <strong>
+                                        <%= number_to_currency @cart.item_order.inventory_item.rental_price %>
+                                    </strong>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="col-md-4 payment-details">
+            <div class="card">
+                <div class="card-body">
+                    <h5>
+                      <strong>
+                          <i class="fas fa-lock"></i> Payment Information
+                      </strong>
+                    </h5>
+                    
+                    <hr>
+                    
+                    <form method="post" action="/pay">
+                        <div class="field">
+                            <label>Name on card</label>
+                            <input type="text" name="card_name" id="card-name"
+                                placeholder="Name on card" class="form-control">
+                        </div>
+                        
+                        <div class="field">
+                            <label>Card number</label>
+                            <input type="text" name="card_number" id="card-number"
+                                placeholder="Card number" class="form-control">
+                        </div>
+                        
+                        <div class="field">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Expiration date</label>
+                                    <input type="text" name="card_expiration"
+                                        id="card-expiration" class="form-control"
+                                        placeholder="Card expiration">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label>Security code</label>
+                                    <input type="text" name="security code"
+                                        id="security-code" class="form-control"
+                                        placeholder="Security code">
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-md-6 payment-details">
-                            <form method="post" action="/pay">
-                                <div class="field">
-                                    <label>Name on card</label>
-                                    <input type="text" name="card_name" id="card-name"
-                                        placeholder="Name on card" class="form-control">
-                                </div>
-                                
-                                <div class="field">
-                                    <label>Card number</label>
-                                    <input type="text" name="card_number" id="card-number"
-                                        placeholder="Card number" class="form-control">
-                                </div>
-                                
-                                <div class="field">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Expiration date</label>
-                                            <input type="text" name="card_expiration"
-                                                id="card-expiration" class="form-control"
-                                                placeholder="Card expiration">
-                                        </div>
-                                        
-                                        <div class="col-md-6">
-                                            <label>Security code</label>
-                                            <input type="text" name="security code"
-                                                id="security-code" class="form-control"
-                                                placeholder="Security code">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="actions">
-                                    <input type="submit" class="btn btn-theme btn-block"
-                                        value="Submit payment">
-                                </div>
-                            </form>
+                        <div class="actions">
+                            <div class="d-grid gap-2">
+                                <input type="submit" class="btn btn-primary btn-block"
+                                    value="Book">
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

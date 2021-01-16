@@ -108,7 +108,7 @@
     }
 </style>
 
-<%= form_for(@cart.item_order, :html => {:id => "item-order-form"} ) do |f| %>
+<%= form_for(@cart.item_order, :html => { :id => "item-order-form", :style => "display: none;" }) do |f| %>
   <%= f.hidden_field :order_total, id:"form-order-total", value:"0" %>
   
   <%= f.submit %>
@@ -157,7 +157,7 @@
       class="float-left" style="margin: 0;">Total</p>
       
     <p id="price-per-day" align="left" style="margin: 0;"
-      class="float-right">X <%= number_to_currency @cart.item_order.total %></p>
+      class="float-right">X <%= number_to_currency @cart.item_order.order_total %></p>
   </div>
 </div>
   

@@ -22,11 +22,11 @@
         </div>
         
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <%= f.label :city %>
                 <%= f.text_field :city, class:"form-control", placeholder:"City" %>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <%= f.label :state %>
                 <%= f.text_field :state, class:"form-control", placeholder:"State" %>
             </div>
@@ -37,9 +37,9 @@
         </div>
     </div>
     
-    <div class="submit">
+    <div class="submit d-grid gap-2">
         <hr>
-        <%= f.submit "Update Profile Details", class:"btn btn-theme btn-block",
+        <%= f.submit "Update Profile Details", class:"btn btn-primary btn-block",
             data: { :disable_with => "updating..." } %>
     </div>
 <% end %>

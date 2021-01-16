@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201218010140) do
+ActiveRecord::Schema.define(version: 20210115193609) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "order_total"
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20201218010140) do
     t.integer  "cart_id"
     t.integer  "inventory_item_id"
     t.integer  "renter_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "order_total"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "order_total",       default: "0"
   end
 
   create_table "item_owners", force: :cascade do |t|
@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(version: 20201218010140) do
     t.string   "last_name"
     t.boolean  "verified"
     t.boolean  "flagged"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20201218010140) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
+    t.boolean  "registration_completed", default: false
     t.index ["email"], name: "index_item_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_item_owners_on_reset_password_token", unique: true
   end

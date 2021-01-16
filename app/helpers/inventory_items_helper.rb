@@ -21,7 +21,7 @@ module InventoryItemsHelper
     end
     
     def is_in_cart(item)
-        current_cart.item_orders.exists?(inventory_item_id: item.id)
+        current_cart.item_order.inventory_item == item
     end
     
     def is_in_favorites(item)

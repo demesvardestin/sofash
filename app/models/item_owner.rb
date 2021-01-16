@@ -14,8 +14,11 @@ class ItemOwner < ApplicationRecord
     inventory_items.length
   end
   
-  def profile_complete
-    # attrs = 
-    false
+  def has_completed_registration
+    registration_completed
+  end
+  
+  def has_not_completed_registration
+    registration_completed == false
   end
 end
