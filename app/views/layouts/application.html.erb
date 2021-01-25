@@ -28,7 +28,10 @@
 
   <body>
     <%= render navbar %>
-    <div style="padding-bottom: 45px;">
+    <div id="main-body-wrapper" style="padding-bottom: 45px;">
+      <% if notice.present? %>
+        <%= render partial: "common/notice", locals: { message: flash[:notice] } %>
+      <% end %>
       <%= render body %>
     </div>
     <%= render "layouts/footer" %>

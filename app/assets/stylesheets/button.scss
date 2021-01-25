@@ -13,14 +13,20 @@
 }
 
 .btn {
-    border-radius: 0;
+    border-radius: 2.75px;
 }
 
 .btn-pill {
     border-radius: 25px !important;
 }
 
-.btn-link {
+.btn-link, .btn-link:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+a.body-link {
+    color: #822432 !important;
     text-decoration: none;
 }
 

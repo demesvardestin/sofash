@@ -5,13 +5,17 @@ class ItemOwners::ItemOwnersController < ApplicationController
   def dashboard; end
   
   def update
+    if params[:registration_completed].present?
+      params[:registration_completed] = true
+    end
+    
     @io.update(item_owners_params)
     
     respond_to do |format|
       if @io.save
         format.html do
           if params[:next]
-            redirect_to params[:next]
+            redirect_to params[:next], notice: "Profile details updated!"
           else
             redirect_to io_dashboard_path, notice: "Profile details updated!"
           end
@@ -36,7 +40,8 @@ class ItemOwners::ItemOwnersController < ApplicationController
       :street_address,
       :city,
       :state,
-      :zipcode
+      :zipcode,
+      :registration_completed
       )
   end
 end

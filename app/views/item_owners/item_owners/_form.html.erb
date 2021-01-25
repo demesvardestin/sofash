@@ -2,13 +2,13 @@
     <div class="field">
         <div class="row">
             <div class="col-lg-6">
-                <%= f.label :first_name %>
-                <%= f.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+                <%= f.text_field :first_name, class:"form-control",
+                    placeholder:"First Name", required: true %>
             </div>
             
             <div class="col-lg-6">
-                <%= f.label :last_name %>
-                <%= f.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+                <%= f.text_field :last_name, class:"form-control",
+                    placeholder:"Last Name", required: true %>
             </div>
         </div>
     </div>
@@ -16,30 +16,30 @@
     <div class="field">
         <div class="row">
             <div class="col-lg-12">
-                <%= f.label :street_address %>
-                <%= f.text_field :street_address, class:"form-control", placeholder:"Street Address" %>
+                <%= f.text_field :street_address, class:"form-control",
+                    placeholder:"Street Address", required: true %>
             </div>
         </div>
         
         <div class="row">
-            <div class="col-lg-6">
-                <%= f.label :city %>
-                <%= f.text_field :city, class:"form-control", placeholder:"City" %>
+            <div class="col-lg-5">
+                <%= f.text_field :city, class:"form-control",
+                    placeholder:"City", required: true %>
             </div>
-            <div class="col-lg-2">
-                <%= f.label :state %>
-                <%= f.text_field :state, class:"form-control", placeholder:"State" %>
+            <div class="col-lg-3">
+                <%= f.text_field :state, class:"form-control",
+                    placeholder:"State", required: true %>
             </div>
             <div class="col-lg-4">
-                <%= f.label :zipcode %>
-                <%= f.text_field :zipcode, class:"form-control", placeholder:"Zipcode" %>
+                <%= f.text_field :zipcode, class:"form-control",
+                    placeholder:"Zipcode", required: true %>
             </div>
         </div>
     </div>
     
     <div class="submit d-grid gap-2">
         <hr>
-        <%= f.submit "Update Profile Details", class:"btn btn-primary btn-block",
+        <%= f.submit "Continue", class:"btn btn-primary btn-block",
             data: { :disable_with => "updating..." } %>
     </div>
 <% end %>

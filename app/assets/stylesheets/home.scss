@@ -1,32 +1,11 @@
 #first-banner {
-    min-height: 50vh;
+    padding-top: 75px;
+    height: 62vh;
     border: none;
-    text-align: center;
     width: 100%;
-    background-image: url("/images/banners/banner_test_1.png");
+    background-image: url("/images/banners/banner_test_5.png");
     background-size: cover;
     background-position: center;
-    
-    div.vertical-align-center {
-        display: table-cell;
-        vertical-align: middle;
-        
-        h1 {
-            color: #fff;
-            font-size: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-        
-        h4{
-            color: #fff;
-        }
-        
-        h1, h4 {
-            margin-bottom: 15px;
-        }
-    }
-    
     margin-top: -75px;
     margin-bottom: 20px;
 }
@@ -114,33 +93,6 @@
         }
     }
 
-}
-
-#latest-arrivals, #popular-right-now {
-    padding: 25px 0;
-}
-
-.home-page > section:not(:first-child) {
-    margin-bottom: 15px;
-}
-
-#browse-by-brand {
-    padding: 15px 0;
-    
-    h6 {
-        margin-bottom: 15px;
-    }
-    
-    .brand-box {
-        img {
-            width: 95%;
-        }
-    }
-    
-    .prop-asset {
-        width: 200px;
-        border: 1px solid #e7e7e9;
-    }
 }
 
 

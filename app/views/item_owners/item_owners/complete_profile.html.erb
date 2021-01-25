@@ -1,9 +1,8 @@
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-4 offset-md-4">
         <div class="card">
             <div class="card-body">
-                <h5>Tell us a bit more about yourself</h5>
-                <hr>
+                <%= render partial: "common/card_header", locals: { text: "Almost there" } %>
                 <%= render "form" %>
             </div>
         </div>
@@ -19,7 +18,15 @@
     let path = document.createElement('input');
     path.setAttribute('type', 'hidden');
     path.setAttribute('name', 'next');
-    path.setAttribute('value', '/initialize-prf');
+    path.setAttribute('value', '/io/dashboard');
+    
+    let registrationCompleted = document.createElement('input');
+    registrationCompleted.setAttribute('type', 'hidden');
+    registrationCompleted.setAttribute('name', 'item_owner[registration_completed]');
+    registrationCompleted.setAttribute('value', 'true');
     
     form.appendChild(path);
+    form.appendChild(registrationCompleted);
+    
+    console.log("done");
 </script>

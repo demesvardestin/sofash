@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import "toastr";
 
 :root {
   --main-font-color: #003166;
@@ -22,7 +24,7 @@
 
 html, body {
     overflow-x: hidden !important;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Noto', sans-serif;
 }
 
 nav {
@@ -43,14 +45,6 @@ body {
 
 hr {
     border-color: #eeeeef;
-}
-
-p {
-    color: #616162;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--main-font-color);
 }
 
 .no-border {

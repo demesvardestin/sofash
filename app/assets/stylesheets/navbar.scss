@@ -6,8 +6,6 @@
     
 nav.navbar {
     background-color: #fff;
-    overflow-y: hidden;
-    // z-index: 9999;
     border-bottom: 1px solid #e7e7e9;
     
     a.btn-link:not(#user-icon) {
@@ -125,7 +123,6 @@ nav.navbar {
 
 #base-navbar {
     background-color: transparent !important;
-    border-bottom: none;
     
     hr {
         width: 1px;
@@ -165,17 +162,18 @@ nav.navbar {
         }
     }
     
-    .btn-nav {
-        background-color: #fff;
-        border-color: var(--main-font-color);
-        font-size: var(--nav-font-size);
-        color: var(--main-font-color);
-        transition: all 0.25s;
-    }
-    
-    .btn-nav:hover {
-        background-color: var(--main-bg-color);
-        color: #fff;
+    #for-renters-dropdown {
+        border-radius: 2.5px;
+        border: none;
+        right: 0 !important;
+        left: auto;
+        padding: 0;
+        
+        li {
+            a {
+                padding: 15px;
+            }
+        }
     }
 }
 

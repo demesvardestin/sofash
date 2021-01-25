@@ -1,42 +1,42 @@
-<style> 
-  nav, footer {
-    display: none !important;
-  }
-</style>
-
-<section id="login-section">
+<section id="signup-section">
   <div class="row">
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-wrapper">
+            <div class="form-main">
+              <header align="center">
+                <a class="navbar-brand" href="/">
+                  <img src="/images/brand/navbar_logo.png" height="80">
+                </a>
+                <h5>Let's get you started</h5>
+              </header>
       
-      <header align="center">
-        <a class="navbar-brand" href="/">
-          <img src="/images/brand/navbar_logo.png" height="80">
-        </a>
-        
-        <h5>Welcome back!</h5>
-      </header>
-      
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",
-            class:"form-control", placeholder:"Email" %>
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="field">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                    class:"form-control", placeholder:"Email" %>
+                </div>
+              
+                <div class="field">
+                  <%= f.password_field :password, autocomplete: "current-password",
+                    class:"form-control", placeholder:"Password" %>
+                </div>
+              
+                <div class="actions d-grid gap-2">
+                  <%= f.submit "Log in", class:"btn btn-primary btn-block", data: { "disable-with": "Logging you in..." } %>
+                </div>
+              <% end %>
+              
+              <hr>
+              <p align="center">
+                <a href="<%= registration_path_for_resource resource_name %>">Don't have an account? Sign up</a> <br />
+                <a href="<%= new_password_path_for_resource resource_name %>">Forgot your password?</a>
+              </p>
+            </div>
+          </div>
         </div>
-      
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password",
-            class:"form-control", placeholder:"Password" %>
-        </div>
-      
-        <div class="actions">
-          <%= f.submit "Log in", class:"btn btn-theme btn-block", data: { "disable-with": "Logging you in..." } %>
-        </div>
-      <% end %>
-      
-      <hr>
-      <p align="center">
-        <a href="<%= registration_path_for_resource resource_name %>">Don't have an account? Sign up</a> <br />
-        <a href="<%= new_password_path_for_resource resource_name %>">Forgot your password?</a>
-      </p>
+      </div>
     </div>
   </div>
 </section>
