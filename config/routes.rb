@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'renters/feed'
+
   namespace :workflow do
     get 'item_favorites/new'
   end
@@ -9,19 +12,19 @@ Rails.application.routes.draw do
   devise_scope :renter do
     get '/login', to: 'devise/sessions#new'
     get '/register', to: 'devise/registrations#new'
-    get '/password/settings', to: 'authentication/renters/registrations#edit'
-    get '/retrieve/password', to: 'devise/passwords#new'
+    get '/security', to: 'authentication/renters/registrations#edit'
+    get '/retrieve-password', to: 'devise/passwords#new'
   end
   authenticated :renter do
-    root 'pages#index', as: :authenticated_renter_root
+    root 'renters#feed', as: :authenticated_renter_root
   end
   
   devise_for :item_owners, :controllers => { :registrations => "authentication/item_owners/registrations" }
   devise_scope :item_owner do
-    get '/io/login', to: 'devise/sessions#new'
-    get '/io/register', to: 'devise/registrations#new'
-    get '/password/settings', to: 'authentication/item_owners/registrations#edit'
-    get '/io/retrieve/password', to: 'devise/passwords#new'
+    get '/lister/login', to: 'devise/sessions#new'
+    get '/lister/register', to: 'devise/registrations#new'
+    get '/lister/security', to: 'authentication/item_owners/registrations#edit'
+    get '/lister/retrieve-password', to: 'devise/passwords#new'
   end
   authenticated :item_owner do
     root 'item_owners/item_owners#dashboard', as: :authenticated_item_owner_root
@@ -29,7 +32,7 @@ Rails.application.routes.draw do
   
   scope module: 'item_owners' do
     get '/complete-profile', to: 'item_owners#complete_profile', as: 'complete_item_owner_profile'
-    get '/io/dashboard', to: 'item_owners#dashboard', as: 'io_dashboard'
+    get '/lister/dashboard', to: 'item_owners#dashboard', as: 'io_dashboard'
     get '/initialize-prf', to: 'item_owners#initialize_prf', as: 'initialize_prf'
     get '/request-pickup', to: 'item_owners#request_pickup'
     post '/submit-pr', to: 'pickup_requests#submit_pr'
@@ -55,8 +58,6 @@ Rails.application.routes.draw do
   end
   
   get '/browse', to: 'pages#browse'
-  get '/brands', to: 'pages#brands'
-  get '/popular', to: 'pages#popular'
-  get '/new-wish', to: 'pages#new_wish'
+  get '/orders', to: 'orders#index'
   root "pages#index"
 end

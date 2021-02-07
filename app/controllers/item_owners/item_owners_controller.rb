@@ -17,7 +17,7 @@ class ItemOwners::ItemOwnersController < ApplicationController
           if params[:next]
             redirect_to params[:next], notice: "Profile details updated!"
           else
-            redirect_to io_dashboard_path, notice: "Profile details updated!"
+            redirect_to lister_dashboard_path, notice: "Profile details updated!"
           end
         end
       else

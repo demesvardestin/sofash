@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210115193609) do
+ActiveRecord::Schema.define(version: 20210206201546) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "order_total"
@@ -99,8 +99,15 @@ ActiveRecord::Schema.define(version: 20210115193609) do
     t.boolean  "shipped_to_renter"
     t.boolean  "delivered_to_renter"
     t.boolean  "returned_by_renter"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "inventory_item_id"
+    t.integer  "item_owner_id"
+    t.integer  "renter_id"
+    t.string   "initial_price"
+    t.string   "tax"
+    t.string   "final_price"
+    t.boolean  "completed",           default: false
   end
 
   create_table "pickup_request_items", force: :cascade do |t|

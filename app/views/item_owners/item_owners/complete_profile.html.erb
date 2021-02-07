@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-body">
                 <%= render partial: "common/card_header", locals: { text: "Almost there" } %>
@@ -18,7 +18,7 @@
     let path = document.createElement('input');
     path.setAttribute('type', 'hidden');
     path.setAttribute('name', 'next');
-    path.setAttribute('value', '/io/dashboard');
+    path.setAttribute('value', '/lister/dashboard');
     
     let registrationCompleted = document.createElement('input');
     registrationCompleted.setAttribute('type', 'hidden');

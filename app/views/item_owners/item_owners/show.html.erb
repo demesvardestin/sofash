@@ -1,0 +1,42 @@
+<section class="section-avatar" style="border-bottom: 1px solid #e7e7e9;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="img--container">
+                            <img src="https://pbs.twimg.com/profile_images/1033883796263895040/GQJRpLmR_400x400.jpg"
+                                alt="demesvar_avatar">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <div class="profile-snapshot-container">
+                            <h4>
+                                <%= @io.full_name %>
+                            </h4>
+                            
+                            <p>
+                                <span id="io-item-count">
+                                    <%= pluralize @io.item_count, "listing" %>
+                                </span>
+                                |
+                                <span id="io-item-count">
+                                    <%= @io.state %>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="privacy-settings-btn-container">
+                            <button class="btn btn-theme btn-block">
+                                <%= link_to "Privacy", lister_security_path, style:"height: 100%; color: #fff; text-decoration: none;" %>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

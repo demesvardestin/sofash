@@ -1,6 +1,6 @@
 class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
-    has_many :item_orders
+    belongs_to :order
     
     
     def self.search(parameter)

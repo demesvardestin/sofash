@@ -48,7 +48,7 @@ $(document).on("turbolinks:load", function() {
     }
     
     toastr.options = {
-      "closeButton": false,
+      "closeButton": true,
       "debug": false,
       "newestOnTop": false,
       "progressBar": false,

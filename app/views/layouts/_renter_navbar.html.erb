@@ -1,0 +1,178 @@
+<nav class="navbar navbar-expand-lg navbar-light" id="renter-navbar"
+    onscroll="triggerBoxShadow(this)">
+    <div class="container">
+        <button class="btn btn-link btn-transparent navbar-toggler"
+            id="cart-icon" onclick="window.location.href='/cart';">
+            <i class="fas fa-user"></i>
+            <span class="badge badge-light cart-size">
+                <%= "1" %>
+            </span>
+        </button>
+        
+        <a class="navbar-brand" href="/">
+            TBD
+        </a>
+        
+        <button class="navbar-toggler mobile-menu-button" type="button"
+            onclick="$('#mobile-menu').fadeIn();">
+            <div class="ham-menu-wrapper">
+                <div class="ham-menu" id="stack1"></div>
+                <div class="ham-menu" id="stack2"></div>
+                <div class="ham-menu" id="stack3"></div>
+            </div>
+            
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end right-nav" id="navbarNav" style="font-weight: bold;">
+            <ul class="navbar-nav">
+                <li class="nav-item <%= is_active?("feed") %>">
+                    <button class="btn btn-link">
+                        <a href="/" type="button" style="text-decoration: none; color: inherit;">
+                            <span>
+                                <i class="fas fa-home" style="font-size: 18px;"></i>
+                            </span>
+                            <br />
+                            <span>Feed</span>
+                        </a>
+                    </button>
+                    
+                    <div>
+                        <hr>
+                    </div>
+                </li>
+                
+                <li class="nav-item <%= is_active?("orders") %>">
+                    <button class="btn btn-link">
+                        <a href="/orders" type="button" style="text-decoration: none; color: inherit;">
+                            <span>
+                                <i class="fas fa-dollar-sign" style="font-size: 18px;"></i>
+                            </span>
+                            <br />
+                            <span>Orders</span>
+                        </a>
+                    </button>
+                    
+                    <div>
+                        <hr>
+                    </div>
+                </li>
+                
+                <li class="nav-item <%= is_active?("messages") %>">
+                    <button class="btn btn-link">
+                        <a href="/messages" type="button" style="text-decoration: none; color: inherit;">
+                            <span>
+                                <i class="far fa-envelope" style="font-size: 18px;"></i>
+                            </span>
+                            <br />
+                            <span>Messages</span>
+                        </a>
+                    </button>
+                    
+                    <div>
+                        <hr>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-link" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle" style="font-size: 25px"></i> <i class="fas fa-angle-down"></i>
+                      </button>
+                      <ul class="dropdown-menu box-shadow">
+                        <li><a class="dropdown-item" href="/settings">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="security">Security</a></li>
+                        <li><a class="dropdown-item" href="/renter-faqs">FAQs</a></li>
+                        <li style="border-top: 1px solid #e7e7e9;">
+                            <%= link_to destroy_renter_session_path, class:"dropdown-item", method: :delete do %>
+                                Logout
+                            <% end %>
+                        </li>
+                      </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="mobile-menu">
+        <header>
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="float-left">
+                        Menu
+                    </h6>
+                    
+                    <h6 class="float-right">
+                        <a class="cursor-pointer" onclick="$('#mobile-menu').fadeOut();">
+                            <i class="fas fa-times"></i> Close
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </header>
+        
+        <section id="menu-body">
+            <a onclick="$('#search-panel').fadeIn()">
+                <div>
+                    <i class="fas fa-search"></i> Search
+                </div>
+            </a>
+            
+            <a href="/login">
+                <div>
+                    Signin
+                </div>
+            </a>
+            
+            <a href="/register">
+                <div>
+                    Register
+                </div>
+            </a>
+            
+            <a href="/register">
+                <div>
+                    Consignor login
+                </div>
+            </a>
+            
+            <a href="/io/register">
+                <div>
+                    Consign with us
+                </div>
+            </a>
+            
+            <a href="/faq">
+                <div>
+                    FAQ
+                </div>
+            </a>
+        </section>
+    </div>
+    
+    <div id="search-panel">
+        <header>
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="float-left">
+                        Search
+                    </h6>
+                    
+                    <h6 class="float-right">
+                        <a class="cursor-pointer" onclick="$('#search-panel').fadeOut();">
+                            <i class="fas fa-times"></i> Close
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </header>
+        
+        <section>
+            <input type="search" placeholder="Search an item" id="mobile-search"
+                autocomplete="off" oninput="submitFormWithQuery(this, this.value)"
+                autofocus="true">
+            <div id="mobile-search-results-box"></div>
+        </section>
+    </div>
+</nav>

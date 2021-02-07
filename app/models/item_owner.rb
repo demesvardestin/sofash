@@ -3,8 +3,7 @@ class ItemOwner < ApplicationRecord
          :recoverable, :rememberable, :validatable
  
   has_many :inventory_items
-  has_many :pickup_requests, dependent: :destroy
-  has_many :pickup_request_items, through: :pickup_requests
+  has_many :orders
   
   def full_name
     first_name + " " + last_name
@@ -20,5 +19,17 @@ class ItemOwner < ApplicationRecord
   
   def has_not_completed_registration
     registration_completed == false
+  end
+  
+  def live_orders
+    Order.where(item_owner_id: id, completed: false)
+  end
+  
+  def has_live_orders
+    live_orders.size > 0
+  end
+  
+  def has_transactions
+    false
   end
 end

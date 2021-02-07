@@ -1,167 +1,29 @@
-<div class="row">
-    <div class="col-md-12">
-        <section class="section-avatar">
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="img--container">
-                        <img src="https://pbs.twimg.com/profile_images/1033883796263895040/GQJRpLmR_400x400.jpg"
-                            alt="demesvar_avatar">
-                    </div>
-                </div>
-                
-                <div class="col-md-8">
-                    <div class="profile-snapshot-container">
-                        <h4>
-                            <%= @io.full_name %>
-                        </h4>
-                        
-                        <p>
-                            <span id="io-item-count">
-                                <%= pluralize @io.item_count, "item" %>
-                            </span>
-                            |
-                            <span id="io-item-count">
-                                <%= @io.state %>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="col-md-2">
-                    <div class="privacy-settings-btn-container">
-                        <button class="btn btn-theme btn-block">
-                            <%= link_to "Privacy", password_settings_path, style:"height: 100%; color: #fff; text-decoration: none;" %>
-                        </button>
+<section id="io-dashboard-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body" style="height: 500px;">
+                        <% if current_item_owner.has_live_orders %>
+                            <%= render partial: "orders/_orders", locals: { orders: ccurrent_item_owner.live_orders } %>
+                        <% else %>
+                            <%= render "no_live_orders" %>
+                        <% end %>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <div class="dropdown mobile-show dashboard-navigation">
-            <button class="btn btn-block btn-transparent" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span id="button-text">My Items</span>
-                <span>
-                    <i class="fas fa-angle-down"></i>
-                </span>
-            </button>
-        
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#v-pills-items" role="tab" aria-controls="v-pills-items"
-                    id="v-pills-items-tab" data-toggle="pill" onclick="$('.active').toggleClass('active'); $('#button-text').text('My Items');">
-                    <span>My Items</span>
-                </a>
-                <a class="dropdown-item" id="v-pills-earnings-tab" data-toggle="pill"
-                    href="#v-pills-earnings" role="tab" aria-controls="v-pills-earnings"
-                    aria-selected="false" onclick="$('.active').toggleClass('active'); $('#button-text').text('My Earnings');">
-                    <span>My Earnings</span>
-                </a>
-                <a class="dropdown-item" href="#v-pills-transactions" role="tab" aria-controls="v-pills-transactions"
-                    id="v-pills-transactions-tab" data-toggle="pill" onclick="$('.active').toggleClass('active'); $('#button-text').text('Transactions');">
-                    <span>Transactions</span>
-                </a>
-                <a class="dropdown-item" href="#v-pills-notifications" role="tab" aria-controls="v-pills-notifications"
-                    id="v-pills-notifications-tab" data-toggle="pill" onclick="$('.active').toggleClass('active'); $('#button-text').text('Notifications');">
-                    <span>Notifications</span>
-                </a>
-                <a class="dropdown-item" href="#v-pills-request" role="tab" aria-controls="v-pills-request"
-                    id="v-pills-request-tab" data-toggle="pill" onclick="$('.active').toggleClass('active'); $('#button-text').text('Pickup Requests');">
-                    <span>Pickup Requests</span>
-                </a>
-                <a class="dropdown-item" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                    id="v-pills-settings-tab" data-toggle="pill" onclick="$('.active').toggleClass('active'); $('#button-text').text('Settings');">
-                    <span>Account Details</span>
-                </a>
-            </div>
-        </div>
-        
-        <section class="section-divider">
-            <div class="row">
-                <div class="col-md-12">
-                    <hr>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section-dashboard_content">
-            <div class="row">
-                <div class="col-md-3 mobile-hide">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
-                            href="#v-pills-items" role="tab" aria-controls="v-pills-items"
-                            aria-selected="true">
-                            <span>My Items</span>
-                        </a>
-                        <a class="nav-link" id="v-pills-earnings-tab" data-toggle="pill"
-                            href="#v-pills-earnings" role="tab" aria-controls="v-pills-earnings"
-                            aria-selected="false">
-                            <span>My Earnings</span>
-                        </a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
-                            href="#v-pills-transactions" role="tab" aria-controls="v-pills-transactions"
-                            aria-selected="false">
-                            <span>Transactions</span>
-                        </a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
-                            href="#v-pills-notifications" role="tab" aria-controls="v-pills-notifications"
-                            aria-selected="false">
-                            <span>Notifications</span>
-                        </a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
-                            href="#v-pills-request" role="tab" aria-controls="v-pills-request"
-                            aria-selected="false">
-                            <span>Pickup Requests</span>
-                        </a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
-                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                            aria-selected="false">
-                            <span>Account Details</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="card">
-                        <div class="card-body" style="">
-                            <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-items"
-                                    role="tabpanel" aria-labelledby="v-pills-items-tab">
-                                    <h5>My Items</h5>
-                                    <hr>
-                                    
-                                    <%= render partial: "/workflow/inventory_items/items",
-                                        locals: { items: @io.inventory_items } %>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-earnings"
-                                    role="tabpanel" aria-labelledby="v-pills-earnings-tab">
-                                    <h5>My Earnings</h5>
-                                    <hr>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-transactions"
-                                    role="tabpanel" aria-labelledby="v-pills-transactions-tab">
-                                    <h5>Transactions</h5>
-                                    <hr>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-notifications"
-                                    role="tabpanel" aria-labelledby="v-pills-notifications-tab">
-                                    <h5>Notifications</h5>
-                                    <hr>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-request"
-                                    role="tabpanel" aria-labelledby="v-pills-request-tab">
-                                    <h5>Pickup Requests</h5>
-                                    <hr>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                    aria-labelledby="v-pills-settings-tab">
-                                    <h5>Account Details</h5>
-                                    <hr>
-                                    <%= render 'form' %>
-                                </div>
-                            </div>
-                        </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body" style="height: 500px;">
+                        <% if current_item_owner.has_transactions %>
+                            <%= render partial: "transactions", locals: { transactions: [] } %>
+                        <% else %>
+                            <%= render "no_transaction_history" %>
+                        <% end %>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>

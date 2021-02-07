@@ -5,5 +5,5 @@ class Renter < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :carts
-  has_many :item_orders, through: :carts
+  has_many :orders
 end

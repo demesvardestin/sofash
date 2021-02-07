@@ -42,12 +42,18 @@ module ApplicationHelper
         " | " + request.path_info.split('/').map(&:capitalize).join(' ')
     end
     
-    def path_for(path)
-        if request.original_url.include?(path)
-           return "active" 
+    def is_active?(keyword)
+        url = request.original_url
+        
+        if current_page?(root_path) && keyword == "feed"
+            return "active"
+        else
+            if url.ends_with?(keyword)
+                return "active"
+            end
         end
         
-        return ""
+        return
     end
     
     def current_cart
