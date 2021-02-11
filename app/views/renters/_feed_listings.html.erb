@@ -1,0 +1,53 @@
+<% listings.each do |l| %>
+    <div class="card">
+        <div class="card-body">
+            <div class="feed-item-image">
+                <a href="/inventory_items/<%= l.id %>" style="text-decoration: none;" target="_blank">
+                    <img src="<%= l.image.first_source if !l.image.first_source.nil? %>" class="d-block w-100"
+                        alt="<%= l.item_name %>">
+                </a>
+            </div>
+            
+            <div class="feed-item-description">
+                <h6>
+                    <%= l.item_name %>
+                </h6>
+                
+                <p>
+                    <span class="feed-item-price" style="color: #000 !important; font-weight: bold;">
+                        <%= number_to_currency l.market_value, precision: 0 %>
+                    </span>
+                    
+                    |
+                    
+                    <span class="feed-item-size">Size: M</span>
+                    
+                    |
+                    
+                    <span class="feed-item-brand">Versace</span>
+                </p>
+            </div>
+            
+            <hr>
+            
+            <div class="lister-info float-left" style="width: 50%;">
+                <div class="float-left">
+                    <i class="fas fa-user-circle" style="font-size: 24px;"></i>
+                </div>
+                
+                <div class="float-left" style="padding-left: 10px;">
+                    <a href="/lister/<%= l.lister.username %>" class="body-link">
+                        <span style="font-size: 14px;"><%= l.item_owner.full_name %></span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="listing-info float-right" style="width: 50%; text-align: right;">
+                <%= link_to inventory_item_path(l), class:"btn btn-link",
+                    style:"padding: 0; color: var(--main-link-color);", target:"_blank" do %>
+                    View item <i class="fas fa-angle-right"></i>
+                <% end %>
+            </div>
+        </div>
+    </div>
+<% end %>

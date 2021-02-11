@@ -6,4 +6,8 @@ class Renter < ApplicationRecord
   
   has_many :carts
   has_many :orders
+  
+  def home_location
+    "New York, NY"
+  end
 end

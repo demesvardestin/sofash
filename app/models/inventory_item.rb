@@ -1,6 +1,8 @@
 class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
-    belongs_to :order
+    belongs_to :item_owner
+    
+    scope :sort_by_date, -> { order("updated_at DESC") }
     
     
     def self.search(parameter)
@@ -40,6 +42,10 @@ class InventoryItem < ApplicationRecord
     
     def rental_costs
         "$#{rental_price} for 4 days"
+    end
+    
+    def lister
+        item_owner
     end
     
     protected

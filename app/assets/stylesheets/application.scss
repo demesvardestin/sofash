@@ -36,6 +36,10 @@ nav {
 body {
     min-height: 100vh;
     
+    p {
+        font-size: 14px;
+    }
+    
     #io-body, #renter-body {
         color: var(--main-font-color);
     }

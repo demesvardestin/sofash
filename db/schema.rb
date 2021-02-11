@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210206201546) do
+ActiveRecord::Schema.define(version: 20210211180624) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "order_total"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20210206201546) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "item_owner_id"
+    t.string   "size"
   end
 
   create_table "item_categories", force: :cascade do |t|
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 20210206201546) do
     t.string   "state"
     t.string   "zipcode"
     t.boolean  "registration_completed", default: false
+    t.string   "username"
     t.index ["email"], name: "index_item_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_item_owners_on_reset_password_token", unique: true
   end
@@ -108,6 +110,7 @@ ActiveRecord::Schema.define(version: 20210206201546) do
     t.string   "tax"
     t.string   "final_price"
     t.boolean  "completed",           default: false
+    t.integer  "cart_id"
   end
 
   create_table "pickup_request_items", force: :cascade do |t|

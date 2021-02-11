@@ -6,81 +6,65 @@
     #scrollable-feed-items .card {
         margin-bottom: 15px;
     }
+    
+    #carouselExampleIndicators li {
+        height: 70px;
+        width: 55px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 </style>
 
 <section id="renter-feed">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 offset-md-1 fixed">
-                <div class="card">
+            <div class="col-md-3">
+                <div class="card" style="">
                     <div class="card-body">
+                        <div id="location-filter">
+                            <h6>Location</h6>
+                            
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="<%= current_renter.home_location %>"
+                                    aria-label="Renter's location" aria-describedby="basic-addon2"
+                                    style="height: 45px !important; border-top-left-radius: 2.75px;
+                                        border-bottom-left-radius: 2.75px; border-top-right-radius: 0 !important;
+                                        border-bottom-right-radius: 0 !important; border-right: none;
+                                        box-shadow: none !important; outline: none !important;">
+                                <span class="input-group-text cursor-pointer" id="basic-addon2"
+                                    style="height: 45px !important; border-left: none; background-color: #fff;
+                                        border-bottom-left-radius: 0; border-top-left-radius: 0;">
+                                    <i class="fas fa-search" style="color: #e7e7e9 !important;"></i>
+                                </span>
+                            </div>
+                        </div>
                         
+                        <div id="location-filter">
+                            <h6>Price</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Low to High
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    High to Low
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-md-7" id="scrollable-feed-items">
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        
-                    </div>
-                </div>
-                
-                <div class="card">
+            <div class="col-md-5" id="scrollable-feed-items">
+                <%= render partial: "feed_listings", locals: { listings: @listings } %>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card" style="">
                     <div class="card-body">
                         
                     </div>

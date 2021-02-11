@@ -5,24 +5,20 @@ button.btn, input.form-control, input.btn {
 button.btn, input.form-control, textarea {
     outline: none !important;
     box-shadow: none !important;
+    border-radius: 3px;
 }
 
-form {
-    label, .form-control, .btn {
-        font-size: 1rem !important;
-    }
+input:focus {
+    border-color: #ced4da !important;
+}
+
+label, .form-control, .btn {
+    font-size: 14px !important;
 }
 
 .form-control {
     border-radius: 2.75px !important;
-}
-
-.form-control {
     margin-bottom: 15px;
-}
-
-button.btn, .form-control {
-    border-radius: 3px;
 }
 
 #newsletter-form {

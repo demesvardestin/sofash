@@ -3,61 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// INDEX
-#inventory--items {
-    
-    .item-column {
-        margin: 15px 0;
-    }
-    
-    .img--container {
-        margin: auto !important;
-        width: auto;
-        min-height: 300px;
-        border-radius: 15px !important;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 0 26px 54px -10px rgba(50,50,93,.25),
-                    0 16px 32px -16px rgba(0,0,0,.3),
-                    0 -12px 32px -12px rgba(0,0,0,.025);
-        // transition: width 0.25s;
-        
-        h6 {
-            color: #191919 !important;
-        }
-        
-        .card-body {
-            max-height: 163px;
-        }
-        
-        .card-footer {
-            border-top: none;
-            background-color: #fbfbfb;
-            
-            p {
-                font-size: 14px;
-            }
-            
-            div {
-                color: var(--main-font-color);
-            }
-        }
-        
-        img {
-            width: 100%;
-        }
-    }
-}
-
-#search-results-box {
-    #search-result-items .col-md-12 {
-        padding: 15px 0 15px 40px;
-    }
-    
-    #search-result-items .col-md-12.item:hover {
-        background-color: #e7e7e9;
-        cursor: pointer;
-    }
+.feed-item-description {
+    padding-top: 30px;
 }
 
 
@@ -156,18 +103,6 @@
 
 
 @media (max-width: 992px) {
-    #mobile-search-results-box {
-        #search-result-items .col-md-12 {
-            padding: 20px 0 20px 40px;
-            border-bottom: 0.5px solid #e7e7e9;
-        }
-        
-        #search-result-items .col-md-12.item:hover {
-            background-color: #e7e7e9;
-            cursor: pointer;
-        }
-    }
-    
     #inventory--items {
         .img--container {
             .card-body {

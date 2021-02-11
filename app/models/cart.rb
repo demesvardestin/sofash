@@ -1,9 +1,9 @@
 class Cart < ApplicationRecord
-    has_one :item_order
+    has_one :order
     validates_uniqueness_of :renter_email
     
     def size
-        item_order != nil ? 1 : 0
+        order != nil ? 1 : 0
     end
     
     def renter
@@ -11,7 +11,7 @@ class Cart < ApplicationRecord
     end
     
     def is_empty
-        item_order == nil
+        order == nil
     end
     
     def is_not_empty
