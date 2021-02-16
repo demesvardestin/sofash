@@ -71,5 +71,5 @@ names = [
     rand_img3 = sources[rand(0..16)]
     rand_img4 = sources[rand(0..16)]
     image = Image.create(inventory_item_id: item.id)
-    image.update!(first_source: rand_img1, sources: [rand_img1, rand_img2, rand_img3, rand_img4])
+    image.update!(first_source: rand_img1, {sources: [rand_img1, rand_img2, rand_img3, rand_img4]})
 end

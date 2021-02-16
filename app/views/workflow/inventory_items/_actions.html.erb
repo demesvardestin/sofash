@@ -4,35 +4,25 @@
             Item added to cart
         </button>
     <% else %>
-        <%= link_to add_to_cart_path(:item_id => item.id), remote: true do %>
-            <button class="btn btn-theme btn-block" onclick="showSpinner(this)">
+    <div class="row">
+        <div class="col-md-6 d-grid gap-2">
+            <%= link_to add_to_cart_path(:item_id => item.id), class:"d-grid gap-2",
+                style:"text-decoration: none;", remote: true do %>
+                <button class="btn btn-primary btn-block" onclick="showSpinner(this)">
+                    <span>
+                        Book Now
+                    </span>
+                </button>
+            <% end %>
+        </div>
+        <div class="col-md-6 d-grid gap-2">
+            <button class="btn btn-outline-primary btn-block" onclick="showSpinner(this)">
                 <span>
-                    Add to cart | <%= item.rental_costs %>
-                </span>
-                <span class="no-display">
-                    <i class="fas fa-shopping-cart"></i>
+                    Share
                 </span>
             </button>
-        <% end %>
-    <% end %>
-</div>
-
-<div id="add-to-likes-div">
-    <% if is_in_favorites item %>
-        <button class="btn btn-theme-outline btn-block" disabled>
-            Item saved
-        </button>
-    <% else %>
-        <%= link_to favorite_path(:item_id => item.id), remote: true, method: :post do %>
-            <button class="btn btn-theme-outline btn-block">
-                <span>
-                    Save
-                </span>
-                <span class="no-display">
-                    <i class="far fa-heart"></i>
-                </span>
-            </button>
-        <% end %>
+        </div>
+    </div>
     <% end %>
 </div>
 

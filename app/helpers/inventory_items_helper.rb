@@ -21,6 +21,7 @@ module InventoryItemsHelper
     end
     
     def is_in_cart(item)
+        return false if current_cart.order.nil?
         current_cart.order.inventory_item == item
     end
     

@@ -41,11 +41,15 @@ class InventoryItem < ApplicationRecord
     end
     
     def rental_costs
-        "$#{rental_price} for 4 days"
+        "$#{rental_price}/day"
     end
     
     def lister
         item_owner
+    end
+    
+    def tags_as_list
+        tags.split(",") 
     end
     
     protected

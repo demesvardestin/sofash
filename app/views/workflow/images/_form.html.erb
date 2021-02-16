@@ -1,12 +1,12 @@
 <%= form_for(@image, :html => { :multipart => true }) do |f| %>
-    <%= render partial: "shared/errors", locals: { object: @image } %>
+    <%= render partial: "shared/errors_messages", locals: { object: @image } %>
     
     <div class="field">
         <%= f.label :images %>
         <%= f.file_field :sources, multiple: true %>
     </div>
     
-    <%= f.hidden_field :inventory_item_id, value:"#{params[:id]}" %>
+    <%= f.hidden_field :inventory_item_id, value:"#{!@image.inventory_item.id.nil? ? @image.inventory_item.id : params[:id]}" %>
     <%= f.hidden_field :sources_cache %>
     
     <div class="actions">

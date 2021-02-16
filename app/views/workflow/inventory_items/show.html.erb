@@ -1,109 +1,166 @@
 <style>
-    #carouselExampleIndicators li {
-        height: 70px;
-        width: 55px;
-        background-size: cover;
+    .current {
+        border: 3px solid #b4894b;
+    }
+    
+    #main-image {
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
 </style>
 
 <section id="inventory-item-<%= @item.id %>" class="inventory-item">
-    <div class="row">
-        <div class="col-md-2 offset-md-1">
-            <a class="btn btn-primary box-shadow" href="/">
-                <i class="fa fa-angle-left"></i> Back
-            </a>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-6 offset-md-1" style="padding-bottom: 100px;">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators" style="top: 100%;">
-                    <% @item.image.sources.each_with_index do |s, idx| %>
-                        <li data-target="#carouselExampleIndicators"
-                            data-slide-to="<%= idx %>"class="active"
-                            style="background-image: url('<%= s.url %>')"></li>
-                    <% end %>
-                </ol>
-                <div class="carousel-inner">
-                    <% @item.image.sources.each_with_index do |s, idx| %>
-                        <div class="carousel-item <%= "active" if idx == 0 %>">
-                            <img src="<%= s.url %>" class="d-block w-100"
-                                alt="<%= @item.item_name %>">
-                        </div>
-                    <% end %>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <% @item.image.sources.each_with_index do |s, idx| %>
+                    <div class="card cursor-pointer <%= "current" if idx == 0 %>" style="margin-bottom: 15px;"
+                        onclick="changeCurrentImage('<%= s.url %>', this)">
+                        <div class="card-body" style="background-image: url('<%= s.url %>');
+                            background-size: 80%; background-position: center;
+                            height: 143px; background-repeat: no-repeat;"></div>
+                    </div>
+                <% end %>
             </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="item-data">
-                <div class="item-name">
-                    <h5>
-                        <%= @item.item_name %>
-                    </h5>
+            
+            <div class="col-md-6" style="padding-bottom: 100px;">
+                <div class="card">
+                    <div class="card-body"
+                        style="height: 555px; background-image: url('<%= @item.image.first_source %>');
+                                background-size: 80%;"
+                        id="main-image"></div>
                 </div>
-                
-                <div class="item-name">
-                    <p>
-                        <strong>
-                            <a href="/brand/<%= @item.item_brand %>">
-                                <%= @item.item_brand %>
-                            </a>
-                        </strong>
-                    </p>
-                </div>
-                
-                <div class="item-size">
-                    <p>
-                        Size: US L/EU M
-                        <span class="badge badge-<%= availability_color_for @item %>">
-                            <%= @item.availability %>
-                        </span>
-                    </p>
-                </div>
-                
-                <div class="item-market-value">
-                    <p>
-                        Originally retails for: $<%= @item.market_value %>
-                    </p>
-                </div>
-                
-                <div class="item-condition">
-                    <p>
-                        Condition: <%= @item.condition %>
-                    </p>
-                </div>
-                
-                <hr>
-                
-                <div class="item-description">
-                    <h6>
-                        Description
-                    </h6>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="item-data">
+                    <div class="item-name">
+                        <h5>
+                            <%= @item.item_name %>
+                        </h5>
+                    </div>
                     
-                    <p>
-                        <%= sanitize @item.item_description %>
-                    </p>
-                </div>
-                
-                <hr>
-                
-                <div class="item-actions">
-                    <%= render partial: "workflow/inventory_items/actions",
-                        locals: { item: @item } %>
+                    <div class="item-name">
+                        <p>
+                            <strong>
+                                <a href="/brand/<%= @item.item_brand %>" style="color: var(--main-link-color); text-decoration: none;">
+                                    <%= @item.item_brand %>
+                                </a>
+                            </strong>
+                        </p>
+                    </div>
+                    
+                    <div class="item-size">
+                        <p>
+                            <span>
+                                Size:
+                                <span style="border: 1px solid var(--main-link-color);
+                                            padding: 4px 8px; border-radius: 2.75px;
+                                            color: var(--main-link-color); margin-left: 10px;">
+                                    <%= @item.size %></span>
+                            </span>
+                            
+                            <span style="margin-left: 15px;">
+                                <a href="#">Size Chart</a>
+                            </span>
+                            <!--<span class="badge badge-<%= availability_color_for @item %>">-->
+                            <!--    <%= @item.availability %>-->
+                            <!--</span>-->
+                        </p>
+                    </div>
+                    
+                    <div class="item-market-value" style="margin-bottom: 0;">
+                        <p style="margin-bottom: 0; font-size: 24px;">
+                            <%= @item.rental_costs %>
+                            <s><%= number_to_currency @item.market_value %></s>
+                        </p>
+                    </div>
+                    
+                    <div class="item-actions" style="margin-top: 30px;">
+                        <%= render partial: "workflow/inventory_items/actions",
+                            locals: { item: @item } %>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="item-description">
+                        <p>
+                            <%= sanitize @item.item_description %>
+                        </p>
+                    </div>
+                    
+                    <div class="tags">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p><strong>Tags</strong></p>
+                                
+                                <% @item.tags_as_list.each do |t| %>
+                                    <a class="btn btn-info" href="/inventory_items?tagged=<%= t %>">
+                                        <%= t %>
+                                    </a>
+                                <% end %>
+                            </div>
+                            
+                            <div class="col-md-5">
+                                <p><strong>Color</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-terms">
+                        <p><strong>Terms & Conditions</strong></p>
+                        
+                        <div class="text-muted">
+                            <hr>
+                            
+                            <p style="margin-bottom: 0;">
+                                <i class="fas fa-check" style="font-size: 20px;"></i>
+                                
+                                <span style="margin-left: 15px;">
+                                    Guaranteed Dry Cleaned
+                                </span>
+                                
+                                <i class="fas fa-angle-right float-right" style="font-size: 18px;"></i>
+                            </p>
+                            
+                            <hr>
+                            
+                            <p style="margin-bottom: 0;">
+                                <i class="fas fa-lock" style="font-size: 20px;"></i>
+                                
+                                <span style="margin-left: 15px;">
+                                    Buyer Protection & Refund
+                                </span>
+                                
+                                <i class="fas fa-angle-right float-right" style="font-size: 18px;"></i>
+                            </p>
+                            
+                            <hr>
+                            
+                            <p style="margin-bottom: 0;">
+                                <i class="fas fa-notes-medical" style="font-size: 20px;"></i>
+                                
+                                <span style="margin-left: 15px;">
+                                    COVID-19 Guidelines
+                                </span>
+                                
+                                <i class="fas fa-angle-right float-right" style="font-size: 18px;"></i>
+                            </p>
+                            
+                            <hr>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
+
+<script type="text/javascript">
+    changeCurrentImage = (url, elem) => {
+        document.querySelector('#main-image').style.backgroundImage = `url(${url})`;
+        document.querySelector('.current').classList.remove('current');
+        elem.classList.add('current');
+    }
+</script>

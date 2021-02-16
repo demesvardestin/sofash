@@ -72,16 +72,6 @@
             transition: display 0.50s;
             margin-bottom: 15px;
         }
-        
-        .btn:hover {
-            span:first-child {
-                display: none;
-            }
-            
-            span:last-child {
-                display: inline !important;
-            }
-        }
     }
 }
 

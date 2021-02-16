@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     
     get '/search', to: 'inventory_items#search'
     get '/attach-images', to: 'images#new'
+    get '/images/:id/edit', to: 'images#edit'
     get '/item/:id/:slug', to: 'inventory_items#show', as: 'show_inventory_item'
     get '/add_to_cart', to: 'carts#add'
     get '/remove_from_cart', to: 'carts#remove'

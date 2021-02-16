@@ -47,6 +47,8 @@ module ApplicationHelper
         
         if current_page?(root_path) && keyword == "feed"
             return "active"
+        elsif keyword == "feed" && url.include?("inventory_item")
+            return "active"
         else
             if url.ends_with?(keyword)
                 return "active"
