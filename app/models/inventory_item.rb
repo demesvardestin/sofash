@@ -41,7 +41,7 @@ class InventoryItem < ApplicationRecord
     end
     
     def rental_costs
-        "$#{rental_price}/day"
+        "$#{rental_price}/<span style='font-size: 16px !important;'>day</span>"
     end
     
     def lister
