@@ -23,7 +23,7 @@
                 <div class="card" style="">
                     <div class="card-body">
                         <div id="location-filter">
-                            <h6>Location</h6>
+                            <h6><b>Location</b></h6>
                             
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="<%= current_renter.home_location %>"
@@ -40,18 +40,46 @@
                             </div>
                         </div>
                         
-                        <div id="location-filter">
-                            <h6>Price</h6>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
+                        <div id="price-filter">
+                            <h6><b>Price</b></h6>
+                            <div class="price-filter-radio">
+                                <input class="price-filter-radio-input" type="radio" name="price-filter" id="filter-low-high">
+                                <label class="price-filter-radio-label" for="filter-low-high">
                                     Low to High
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
+                            <div class="price-filter-radio">
+                                <input class="price-filter-radio-input" type="radio" name="price-filter" id="filter-high-low">
+                                <label class="price-filter-radio-label" for="filter-high-low">
                                     High to Low
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div id="size-filter" style="margin-top: 30px;">
+                            <h6><b>Size</b></h6>
+                            <div class="size-filter-radio">
+                                <input class="size-filter-radio-input" type="radio" name="size-filter" id="filter-small">
+                                <label class="size-filter-radio-label" for="filter-small">
+                                    Small
+                                </label>
+                            </div>
+                            <div class="size-filter-radio">
+                                <input class="size-filter-radio-input" type="radio" name="size-filter" id="filter-medium">
+                                <label class="size-filter-radio-label" for="filter-medium">
+                                    Medium
+                                </label>
+                            </div>
+                            <div class="size-filter-radio">
+                                <input class="size-filter-radio-input" type="radio" name="size-filter" id="filter-large">
+                                <label class="size-filter-radio-label" for="filter-large">
+                                    Large
+                                </label>
+                            </div>
+                            <div class="size-filter-radio">
+                                <input class="size-filter-radio-input" type="radio" name="size-filter" id="filter-extra-large">
+                                <label class="size-filter-radio-label" for="filter-extra-large">
+                                    X-Large
                                 </label>
                             </div>
                         </div>

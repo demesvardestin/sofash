@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
  
  @import "toastr";
@@ -112,6 +113,10 @@ hr {
 
 .fixed {
     position: fixed;
+}
+
+.text-muted {
+    color: #A3B4C7 !important;
 }
 
 .goodbye-modal {

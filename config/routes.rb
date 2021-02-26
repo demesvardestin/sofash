@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'listing_reports/create'
+
   get 'renters/feed'
 
   namespace :workflow do
@@ -57,6 +59,8 @@ Rails.application.routes.draw do
     get '/checkout', to: 'carts#checkout'
     post '/favorite', to: 'item_favorites#create'
   end
+  
+  resources :listing_reports, only: :create
   
   get '/browse', to: 'pages#browse'
   get '/orders', to: 'orders#index'

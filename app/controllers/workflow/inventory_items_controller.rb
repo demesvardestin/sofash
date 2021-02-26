@@ -1,18 +1,8 @@
 class Workflow::InventoryItemsController < ApplicationController
     before_action :set_item, except: [:new, :create]
     
-    def search
-        @query = params[:query]
-        
-        @items = if @query.empty?
-            []
-        else
-            InventoryItem.search(@query)
-        end
-        
-        @snapshot_items = @items.take 5
-        
-        render :layout => false
+    def show
+        @report = ListingReport.new
     end
     
     def new

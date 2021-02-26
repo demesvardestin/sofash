@@ -14,19 +14,111 @@
     }
 </style>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="sizeChart" tabindex="-1" aria-labelledby="sizeChart" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <div class="modal-header" align="center" >
+        <h6 class="modal-title" id="sizeChartLabel">Size Chart</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <img src="/images/size_chart.jpg" style="width: 100%; height: auto;">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reportListing" tabindex="-1" aria-labelledby="reportListing" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center" >
+        <h6 class="modal-title" id="reportListingLabel">Report this listing</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close" id="report-listing-close"></button>
+        </div>
+        <div class="modal-body" id="report-listing-body">
+            <% if current_renter %>
+                <%= render 'listing_reports/form' %>
+            <% else %>
+                <p>
+                    You must <a href="/login" style="text-decoration: none; color: var(--main-link-color);">log in</a> to report this listing.
+                </p>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shareListing" tabindex="-1" aria-labelledby="shareListing" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="shareListingLabel">Share Listing</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close" id="share-listing-close"></button>
+      </div>
+      <div class="modal-body" style="min-height: 150px;">
+        <div style="margin-top: 20px;" id="share-listing" class="row">
+            <div align="center" class="col-md-8 offset-md-2 text-center">
+                <div>
+                    <div rel="nofollow" data-site="facebook" class="cursor-pointer float-left"
+                        style="color: #4267B2; font-size: 20px; height: 40px;
+                            width: 40px; border-radius: 20px; border: 1px solid #4267B2;
+                            text-decoration: none; text-align: center; padding-top: 5px;"
+                        onclick="return SocialShareButton.share(this);"
+                        title="Share to Facebook"
+                        data-facebook-title="<%= social_share_text(@item) %>">
+                        <i class="fab fa-facebook-f"></i>
+                        <p style="margin-left: -10px; margin-top: 15px; color: var(--main-font-color);">Facebook</p>
+                    </div>
+                    
+                    <div rel="nofollow" data-site="twitter" class="cursor-pointer float-left"
+                        style="color: #00acee; font-size: 20px; height: 40px;
+                            width: 40px; border-radius: 20px; border: 1px solid #00acee;
+                            text-decoration: none; text-align: center; padding-top: 5px; margin-left: 25px;"
+                        onclick="return SocialShareButton.share(this);"
+                        title="Share to Twitter"
+                        data-twitter-title="<%= social_share_text(@item, "qlozet") %>">
+                        <i class="fab fa-twitter"></i>
+                        <p style="margin-left: -2px; margin-top: 15px; color: var(--main-font-color);">Twitter</p>
+                    </div>
+                    
+                    <div rel="nofollow" data-site="pinterest" class="cursor-pointer float-left"
+                        style="color: #e60023; font-size: 20px; height: 40px;
+                            width: 40px; border-radius: 20px; border: 1px solid #e60023;
+                            text-decoration: none; text-align: center; padding-top: 5px; margin-left: 25px;"
+                        onclick="return SocialShareButton.share(this);"
+                        title="Share to Pinterest"
+                        data-twitter-title="<%= social_share_text(@item, "qlozet") %>">
+                        <i class="fab fa-pinterest theme-blue"></i>
+                        <p style="margin-left: -10px; margin-top: 15px; color: var(--main-font-color);">Pinterest</p>
+                    </div>
+                    
+                    <div class="cursor-pointer float-left"
+                        style="color: var(--main-link-color); font-size: 20px; height: 40px;
+                            width: 40px; border-radius: 20px; border: 1px solid var(--main-link-color);
+                            text-decoration: none; text-align: center; padding-top: 5px; margin-left: 25px;"
+                        onclick="window.location.href='mailto:?subject=Check%20out%20this%20delicious%20listing!&body=https://qlozet.co/dish/<%= @item.id %>';">
+                        <i class="far fa-envelope"></i>
+                        <p style="margin-top: 15px; color: var(--main-font-color);">Email</p>
+                    </div>
+                    
+                    <div class="cursor-pointer float-left"
+                        style="color: var(--main-font-color); font-size: 20px; height: 40px;
+                            width: 40px; border-radius: 20px; border: 1px solid var(--main-font-color);
+                            text-decoration: none; text-align: center; padding-top: 5px; margin-left: 25px;"
+                        onclick="copyListingLink()">
+                        <i class="fas fa-link"></i>
+                        <p style="margin-top: 15px; color: var(--main-font-color);">Link</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8 offset-md-2" style="margin-top: 45px;">
+                <input type="text" id="listing-link" value="<%= @item.link %>" class="form-control"
+                    style="border: none; color: transparent; box-shadow: none !important; font-size: 1px !important;">
+            </div>
+        </div>
       </div>
     </div>
   </div>
@@ -36,15 +128,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Guaranteed Dry Cleaned</h5>
+        <h6 class="modal-title" id="guaranteedDryCleanedLabel">Dry-Clean Guarantee</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -54,15 +142,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Buyer Protection & Refund</h5>
+        <h6 class="modal-title" id="buyerProtectionLabel">Buyer Protection & Refund</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -72,15 +156,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">COVID-19 Guidelines</h5>
+        <h6 class="modal-title" id="covidGuidelinesLabel">COVID-19 Guidelines</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -88,6 +168,14 @@
 
 <section id="inventory-item-<%= @item.id %>" class="inventory-item">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 15px;">
+                <a href="/feed" style="color: var(--main-theme-color); text-decoration: none;">
+                    <i class="fas fa-angle-left"></i> Back to feed
+                </a>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-md-2">
                 <% @item.image.sources.each_with_index do |s, idx| %>
@@ -106,6 +194,19 @@
                         style="height: 555px; background-image: url('<%= @item.image.first_source %>');
                                 background-size: 80%;"
                         id="main-image"></div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <a type="button" class="btn btn-outline-primary float-left"
+                        data-bs-toggle="modal" data-bs-target="#shareListing">
+                        <i class="fas fa-retweet"></i> Share
+                    </a>
+                    
+                    <a type="button" class="btn btn-link float-right"
+                        data-bs-toggle="modal" data-bs-target="#reportListing"
+                        style="text-decoration: none; color: var(--main-theme-color);">
+                        <i class="fas fa-flag"></i> Report
+                    </a>
                 </div>
             </div>
             
@@ -138,7 +239,7 @@
                             </span>
                             
                             <span style="margin-left: 15px;">
-                                <a href="#">Size Chart</a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#sizeChart">Size Chart</a>
                             </span>
                             <!--<span class="badge badge-<%= availability_color_for @item %>">-->
                             <!--    <%= @item.availability %>-->
@@ -148,8 +249,14 @@
                     
                     <div class="item-market-value" style="margin-bottom: 0;">
                         <p style="margin-bottom: 0; font-size: 24px;">
-                            <%= sanitize @item.rental_costs %>
-                            <s><%= number_to_currency @item.market_value %></s>
+                            <span>
+                                <%= (number_to_currency @item.rental_price, precision: 2,
+                                    strip_insignificant_zeros: true) %><span style='font-size: 16px !important;'>/day</span>
+                            </span>
+                            
+                            <span class="text-muted" style="margin-left: 10px;">
+                                <s><%= number_to_currency @item.market_value %></s>
+                            </span>
                         </p>
                     </div>
                     
@@ -172,7 +279,8 @@
                                 <p><strong>Tags</strong></p>
                                 
                                 <% @item.tags_as_list.each do |t| %>
-                                    <a class="btn btn-info" href="/inventory_items?tagged=<%= t %>">
+                                    <a class="btn btn-muted" href="/inventory_items?tagged=<%= t %>"
+                                        style="margin-bottom: 5px;">
                                         <%= t %>
                                     </a>
                                 <% end %>
@@ -180,11 +288,21 @@
                             
                             <div class="col-md-5">
                                 <p><strong>Color</strong></p>
+                                
+                                <% @item.colors_as_list.each do |c| %>
+                                    <a class="btn btn-muted color-tag" color="<%= c %>"
+                                        href="/inventory_items?color=<%= c %>" style="margin-bottom: 5px;">
+                                        <i class="fas fa-circle"
+                                            style="color: <%= c %>; margin-left: 5px;"></i>
+                                    </a>
+                                <% end %>
+                                
+                                <!--<input type="color" value="#ff0000" id="colorPicker"><p id="color-value">color</p>-->
                             </div>
                         </div>
                     </div>
                     
-                    <div class="item-terms">
+                    <div class="item-terms" style="margin-top: 10px;">
                         <p><strong>Terms & Conditions</strong></p>
                         
                         <div class="text-muted">
@@ -227,6 +345,49 @@
                             <hr>
                         </div>
                     </div>
+                    
+                    <div class="item-owner" style="margin-top: 30px;">
+                        <div class="card">
+                            <div class="card-body" style="padding: 20px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p><strong>About the owner</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-8" id="avatar-username">
+                                        <div class="float-left">
+                                            <i class="fas fa-user-circle" style="font-size: 32px;"></i>
+                                        </div>
+                                        
+                                        <div class="float-left" style="margin-left: 10px; margin-top: -2.5px;">
+                                            <div>
+                                                <p style='font-weight: 600; margin-bottom: 0;
+                                                        font-size: 13px; text-transform: uppercase;'>
+                                                    <%= @item.lister.first_name %>
+                                                </p>
+                                            </div>
+                                            
+                                            <div style="margin-top: -4.5px;">
+                                                <a href="/lister/<%= @item.lister.username %>"
+                                                    style="color: var(--main-link-color); text-decoration: none;">
+                                                    <span style="font-size: 14px;">@<%= @item.lister.username %></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 d-grid gap-2">
+                                        <a class="btn btn-outline-primary" href="/listers/<%= @item.lister.username %>"
+                                            style="height: initial !important;">
+                                           Closet
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,9 +395,34 @@
 </section>
 
 <script type="text/javascript">
+    // toggling current image
     changeCurrentImage = (url, elem) => {
         document.querySelector('#main-image').style.backgroundImage = `url(${url})`;
         document.querySelector('.current').classList.remove('current');
         elem.classList.add('current');
+    }
+    
+    // color tags setting
+    setColorHref = (elem, hex) => {
+        let thisColor = ntc.name(hex)[1]; console.log(thisColor);
+        let href = `/inventory_items?color=${ thisColor }`;
+        
+        elem.setAttribute("href", href);
+        elem.prepend(thisColor);
+    }
+    
+    document.querySelectorAll(".color-tag").forEach ( t => {
+        let hex = t.getAttribute("color");
+        
+        setColorHref(t, hex);
+    });
+    
+    copyListingLink = () => {
+        let link = document.querySelector("#listing-link");
+        link.select();
+        
+        document.execCommand("copy");
+        document.querySelector("#share-listing-close").click();
+        toastr["success"]("Link copied!");
     }
 </script>

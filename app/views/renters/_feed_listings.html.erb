@@ -15,7 +15,8 @@
                 
                 <p>
                     <span class="feed-item-price" style="color: #000 !important; font-weight: bold;">
-                        <%= number_to_currency l.market_value, precision: 0 %>
+                        <%= (number_to_currency l.rental_price, precision: 2,
+                            strip_insignificant_zeros: true) %><span style='font-size: 12px !important;'>/day</span>
                     </span>
                     
                     |

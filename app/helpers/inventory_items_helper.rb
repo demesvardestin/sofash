@@ -25,14 +25,7 @@ module InventoryItemsHelper
         current_cart.order.inventory_item == item
     end
     
-    def is_in_favorites(item)
-        if !current_or_guest_renter.guest
-            favorites = current_renter.item_favorites.map(&:inventory_item_id)
-            if favorites.include?(item.id)
-                return true
-            end
-        end
-        
-        return false
+    def social_share_text(listing, social="qlozet")
+        "Rent '#{listing.item_name}' on @#{social} for only #{number_to_currency listing.rental_price, strip_insignificant_zeros: true}/day"
     end
 end

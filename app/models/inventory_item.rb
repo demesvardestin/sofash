@@ -1,6 +1,7 @@
 class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
     belongs_to :item_owner
+    has_many :listing_reports
     
     scope :sort_by_date, -> { order("updated_at DESC") }
     
@@ -34,14 +35,8 @@ class InventoryItem < ApplicationRecord
         ["Excellent", "Good", "Fair"][item_condition]
     end
     
-    ## Pricing will be determined by consignor
-    
     def rental_price
-        20.0
-    end
-    
-    def rental_costs
-        "$#{rental_price}/<span style='font-size: 16px !important;'>day</span>"
+        20
     end
     
     def lister
@@ -50,6 +45,14 @@ class InventoryItem < ApplicationRecord
     
     def tags_as_list
         tags.split(",") 
+    end
+    
+    def colors_as_list
+        colors.split(",")
+    end
+    
+    def link
+        "qlozet.co/l/#{id}"
     end
     
     protected

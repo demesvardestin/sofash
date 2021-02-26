@@ -16,6 +16,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'tinymce-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'toastr-rails'
+gem 'social-share-button'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -14,3 +14,17 @@
             data: { "disable-with": "Attaching images..."} %>
     </div>
 <% end %>
+
+<script type="text/javascript">
+    // color picker
+    let colorPicker = document.querySelector("#colorPicker");
+    
+    watchColorPicker = (event) => {
+        colorPicker.setAttribute("value", event.target.value);
+        
+        let colorName = ntc.name(event.target.value)[1];
+        document.querySelector("#color-value").innerHTML = colorName;
+    }
+    
+    colorPicker.addEventListener("change", watchColorPicker, false);
+</script>

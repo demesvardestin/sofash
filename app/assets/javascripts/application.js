@@ -16,6 +16,7 @@
 //= require tinymce
 //= require toastr
 //= require bootstrap-datepicker
+//= require social-share-button
 //= require_tree .
 
 console.log('DripRent has suspended all operations, effective September 1st.');

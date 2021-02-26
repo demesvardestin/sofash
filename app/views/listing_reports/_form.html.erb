@@ -1,0 +1,39 @@
+<%= form_for(@report, :html => { :id => "listing-report-form" }, remote: true) do |f| %>
+    <div class="field">
+        <%= f.label :please_select_reason %>
+        
+        <div class="dropdown d-grid gap-2" style="margin-top: 15px;">
+            <button class="btn btn-outline-secondary" type="button"
+                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                style="background-color: transparent; color: var(--main-theme-color) !important;
+                    border-color: var(--main-theme-color) !important;">
+                <span class="float-left" id="reason-text">Choose</span>
+                <span class="float-right">
+                    <i class="fas fa-angle-down"></i>
+                </span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
+                <% listing_report_reasons.each do |r| %>
+                    <li>
+                        <a class="dropdown-item cursor-pointer" onclick="fillReason('<%= r %>')">
+                            <%= r %>
+                        </a>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        
+        <%= f.hidden_field :reason, id:"report-reason" %>
+    </div>
+    
+    <div class="actions" style="margin-top: 30px;" align="right">
+        <%= f.submit "Submit", class:"btn btn-primary", data: { :disable_with => "Submitting..." } %>
+    </div>
+<% end %>
+
+<script type="text/javascript">
+    fillReason = (reason) => {
+        document.querySelector('#report-reason').value = reason;
+        $('#reason-text').text(reason);
+    }
+</script>
