@@ -108,12 +108,6 @@
     }
 </style>
 
-<%= form_for(@cart.item_order, :html => { :id => "item-order-form", :style => "display: none;" }) do |f| %>
-  <%= f.hidden_field :order_total, id:"form-order-total", value:"0" %>
-  
-  <%= f.submit %>
-<% end %>
-
 <div class="date-range">
   <div class="row">
     <div class="col-md-6" align="center">
@@ -125,55 +119,51 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <input type="text" readonly placeholder="From: " id="display-checkin"
-      class="form-control">
-  </div>
+<!--<div class="row">-->
+<!--  <div class="col-md-6">-->
+<!--    <input type="text" readonly placeholder="From: " id="display-checkin"-->
+<!--      class="form-control">-->
+<!--  </div>-->
   
-  <div class="col-md-6">
-    <input type="text" readonly placeholder="To: " id="display-checkout"
-      class="form-control">
-  </div>
-</div>
+<!--  <div class="col-md-6">-->
+<!--    <input type="text" readonly placeholder="To: " id="display-checkout"-->
+<!--      class="form-control">-->
+<!--  </div>-->
+<!--</div>-->
 
 <hr>
 
-<div class="row">
-  <div class="col-md-12">
-    <p id="rental-period-length" align="left"
-      class="float-left" style="margin: 0;">0 days</p>
-      
-    <p id="price-per-day" align="left" style="margin: 0;"
-      class="float-right">X <%= number_to_currency @cart.item_order.inventory_item.rental_price %></p>
-  </div>
+<div id="order-form-container" style="display: none;">
+  <%= form_for(@order, :html => { :id => "order-form" }, remote: true) do |f| %>
+    <%= f.hidden_field :rental_start, id:"rental-start-input" %>
+    <%= f.hidden_field :rental_end, id:"rental-end-input" %>
+    <%= f.submit "submit", id:"order-form-btn" %>
+  <% end %>
 </div>
-  
-<hr>
-
-<div class="row">
-  <div class="col-md-12">
-    <p id="rental-period-length" align="left"
-      class="float-left" style="margin: 0;">Total</p>
-      
-    <p id="price-per-day" align="left" style="margin: 0;"
-      class="float-right">X <%= number_to_currency @cart.item_order.order_total %></p>
-  </div>
-</div>
-  
-<hr>
 
 <script type="text/javascript">
+    let form = document.querySelector("#order-form");
+    let btn = document.querySelector("#order-form-btn");
+    
+    submitForm = () => {
+      btn.click();
+    }
+    
     let checkin_date, checkin_div, checkin_dp,
       checkout_date, checkout_div, checkout_dp;
     
     // function for udpating displayed date in button
     function update() {
       if (checkin_date !== undefined) {
-        document.querySelector('#display-checkin').value = "From: " + checkin_date.toLocaleDateString();
+        $('#display-checkin').text(checkin_date.toLocaleDateString());
+        document.querySelector('#rental-start-input').value = checkin_date.toLocaleDateString();
       }
+      
       if (checkout_date !== undefined) {
-        document.querySelector('#display-checkout').value = checkout_date.toLocaleDateString();
+        $('#display-checkout').text(checkout_date.toLocaleDateString());
+        document.querySelector('#rental-end-input').value = checkout_date.toLocaleDateString();
+        
+        submitForm();
       }
       
       calculateDays()
@@ -295,7 +285,7 @@
     let day_difference = time_difference / (1000 * 3600 * 24); 
       
     $("#rental-period-length").html(day_difference + " days");
-    document.querySelector("#form-order-total").value = day_difference;
+    // document.querySelector("#form-order-total").value = day_difference;
   }
 
 </script>

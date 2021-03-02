@@ -1,0 +1,99 @@
+console.log('done');
+
+$('#checkout-snapshot').html(`
+    <div class="row">
+        <div class="col-md-5">
+            <img src="<%= @order.item.image.first_source %>" alt="<%= @order.item.item_name %>"
+                height="120">
+        </div>
+        
+        <div class="col-md-7">
+            <h5 style="color: #000;">
+                <%= @order.item.item_name %>
+            </h5>
+            
+            <p style="margin-bottom: 0;">
+                Size: <%= @order.item.size %>
+            </p>
+            
+            <p>
+                Owner: <%= @order.item.lister.username %>
+            </p>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <span class="float-left" id="display-checkin" style="width: 45%;">
+                <%= @order.rental_start.present? ? @order.rental_start : DateTime.current().strftime("%-m/%d/%Y") %>
+            </span>
+            
+            <span class="float-center" style="width: 10%; text-align: center;">
+                <i class="fas fa-arrows-alt-h"></i>
+            </span>
+            
+            <span class="float-right" id="display-checkout" style="width: 45%; text-align: right;">
+                <%= @order.rental_end.present? ? @order.rental_end : (DateTime.current() + 3).strftime("%-m/%-d/%Y") %>
+            </span>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom: 0;">Price</p>
+                
+                <p class="float-right" style="text-align: right !important; margin-bottom: 0;">
+                    <%= number_to_currency @order.calculated_price %>
+                    <br>
+                    <span style="font-size: 12px !important;" class="text-muted">
+                        <!--<%= number_to_currency @order.item.rental_price %>-->
+                        <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+            
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom: 0;">Service fee</p>
+                
+                <p class="float-right">
+                    <%= number_to_currency @order.calculated_service_fee %>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom:0;">Tax</p>
+                
+                <p class="float-right" style="margin-bottom:0;">
+                    <%= number_to_currency @order.calculated_tax %>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left">Total</p>
+                
+                <p class="float-right">
+                    <%= number_to_currency @order.total %>
+                </p>
+            </div>
+        </div>
+    </div>
+`);

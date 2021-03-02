@@ -56,13 +56,14 @@ Rails.application.routes.draw do
     get '/add_to_cart', to: 'carts#add'
     get '/remove_from_cart', to: 'carts#remove'
     get '/cart', to: 'carts#show'
-    get '/checkout', to: 'carts#checkout'
     post '/favorite', to: 'item_favorites#create'
   end
   
   resources :listing_reports, only: :create
+  resources :orders, only: [:create, :update]
   
   get '/browse', to: 'pages#browse'
   get '/orders', to: 'orders#index'
+  get '/checkout/:id', to: 'orders#checkout', as: 'checkout'
   root "pages#index"
 end

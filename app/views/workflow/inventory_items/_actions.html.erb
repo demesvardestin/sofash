@@ -1,29 +1,29 @@
 <div id="add-to-cart-div">
     <% if is_in_cart item %>
         <button class="btn btn-theme btn-block" disabled>
-            Item added to cart
+            Book Now
         </button>
     <% else %>
-    <div class="row">
-        <div class="col-md-6 d-grid gap-2">
-            <%= link_to add_to_cart_path(:item_id => item.id), class:"d-grid gap-2",
-                style:"text-decoration: none;", remote: true do %>
-                <button class="btn btn-primary btn-block" onclick="showSpinner(this)">
+        <div class="row">
+            <div class="col-md-6 d-grid gap-2">
+                <%= link_to checkout_path(item), class:"d-grid gap-2",
+                    style:"text-decoration: none;" do %>
+                    <button class="btn btn-primary btn-block" onclick="showSpinner(this)">
+                        <span>
+                            Book Now
+                        </span>
+                    </button>
+                <% end %>
+            </div>
+            <div class="col-md-6 d-grid gap-2">
+                <button class="btn btn-outline-primary btn-block" data-bs-toggle="modal"
+                    data-bs-target="#shareListing">
                     <span>
-                        Book Now
+                        Share
                     </span>
                 </button>
-            <% end %>
+            </div>
         </div>
-        <div class="col-md-6 d-grid gap-2">
-            <button class="btn btn-outline-primary btn-block" data-bs-toggle="modal"
-                data-bs-target="#shareListing">
-                <span>
-                    Share
-                </span>
-            </button>
-        </div>
-    </div>
     <% end %>
 </div>
 

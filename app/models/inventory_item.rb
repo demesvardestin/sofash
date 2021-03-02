@@ -55,5 +55,17 @@ class InventoryItem < ApplicationRecord
         "qlozet.co/l/#{id}"
     end
     
+    def service_fee
+        3
+    end
+    
+    def tax
+        2
+    end
+    
+    def total
+        rental_price + service_fee + tax
+    end
+    
     protected
 end
