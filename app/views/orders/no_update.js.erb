@@ -1,0 +1,58 @@
+toastr["warning"]("<%= @notice %>");
+
+$('#checkout-snapshot-details').html(`
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom: 0;">Price</p>
+                
+                <p class="float-right" style="text-align: right !important; margin-bottom: 0;">
+                    <%= number_to_currency @order.calculated_price %>
+                    <br>
+                    <span style="font-size: 12px !important;" class="text-muted">
+                        <!--<%= number_to_currency @order.item.rental_price %>-->
+                        <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+            
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom: 0;">Service fee</p>
+                
+                <p class="float-right">
+                    <%= number_to_currency @order.calculated_service_fee %>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p class="float-left" style="margin-bottom:0;">Tax</p>
+                
+                <p class="float-right" style="margin-bottom:0;">
+                    <%= number_to_currency @order.calculated_tax %>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div style="color: #000; font-weight: 600;">
+                <p class="float-left">Total</p>
+                
+                <p class="float-right">
+                    <%= number_to_currency @order.total %>
+                </p>
+            </div>
+        </div>
+    </div>
+`);

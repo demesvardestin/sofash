@@ -2,6 +2,7 @@ class InventoryItem < ApplicationRecord
     has_one :image, dependent: :destroy
     belongs_to :item_owner
     has_many :listing_reports
+    has_many :orders
     
     scope :sort_by_date, -> { order("updated_at DESC") }
     
@@ -55,16 +56,27 @@ class InventoryItem < ApplicationRecord
         "qlozet.co/l/#{id}"
     end
     
-    def service_fee
-        3
-    end
-    
-    def tax
-        2
-    end
-    
-    def total
-        rental_price + service_fee + tax
+    # needs improvement
+    def reserved_dates
+        dates = ""
+        
+        orders.completed.all.each do |o|
+            start = o.format_datetime o.rental_start
+            end_ = o.format_datetime o.rental_end
+            dates << start.strftime("%m/%d/%Y") + ","
+            
+            interval = (end_ - start).to_i
+            
+            (interval-1).times.each do |i|
+                new = start.to_datetime + 1
+                dates << new.strftime("%m/%d/%Y") + ","
+                start = new
+            end
+            
+            dates << end_.strftime("%m/%d/%Y") + ","
+        end
+        
+        dates
     end
     
     protected

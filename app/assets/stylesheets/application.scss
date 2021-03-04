@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require social-share-button
+ *= require bootstrap-datepicker
  */
  
  @import "toastr";
@@ -20,6 +21,7 @@
 :root {
   --main-link-color: #b4894b;
   --main-font-color: #6683a3;
+  --main-font-color-dark: #475B72;
   --main-bg-color: #7f7f7f;
   --nav-font-size: 14px;
 }

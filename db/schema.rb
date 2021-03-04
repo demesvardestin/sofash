@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210228004235) do
+ActiveRecord::Schema.define(version: 20210303191807) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "order_total"
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 20210228004235) do
     t.string   "rental_start"
     t.string   "rental_end"
     t.string   "service_fee"
+    t.integer  "stage",               default: 0
   end
 
   create_table "pickup_request_items", force: :cascade do |t|

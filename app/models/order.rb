@@ -3,19 +3,16 @@ class Order < ApplicationRecord
     belongs_to :renter
     has_one :inventory_item
     
-    # def price
-    #     start = rental_start.split.to
-    #     end_ = rental_end
-        
-        
-    # end
+    scope :completed, -> { where("STAGE == 2") }
     
     def item
         InventoryItem.find inventory_item_id
     end
     
-    def days_requested
-        return (Order.format_datetime(rental_end) - Order.format_datetime(rental_start)).to_i
+    def days_requested(rental_end_=nil, rental_start_=nil)
+        days = (Order.format_datetime(rental_end_ || rental_end) - Order.format_datetime(rental_start_ || rental_start)).to_i
+        
+        return days
     end
     
     def calculated_price
@@ -32,6 +29,23 @@ class Order < ApplicationRecord
     
     def total
         calculated_price + calculated_service_fee + calculated_tax
+    end
+    
+    def within_reserved_dates?(start, end_)
+        counter = 0
+        
+        item.reserved_dates.split(",").each do |d|
+            if Order.format_datetime(start) == Order.format_datetime(d) || Order.format_datetime(end_) == Order.format_datetime(d)
+                counter += 1
+            end
+        end
+        
+        return false if counter == 0
+        return true
+    end
+    
+    def format_datetime(string)
+        Order.format_datetime string
     end
     
     def self.format_datetime(string)

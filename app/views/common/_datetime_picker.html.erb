@@ -1,135 +1,28 @@
 <style>
-    .datetime-picker-div, .guest_count_picker, .time_picker {
-        border: 0.5px solid #e7e7e9;
-        border-radius: 2px;
-    }
-    
-    .guest_count_picker, .time_picker {
-        padding: 14px 10px;
-    }
-    
-    .start-date:hover, .end-date:hover {
-        background-color: #e7e7e9;
-        border-radius: 2px;
-        cursor: pointer;
-    }
-    
-    .guest_count_picker, .time_picker {
-        cursor: pointer;
-    }
-    
-    .ui-datepicker td {
-        padding: 0;
-    }
-    
-    .ui-datepicker-calendar, .ui-widget-content {
-        background: #fff;
-    }
-    
-    #ui-datepicker-div {
-        border: 0.5px solid #e7e7e9;
-        border-radius: 2px;
-        top: 102px !important;
-    }
-    
-    .ui-datepicker td a {
-        padding: 0;
-        text-align: center;
-    }
-    
-    .ui-state-default {
-        background: transparent !important;
-        padding: 10px !important;
-        border: 0.5px solid #e7e7e9;
-    }
-    
-    .ui-widget-content .ui-state-default {
-        color: #8a8a8b;
-    }
-    
-    .ui-datepicker th {
-        font-weight: normal;
-    }
-    
-    .ui-widget-header {
-        border: none;
-        border-radius: 2px;
-        background: #007bff !important;
-        color: #fff;
-    }
-    
-    .ui-datepicker-next {
-        color: #8a8a8b !important;
-    }
-    
-    .ui-widget-content .ui-state-highlight {
-        color: #007bff;
-        border-color: #e7e7e9;
-    }
-    
-    .date-range {
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    
-    .is-selected {
-      background-color: #286090;
-      color: white;
-    }
-    
-    .is-selected:hover {
-      background-color: #204d74 !important;
-    }
-    
-    .is-between {
-      border-radius: 0 !important;
-      background-color: #5599d4;
-      color: white;
-    }
-    
-    .is-between:hover {
-      background-color: #204d74 !important;
-    }
-    
-    .checkin-picker .active,
-    .checkout-picker .is-selected {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    
-    .checkout-picker .active,
-    .checkin-picker .is-selected {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    
-    .disabled {
-      color: #d8d8d8 !important;
-    }
+  .datepicker td {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .datepicker td.active {
+    background-image: none !important;
+    background-color: #b4894b !important;
+  }
 </style>
 
-<div class="date-range">
-  <div class="row">
-    <div class="col-md-6" align="center">
-      <div class="checkin-picker"></div>
-    </div>
-    <div class="col-md-6" align="center">
-      <div class="checkout-picker"></div>
-    </div>
+<div class="input-daterange input-group row" id="datepicker">
+  <div class="col-md-6">
+    <input type="text" class="input-sm form-control" name="start"
+      placeholder="From" id="checkin" style="color: var(--main-font-color);"
+      onclick="trackClicks('checkin')" onchange="updateRentalPeriod(this)">
+  </div>
+  
+  <div class="col-md-6">
+    <input type="text" class="input-sm form-control" name="end"
+      placeholder="To" id="checkout" style="color: var(--main-font-color);"
+      onclick="trackClicks('checkout')" onchange="updateRentalPeriod(this)">
   </div>
 </div>
-
-<!--<div class="row">-->
-<!--  <div class="col-md-6">-->
-<!--    <input type="text" readonly placeholder="From: " id="display-checkin"-->
-<!--      class="form-control">-->
-<!--  </div>-->
-  
-<!--  <div class="col-md-6">-->
-<!--    <input type="text" readonly placeholder="To: " id="display-checkout"-->
-<!--      class="form-control">-->
-<!--  </div>-->
-<!--</div>-->
 
 <hr>
 
@@ -142,150 +35,89 @@
 </div>
 
 <script type="text/javascript">
+    let datesDisabled = "<%= @order.item.reserved_dates %>".split(",");
+    
+    $('.input-daterange').datepicker({
+      datesDisabled: datesDisabled
+    });
+    
+    let checkOutClickCount = 0;
+    let checkInClickCount = 0;
+    
     let form = document.querySelector("#order-form");
     let btn = document.querySelector("#order-form-btn");
     
+    // submit days to backend, calculate fees
     submitForm = () => {
       btn.click();
+      
+      $("#checkout-snapshot-details").html(`
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      `);
     }
     
-    let checkin_date, checkin_div, checkin_dp,
-      checkout_date, checkout_div, checkout_dp;
-    
-    // function for udpating displayed date in button
-    function update() {
-      if (checkin_date !== undefined) {
-        $('#display-checkin').text(checkin_date.toLocaleDateString());
-        document.querySelector('#rental-start-input').value = checkin_date.toLocaleDateString();
+    // bypass double input value change from bootstrap datepicker
+    trackClicks = (tracker) => {
+      if (tracker == "checkout" && checkOutClickCount == 0) {
+        checkOutClickCount++;
+        return;
       }
       
-      if (checkout_date !== undefined) {
-        $('#display-checkout').text(checkout_date.toLocaleDateString());
-        document.querySelector('#rental-end-input').value = checkout_date.toLocaleDateString();
+      checkInClickCount++;
+    }
+    
+    // calculated days on client side
+    calculateDays = (checkin, checkout) => {
+      diff = Date.parse(checkout) - Date.parse(checkin);
+      diffInDays = diff/(1000 * 3600 * 24);
+      
+      return diffInDays;
+    }
+    
+    validRentalPeriod = (checkin, checkout) => {
+      return calculateDays(checkin, checkout) > 1;
+    }
+    
+    invalidRentalPeriod = (checkin, checkout) => {
+      return validRentalPeriod(checkin, checkout) == false;
+    }
+    
+    updateRentalPeriod = (elem) => {
+      let checkIn = document.querySelector('#checkin').value;
+      let checkOut = document.querySelector('#checkout').value;
+      
+      // reset trackers if checkin is set to after previous checkout
+      // if (checkOutClickCount > 0) {
+      //   if (Date.parse(checkIn) > Date.parse(currentCheckout)) {
+      //     console.log(true)
+      //     checkInClickCount = 0;
+      //     checkOutClickCount = 0
+      //   }
+      // }
+      
+      let inputIn = document.querySelector('#rental-start-input');
+      let inputOut = document.querySelector('#rental-end-input');
+      
+      let checkInDisplay = $('#display-checkin');
+      let checkOutDisplay = $('#display-checkout');
+      
+      inputIn.value = checkIn;
+      inputOut.value = checkOut;
+      
+      checkInDisplay.text(checkIn);
+      checkOutDisplay.text(checkOut);
+      
+      // client-side validation
+      if (checkInClickCount > 0 && checkOutClickCount > 0) {
+        if (invalidRentalPeriod(checkIn, checkOut)) {
+          return toastr["warning"]("The rental period must be more than 1 day");
+        };
         
         submitForm();
       }
-      
-      calculateDays()
     }
-    
-    // create checkin datepicker
-    checkin_div = $('.checkin-picker').datepicker({
-      autoclose: false,
-      beforeShowDay: function(date) {
-        if (checkout_date !== undefined) {
-          // disabled date selection for day after checkout date
-          if (date > checkout_date) {
-            return false;
-          }
-          // display checkout date in checkin datepicker
-          if (date.getDate() === checkout_date.getDate() &&
-            date.getMonth() === checkout_date.getMonth() &&
-            date.getFullYear() === checkout_date.getFullYear()) {
-            return {
-              classes: 'is-selected'
-            };
-          }
-        }
-        // display range dates in checkin datepicker
-        if (checkin_date !== undefined && checkout_date !== undefined) {
-          if (date > checkin_date && date < checkout_date) {
-            return {
-              classes: 'is-between'
-            };
-          }
-        }
-        // display checkin date
-        if (checkin_date !== undefined) {
-          if (date.getDate() === checkin_date.getDate() &&
-            date.getMonth() === checkin_date.getMonth() &&
-            date.getFullYear() === checkin_date.getFullYear()) {
-            return {
-              classes: 'active'
-            };
-          }
-        }
-        return true;
-      }
-    });
-    
-    // save checkin datepicker for later
-    checkin_dp = checkin_div.data('datepicker');
-    
-    // update datepickers on checkin date change
-    checkin_div.on('changeDate', (event) => {
-      // save checkin date
-      checkin_date = event.date;
-      // update checkout datepicker so range dates are displayed
-      checkout_dp.update();
-      checkin_dp.update();
-      update();
-    });
-    
-    // create checkout datepicker
-    checkout_div = $('.checkout-picker').datepicker({
-      autoclose: false,
-      beforeShowDay: function(date) {
-        if (checkin_date !== undefined) {
-          // disabled date selection for day before checkin date
-          if (date < checkin_date) {
-            return false;
-          }
-          // display checkin date in checkout datepicker
-          if (date.getDate() === checkin_date.getDate() &&
-            date.getMonth() === checkin_date.getMonth() &&
-            date.getFullYear() === checkin_date.getFullYear()) {
-            return {
-              classes: 'is-selected'
-            };
-          }
-        }
-        // display range dates in checkout datepicker
-        if (checkin_date !== undefined && checkout_date !== undefined) {
-          if (date > checkin_date && date < checkout_date) {
-            return {
-              classes: 'is-between'
-            };
-          }
-        }
-        // display checkout date
-        if (checkout_date !== undefined) {
-          if (date.getDate() === checkout_date.getDate() &&
-            date.getMonth() === checkout_date.getMonth() &&
-            date.getFullYear() === checkout_date.getFullYear()) {
-            return {
-              classes: 'active'
-            };
-          }
-        }
-        return true;
-      }
-    });
-    
-    // save checkout datepicker for later
-    checkout_dp = checkout_div.data('datepicker');
-    
-    // update datepickers on checkout date change
-    checkout_div.on('changeDate', (event) => {
-      // save checkout date
-      checkout_date = event.date;
-      // update checkin datepicker so range dates are displayed
-      checkin_dp.update();
-      checkout_dp.update();
-      update();
-    });
-    
-    
-    ///////////////////////////////////////////////////////////////
-  let calculateDays = () => {
-    let start = new Date(checkin_date.toLocaleDateString()); 
-    let end = new Date(checkout_date.toLocaleDateString()); 
-    
-    let time_difference = end.getTime() - start.getTime();
-    let day_difference = time_difference / (1000 * 3600 * 24); 
-      
-    $("#rental-period-length").html(day_difference + " days");
-    // document.querySelector("#form-order-total").value = day_difference;
-  }
-
 </script>

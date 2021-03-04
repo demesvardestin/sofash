@@ -12,6 +12,19 @@ class OrdersController < ApplicationController
   end
   
   def update
+    start = params[:order][:rental_start]
+    end_ = params[:order][:rental_end]
+    
+    days = @order.days_requested(end_, start)
+    
+    if days <= 1
+      @notice = "The rental period must be more than 1 day"
+      return render "no_update", :layout => false
+    elsif @order.within_reserved_dates? start, end_
+      @notice = "This interval is not available"
+      return render "no_update", :layout => false
+    end
+    
     @order.update(order_params)
     
     respond_to do |format|
