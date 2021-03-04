@@ -17,6 +17,7 @@ gem 'tinymce-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'toastr-rails'
 gem 'social-share-button'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug', platform: :mri

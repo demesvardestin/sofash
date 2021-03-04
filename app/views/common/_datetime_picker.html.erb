@@ -13,32 +13,37 @@
 <div class="input-daterange input-group row" id="datepicker">
   <div class="col-md-6">
     <input type="text" class="input-sm form-control" name="start"
-      placeholder="From" id="checkin" style="color: var(--main-font-color);"
+      placeholder="Pick-up" id="checkin" style="color: var(--main-font-color);"
       onclick="trackClicks('checkin')" onchange="updateRentalPeriod(this)">
   </div>
   
   <div class="col-md-6">
     <input type="text" class="input-sm form-control" name="end"
-      placeholder="To" id="checkout" style="color: var(--main-font-color);"
+      placeholder="Return" id="checkout" style="color: var(--main-font-color);"
       onclick="trackClicks('checkout')" onchange="updateRentalPeriod(this)">
   </div>
 </div>
-
-<hr>
 
 <div id="order-form-container" style="display: none;">
   <%= form_for(@order, :html => { :id => "order-form" }, remote: true) do |f| %>
     <%= f.hidden_field :rental_start, id:"rental-start-input" %>
     <%= f.hidden_field :rental_end, id:"rental-end-input" %>
+    <%= f.hidden_field :pickup_location_name, id:"pickup-location-name" %>
+    <%= f.hidden_field :pickup_location_address, id:"pickup-location-address" %>
+    <%= f.hidden_field :pickup_location_id, id:"pickup-location-id" %>
+    
     <%= f.submit "submit", id:"order-form-btn" %>
   <% end %>
 </div>
 
 <script type="text/javascript">
     let datesDisabled = "<%= @order.item.reserved_dates %>".split(",");
+    let datesHighlighted = "<%= @order.requested_dates %>".split(",");
     
     $('.input-daterange').datepicker({
-      datesDisabled: datesDisabled
+      datesDisabled: datesDisabled,
+      datesHighlighted: datesHighlighted,
+      todayHighlight: true
     });
     
     let checkOutClickCount = 0;
@@ -86,18 +91,19 @@
       return validRentalPeriod(checkin, checkout) == false;
     }
     
+    validCheckoutDate = (checkin) => {
+      let dateAsMili = Date.parse(checkin) + (2 * (1000 * 3600 * 24));
+      let date = new Date(dateAsMili);
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+      
+      return `${month}/${day}/${year}`;
+    }
+    
     updateRentalPeriod = (elem) => {
       let checkIn = document.querySelector('#checkin').value;
       let checkOut = document.querySelector('#checkout').value;
-      
-      // reset trackers if checkin is set to after previous checkout
-      // if (checkOutClickCount > 0) {
-      //   if (Date.parse(checkIn) > Date.parse(currentCheckout)) {
-      //     console.log(true)
-      //     checkInClickCount = 0;
-      //     checkOutClickCount = 0
-      //   }
-      // }
       
       let inputIn = document.querySelector('#rental-start-input');
       let inputOut = document.querySelector('#rental-end-input');
@@ -114,7 +120,7 @@
       // client-side validation
       if (checkInClickCount > 0 && checkOutClickCount > 0) {
         if (invalidRentalPeriod(checkIn, checkOut)) {
-          return toastr["warning"]("The rental period must be more than 1 day");
+          return toastr["warning"](`The rental period must be more than 1 day. Please select a return date of ${validCheckoutDate(checkIn)} or later`);
         };
         
         submitForm();

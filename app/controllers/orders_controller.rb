@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
   
   def checkout
-    @order = Order.find_or_create_by(inventory_item_id: @item.id, renter_id: current_renter.id, item_owner_id: @item.lister.id)
+    @order = Order.find_or_create_by(inventory_item_id: @item.id, renter_id: current_renter.id, item_owner_id: @item.lister.id, stage: 0)
   end
   
   def update
@@ -47,7 +47,10 @@ class OrdersController < ApplicationController
     .require(:order)
     .permit(
       :rental_start,
-      :rental_end
+      :rental_end,
+      :pickup_location_address,
+      :pickup_location_id,
+      :pickup_location_name
       )
   end
   

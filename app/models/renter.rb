@@ -4,10 +4,17 @@ class Renter < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  geocoded_by :full_address
+  after_validation :geocode
+  
   has_many :carts
   has_many :orders
   
   def home_location
-    "New York, NY"
+    "#{city}, #{state}"
+  end
+  
+  def full_address
+    [street_address, city, state, zipcode].join(",")
   end
 end

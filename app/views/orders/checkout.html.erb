@@ -1,6 +1,6 @@
 <section id="confirmation-page">
     <div class="container">
-        <div class="row">
+        <div class="row" id="rental-details">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body" id="checkout-snapshot">
@@ -55,7 +55,6 @@
                                             <%= number_to_currency @order.calculated_price %>
                                             <br>
                                             <span style="font-size: 12px !important;" class="text-muted">
-                                                <!--<%= number_to_currency @item.rental_price %>-->
                                                 <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
                                             </span>
                                         </p>
@@ -128,7 +127,7 @@
                         
                         <div class="row">
                             <div class="col-md-12" style="margin-bottom: 20px;">
-                                <h6>Select rental period</h6>
+                                <h6 style="color: var(--main-font-color-dark);">Select rental period</h6>
                             </div>
                             
                             <div class="col-md-12">
@@ -136,26 +135,45 @@
                             </div>
                         </div>
                         
+                        <hr>
+                        
+                        <div class="row">
+                            <div class="col-md-12" style="margin-bottom: 20px;">
+                                <h6 style="color: var(--main-font-color-dark);">Select pick-up location</h6>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <%= render partial: "common/location_picker", locals: {  } %>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
                         <div class="row">
                             <div class="col-md-12">
-                                <h6>Select pick-up location</h6>
-                            </div>
-                            
-                            <div class="col-md-4">
+                                <a class="float-left btn btn-outline-primary" style="text-decoration: none;"
+                                    href="/inventory_items/<%= @item.id %>">
+                                    <i class="fas fa-angle-left"></i> Back
+                                </a>
                                 
-                            </div>
-                            
-                            <div class="col-md-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        
-                                    </div>
-                                </div>
+                                <a class="float-right btn btn-primary" onclick="goToPayment()">
+                                    Continue <i class="fas fa-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="row" id="payment-details">
+            
+        </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    goToPayment = () => {
+        btn.click();
+    }
+</script>

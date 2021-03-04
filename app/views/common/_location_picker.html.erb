@@ -1,0 +1,213 @@
+<style type="text/css">
+    .place-details.active, .place-details:hover {
+        border-left: 4px solid #b4894b;
+        padding-left: 15px;
+    }
+    
+    .place-details.active {
+        border-radius: 2.75px;
+        background-color: #ECF0F3;
+    }
+    
+    .place-details {
+        margin-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        transition: padding-left 0.5s;
+    }
+    
+    #locations {
+        overflow-y: auto;
+        height: 400px;
+    }
+    
+    #map {
+        height: 400px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-5" id="locations">
+        <div id="no-locations" style="display: none;">
+            <h6>No pickup locations found for this item</h6>
+            <p>
+                We are still expanding, so check back real soon!<br>
+                You can also email us at
+                <a href="mailto:locations@qlozet.co" style="text-decoration: none; color: #b4894b;">locations@qlozet.co</a>,
+                or reach out on
+                <a href="https://twitter.com/qlozetapp" style="text-decoration: none; color: #b4894b;">Twitter</a>
+                or
+                <a href="https://instagram.com/qlozetapp" style="text-decoration: none; color: #b4894b;">Instagram</a>
+                for any questions, concerns, or suggestions you might have. We're happy to hear from you!
+            </p>
+        </div>
+    </div>
+    
+    <div class="col-md-7">
+        <div class="card" style="height: 400px;" id="map"></div>
+    </div>
+</div>
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8-ZYkMX6OOVLtIHqfv_tnPIExgp61_gs&libraries=places&callback=initMap">
+</script>
+
+<script type="text/javascript">
+    let map;
+    let places;
+    let distances;
+    let center;
+    let lng = <%= current_renter.longitude %>;
+    let lat = <%= current_renter.latitude %>;
+
+    initMap = () => {
+        center = new google.maps.LatLng(lat,lng);
+        
+        map = new google.maps.Map(document.querySelector("#map"), {
+            center: center,
+            zoom: 15,
+            disableDefaultUI: true
+        });
+        
+        let request = {
+            location: center,
+            keyword: 'dry cleaners',
+            rankBy: google.maps.places.RankBy.DISTANCE
+        };
+      
+        places = new google.maps.places.PlacesService(map);
+        places.nearbySearch(request, callback);
+        
+        distances = new google.maps.DistanceMatrixService();
+    }
+    
+    callback = (results, status) => {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            if (results.length == 0) {
+                $('#no-locations').show();
+                return
+            };
+            
+            for (let i = 0; i < results.length; i++) {
+                let place = results[i];
+                console.log(place);
+                if (place.business_status == "OPERATIONAL") {
+                    // set variables
+                    // "origins" will be used later on to calculate distance
+                    let origins = [center]
+                    let marker;
+                    let placeDetails = document.createElement('div');
+                    let placeName = document.createElement('h6');
+                    let placeStreet = document.createElement('span');
+                    let placeDistance = document.createElement('span');
+                    
+                    // placeDetails div, which will contain placeName, placeStreet, and placeDistance
+                    placeDetails.setAttribute('id', `${place.place_id}`);
+                    placeDetails.setAttribute('class', 'cursor-pointer place-details');
+                    placeDetails
+                    .setAttribute('onclick', `addLocationDetailsToForm(this, "${place.name}", "${place.vicinity.split(",")[0]}", "${place.place_id}");`);
+                    
+                    // Display only first 5. Hide rest for client-side lazyload
+                    if (i >= 5) {
+                        // placeDetails.style.display = 'none';
+                    }
+                    
+                    // place name
+                    placeName.setAttribute('class', 'place-name');
+                    placeName.innerHTML = place.name;
+                    
+                    // place street
+                    placeStreet.setAttribute('class', 'place-street');
+                    placeStreet.style.fontSize = "14px";
+                    placeStreet.innerHTML = place.vicinity.split(",")[0] + " &bull; ";
+                    
+                    // place distance
+                    placeDistance.setAttribute('class', 'place-distance text-muted');
+                    placeDistance.style.fontSize = "14px";
+                    
+                    // append place details to placeDetails div
+                    placeDetails.appendChild(placeName);
+                    placeDetails.appendChild(placeStreet);
+                    placeDetails.appendChild(placeDistance);
+                    
+                    // append everything to locations div
+                    document.querySelector("#locations").appendChild(placeDetails);
+                    
+                    // create infoWindow
+                    const contentString = `<h6 class='place-name'>${place.name}</h6>` +
+                            `<span class="place-street" style="font-size: 14px;">${place.vicinity.split(",")[0]}</span>`
+                    const infowindow = new google.maps.InfoWindow({
+                        content: contentString,
+                    });
+                      
+                    // create marker
+                    createMarker = (place) => {
+                        marker = new google.maps.Marker({
+                            position: place.geometry.location,
+                            map: map,
+                            title: place.name,
+                            animation: google.maps.Animation.DROP
+                        });
+                        
+                        // highlight a place when marker is clicked
+                        marker.addListener("click", () => {
+                            infowindow.open(map, marker);
+                        })
+                    }
+                    
+                    // fill pickup location details in order form
+                    addLocationDetailsToForm = (elem, name, street, id) => {
+                        $('.place-details.active').toggleClass('active');
+                        elem.classList.add('active');
+                        
+                        document.querySelector('#pickup-location-name').value = name;
+                        document.querySelector('#pickup-location-address').value = street;
+                        document.querySelector('#pickup-location-id').value = id;
+                    }
+                    
+                    // calculate distance between dry-cleaner and user's selected location
+                    calculateDistance = (destination) => {
+                        distances.getDistanceMatrix(
+                          {
+                            origins: origins,
+                            destinations: [destination],
+                            travelMode: 'DRIVING',
+                            unitSystem: google.maps.UnitSystem.IMPERIAL
+                          }, parseDistance);
+                    }
+                    
+                    // callback for distance calculator function
+                    parseDistance = (response, status) => {
+                        if (status == 'OK') {
+                            let distance;
+                            for (let i = 0; i < origins.length; i++) {
+                                let results = response.rows[i].elements;
+                                for (let j = 0; j < results.length; j++) {
+                                    let element = results[j];
+                                    distance = element.distance.text;
+                                    // let duration = element.duration.text;
+                                }
+                            }
+                            
+                            $(`#${place.place_id} .place-distance`).text(distance);
+                        }
+                    }
+                    calculateDistance(place.geometry.location); // call the calculate distance function
+                    
+                    createMarker(place);
+                }
+            }
+        }
+        
+        // show currently selected location upon page reload.
+        // this is only relevant if a location has already been selected
+        // and the data has been saved
+        document.querySelectorAll(".place-details").forEach(e => {
+            console.log(e.id);
+            if (e.id == "<%= @order.pickup_location_id %>") {
+                e.classList.add('active');
+                return;
+            }
+        });
+    }
+</script>

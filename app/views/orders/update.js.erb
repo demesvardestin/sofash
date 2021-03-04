@@ -6,7 +6,7 @@ $('#checkout-snapshot').html(`
         </div>
         
         <div class="col-md-7">
-            <h5 style="color: #000;">
+            <h5 style="color: var(--main-font-color-dark);">
                 <%= @order.item.item_name %>
             </h5>
             
@@ -24,7 +24,7 @@ $('#checkout-snapshot').html(`
     
     <div class="row">
         <div class="col-md-12">
-            <span class="float-left" id="display-checkin" style="width: 45%;">
+            <span class="float-left" id="display-checkin" style="width: 45%; font-size: 14px;">
                 <%= @order.rental_start.present? ? @order.rental_start : DateTime.current().strftime("%m/%d/%Y") %>
             </span>
             
@@ -32,7 +32,7 @@ $('#checkout-snapshot').html(`
                 <i class="fas fa-arrows-alt-h"></i>
             </span>
             
-            <span class="float-right" id="display-checkout" style="width: 45%; text-align: right;">
+            <span class="float-right" id="display-checkout" style="width: 45%; text-align: right; font-size: 14px;">
                 <%= @order.rental_end.present? ? @order.rental_end : (DateTime.current() + 3).strftime("%m/%d/%Y") %>
             </span>
         </div>
@@ -49,7 +49,6 @@ $('#checkout-snapshot').html(`
                     <%= number_to_currency @order.calculated_price %>
                     <br>
                     <span style="font-size: 12px !important;" class="text-muted">
-                        <!--<%= number_to_currency @order.item.rental_price %>-->
                         <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
                     </span>
                 </p>
@@ -62,7 +61,7 @@ $('#checkout-snapshot').html(`
             <div>
                 <p class="float-left" style="margin-bottom: 0;">Service fee</p>
                 
-                <p class="float-right">
+                <p class="float-right" style="margin-bottom: 0;">
                     <%= number_to_currency @order.calculated_service_fee %>
                 </p>
             </div>
@@ -85,7 +84,7 @@ $('#checkout-snapshot').html(`
     
     <div class="row">
         <div class="col-md-12">
-            <div style="color: #000; font-weight: 600;">
+            <div style="color: var(--main-font-color-dark); font-weight: 600;">
                 <p class="float-left">Total</p>
                 
                 <p class="float-right">

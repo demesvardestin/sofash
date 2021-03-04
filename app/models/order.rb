@@ -44,6 +44,25 @@ class Order < ApplicationRecord
         return true
     end
     
+    def requested_dates
+        dates = ""
+        start = format_datetime rental_start
+        end_ = format_datetime rental_end
+        interval = (end_ - start).to_i
+        
+        dates << start.strftime("%m/%d/%Y") + ","
+        
+        (interval-1).times.each do |i|
+            new = start.to_datetime + 1
+            dates << new.strftime("%m/%d/%Y") + ","
+            start = new
+        end
+        
+        dates << end_.strftime("%m/%d/%Y") + ","
+        
+        dates
+    end
+    
     def format_datetime(string)
         Order.format_datetime string
     end

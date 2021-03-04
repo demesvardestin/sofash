@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210303191807) do
+ActiveRecord::Schema.define(version: 20210304212810) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "order_total"
@@ -112,20 +112,23 @@ ActiveRecord::Schema.define(version: 20210303191807) do
     t.boolean  "shipped_to_renter"
     t.boolean  "delivered_to_renter"
     t.boolean  "returned_by_renter"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "inventory_item_id"
     t.integer  "item_owner_id"
     t.integer  "renter_id"
     t.string   "initial_price"
     t.string   "tax"
     t.string   "final_price"
-    t.boolean  "completed",           default: false
+    t.boolean  "completed",               default: false
     t.integer  "cart_id"
     t.string   "rental_start"
     t.string   "rental_end"
     t.string   "service_fee"
-    t.integer  "stage",               default: 0
+    t.integer  "stage",                   default: 0
+    t.string   "pickup_location_name",    default: ""
+    t.string   "pickup_location_address", default: ""
+    t.string   "pickup_location_id",      default: ""
   end
 
   create_table "pickup_request_items", force: :cascade do |t|
@@ -161,6 +164,12 @@ ActiveRecord::Schema.define(version: 20210303191807) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.boolean  "guest",                  default: false
+    t.string   "street_address",         default: ""
+    t.string   "city",                   default: ""
+    t.string   "state",                  default: ""
+    t.string   "zipcode",                default: ""
+    t.float    "longitude"
+    t.float    "latitude"
     t.index ["email"], name: "index_renters_on_email", unique: true
     t.index ["reset_password_token"], name: "index_renters_on_reset_password_token", unique: true
   end
