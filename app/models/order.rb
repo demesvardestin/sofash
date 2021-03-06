@@ -3,7 +3,7 @@ class Order < ApplicationRecord
     belongs_to :renter
     has_one :inventory_item
     
-    scope :completed, -> { where("STAGE == 2") }
+    scope :completed, -> { where(stage: 2) }
     
     def item
         InventoryItem.find inventory_item_id
