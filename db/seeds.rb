@@ -62,7 +62,7 @@ names = [
         item_condition: rand(0..2),
         market_value: ["100", "149.99", "199.99", "239.99", "399.99"][rand(0..5)],
         in_stock: [true, false][0..1],
-        item_owner_id: rand(4..15),
+        item_owner_id: rand(1..3),
         size: ["S", "M", "L", "XL"][rand(0..3)]
         )
     

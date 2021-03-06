@@ -30,6 +30,6 @@ class ItemOwner < ApplicationRecord
   end
   
   def has_transactions
-    false
+    
   end
 end
