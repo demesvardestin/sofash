@@ -90,7 +90,7 @@
             
             for (let i = 0; i < results.length; i++) {
                 let place = results[i];
-                console.log(place);
+                
                 if (place.business_status == "OPERATIONAL") {
                     // set variables
                     // "origins" will be used later on to calculate distance
@@ -108,9 +108,6 @@
                     .setAttribute('onclick', `addLocationDetailsToForm(this, "${place.name}", "${place.vicinity.split(",")[0]}", "${place.place_id}");`);
                     
                     // Display only first 5. Hide rest for client-side lazyload
-                    if (i >= 5) {
-                        // placeDetails.style.display = 'none';
-                    }
                     
                     // place name
                     placeName.setAttribute('class', 'place-name');
@@ -203,11 +200,20 @@
         // this is only relevant if a location has already been selected
         // and the data has been saved
         document.querySelectorAll(".place-details").forEach(e => {
-            console.log(e.id);
             if (e.id == "<%= @order.pickup_location_id %>") {
                 e.classList.add('active');
                 return;
             }
         });
+        
+        
+        // auto-scroll to location chosen if reloading checkout page
+        let container = $('#locations'); 
+        let scrollTo = $(`#<%= @order.pickup_location_id %>`);
+        let position = scrollTo.offset().top  
+                - container.offset().top  
+                + container.scrollTop();
+        
+        container.scrollTop(position); 
     }
 </script>

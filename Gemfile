@@ -18,6 +18,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'toastr-rails'
 gem 'social-share-button'
 gem 'geocoder'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -108,56 +108,118 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <h5 style="color: var(--main-font-color-dark);">
                                     Secure Checkout
                                 </h5>
                             </div>
                             
-                            <div class="col-md-7" style="padding-top: 8px;">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
-                                        role="progressbar" style="width: 25%;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Rental Details</div>
+                            <div class="col-md-8">
+                                <div style="height: 21px; padding-top: 3px;" class="float-right">
+                                    <i class="far fa-circle float-left" style="font-size: 20px; color: #A3B4C7;
+                                        position: relative; z-index: 999; background-color: #fff;
+                                        padding-right: 10px;" id="done-icon-1"></i><span style="background-color: #fff; font-size: 14px !important;
+                                        position: relative; z-index: 999; padding-right: 10px;" class="float-left">Pickup</span>
+                                    
+                                    <span style="width: 20px; border: 0.25px solid #A3B4C7; margin-top: 10px;" class="float-left"></span>
+                                    
+                                    <i class="far fa-circle float-left" style="font-size: 20px; color: #A3B4C7;
+                                        position: relative; z-index: 999;
+                                        padding-right: 10px; margin-left: 10px;" id="done-icon-2"></i><span style="background-color: #fff;
+                                        position: relative; z-index: 999; padding-right: 10px;
+                                        font-size: 14px !important;" class="float-left">Payment</span>
+                                    
+                                    <span style="width: 20px; border: 0.25px solid #A3B4C7; margin-top: 10px;" class="float-left"></span>
+                                    
+                                    <i class="far fa-circle float-left" style="font-size: 20px; color: #A3B4C7;
+                                        position: relative; z-index: 999;
+                                        padding-right: 10px; margin-left: 10px;" id="done-icon-3"></i><span style="background-color: #fff;
+                                        position: relative; z-index: 999; padding-right: 10px;
+                                        font-size: 14px !important;" class="float-left">Review</span>
                                 </div>
                             </div>
                         </div>
                         
                         <hr>
                         
-                        <div class="row">
-                            <div class="col-md-12" style="margin-bottom: 20px;">
-                                <h6 style="color: var(--main-font-color-dark);">Select rental period</h6>
+                        <div id="pickup-details">
+                            <div class="row" style="margin-bottom: 15px;">
+                                <div class="col-md-12" align="center">
+                                    <div style="width: 100%; border-radius: 2.75px;
+                                        padding: 5px 15px; background-color: #e3e8ee;">
+                                        <p style="margin-bottom: 0; text-transform: uppercase;
+                                            font-weight: 600;">Pickup Details</p>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="col-md-12">
-                                <%= render partial: "common/datetime_picker", locals: { item: @item } %>
+                            <div class="row">
+                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                    <h6 style="color: var(--main-font-color-dark);">Select rental period</h6>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <%= render partial: "common/datetime_picker", locals: { item: @item } %>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="row">
+                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                    <h6 style="color: var(--main-font-color-dark);">Select pick-up location</h6>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <%= render partial: "common/location_picker", locals: {  } %>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="payment-details" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" style="margin-bottom: 15px;">
+                                        <div class="col-md-12" align="center">
+                                            <div style="width: 100%; border-radius: 2.75px;
+                                                padding: 5px 15px; background-color: #e3e8ee;">
+                                                <p style="margin-bottom: 0; text-transform: uppercase;
+                                                    font-weight: 600;">Payment Details</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="review" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" style="margin-bottom: 15px;">
+                                        <div class="col-md-12" align="center">
+                                            <div style="width: 100%; border-radius: 2.75px;
+                                                padding: 5px 15px; background-color: #e3e8ee;">
+                                                <p style="margin-bottom: 0; text-transform: uppercase;
+                                                    font-weight: 600;">Review</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <hr>
-                        
-                        <div class="row">
-                            <div class="col-md-12" style="margin-bottom: 20px;">
-                                <h6 style="color: var(--main-font-color-dark);">Select pick-up location</h6>
-                            </div>
                             
-                            <div class="col-md-12">
-                                <%= render partial: "common/location_picker", locals: {  } %>
-                            </div>
-                        </div>
-                        
-                        <hr>
-                        
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="float-left btn btn-outline-primary" style="text-decoration: none;"
-                                    href="/inventory_items/<%= @item.id %>">
+                                <a class="float-left btn btn-outline-primary"
+                                    style="text-decoration: none;" id="prev-button">
                                     <i class="fas fa-angle-left"></i> Back
                                 </a>
                                 
-                                <a class="float-right btn btn-primary" onclick="goToPayment()">
-                                    Continue <i class="fas fa-angle-right"></i>
+                                <a class="float-right btn btn-primary" id="next-button"
+                                    onclick="nextAction(this, 'pickup-details', 'payment-details');">
+                                    Continue
                                 </a>
                             </div>
                         </div>
@@ -165,15 +227,90 @@
                 </div>
             </div>
         </div>
-        
-        <div class="row" id="payment-details">
-            
-        </div>
     </div>
 </section>
 
 <script type="text/javascript">
-    goToPayment = () => {
-        btn.click();
+    let nextCount = 0;
+    const stages = ['pickup-details', 'payment-details', 'review'];
+    const prev = document.querySelector('#prev-button');
+    const next = document.querySelector('#next-button');
+    
+    toggleCheckIcon = (count) => {
+        let icon = $(`#done-icon-${count}`);
+        
+        icon
+        .toggleClass("far")
+        .toggleClass("fa-circle")
+        .toggleClass('fas')
+        .toggleClass('fa-check-circle');
+    }
+    
+    updateOnclick = () => {
+        prev
+        .setAttribute('onclick', `prevAction(this, '${stages[nextCount]}', '${stages[nextCount - 1]}')`);
+        
+        next
+        .setAttribute('onclick', `nextAction(this, '${stages[nextCount]}', '${stages[nextCount + 1]}')`);
+    }
+    
+    prevAction = (elem, current, prev) => {
+        if (nextCount == 0) {
+            elem.setAttribute('href', '/inventory_items/<%= @item.id %>');
+            elem.removeAttribute('onclick');
+        }
+        
+        $(`#${current}`).fadeOut();
+        $(`#${prev}`).fadeIn();
+        
+        toggleCheckIcon(nextCount);
+        
+        if (nextCount > 0) {
+            nextCount--;
+        }
+        
+        if (nextCount < 2) {
+            next.innerHTML = 'Continue';
+        }
+        
+        updateOnclick();
+        console.log(nextCount);
+    }
+    
+    nextAction = (elem, current, next) => {
+        if (current == "pickup-details" && nextCount == 0) {
+            showSpinner(elem);
+            btn.click(); // update order with pickup details
+            
+            return
+        }
+        
+        if (nextCount < 3) {
+            // making sure that the server-side js is in sync w/ client side
+            if (!(nextCount == 1 && current == "pickup-details")) {
+                nextCount++;
+            }
+        }
+        
+        if (nextCount == 2) {
+            elem.innerHTML = 'Submit'
+        }
+        console.log(nextCount);
+        if (nextCount == 3) {
+            submitOrder();
+            
+            return
+        }
+        
+        $(`#${current}`).fadeOut();
+        $(`#${next}`).fadeIn();
+        
+        toggleCheckIcon(nextCount);
+        updateOnclick();
+    }
+    
+    submitOrder = () => {
+        toggleCheckIcon(nextCount);
+        toastr["success"]("order submitted!");
     }
 </script>

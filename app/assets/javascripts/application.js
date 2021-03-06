@@ -65,4 +65,12 @@ $(document).on("turbolinks:load", function() {
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     }
+    
+    showSpinner = (elem) => {
+        elem.innerHTML = `
+            <div class="spinner-grow spinner-grow-sm text-light" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        `;
+    }
 });

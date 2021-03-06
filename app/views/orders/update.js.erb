@@ -94,3 +94,7 @@ $('#checkout-snapshot').html(`
         </div>
     </div>
 `);
+
+$('#next-button').text('Continue');
+nextCount++;
+nextAction(document.querySelector('#next-button'), 'pickup-details', 'payment-details');
