@@ -106,7 +106,10 @@ hr {
 }
 
 .toast {
-    margin-top: 80px !important;
+    top: 65px !important;
+    width: 100vw !important;
+    right: 0 !important;
+    text-align: center;
 }
 
 .alert {

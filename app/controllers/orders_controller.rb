@@ -8,14 +8,23 @@ class OrdersController < ApplicationController
   end
   
   def checkout
-    @order = Order.find_or_create_by(
+    @order = Order.find_by(
       inventory_item_id: @item.id,
       renter_id: current_renter.id,
       item_owner_id: @item.lister.id,
-      stage: 0,
-      rental_start: DateTime.now().strftime("%m/%d/%Y"),
-      rental_end: (DateTime.now() + 2).strftime("%m/%d/%Y")
+      stage: 0
     )
+    
+    if @order.nil?
+      @order = Order.create(
+        inventory_item_id: @item.id,
+        renter_id: current_renter.id,
+        item_owner_id: @item.lister.id,
+        stage: 0,
+        rental_start: DateTime.now().strftime("%m/%d/%Y"),
+        rental_end: (DateTime.now() + 2).strftime("%m/%d/%Y")
+      )
+    end
   end
   
   def update

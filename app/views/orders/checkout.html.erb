@@ -7,7 +7,7 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <img src="<%= @item.image.first_source %>" alt="<%= @item.item_name %>"
-                                    height="120">
+                                    style="width: 100%; height: auto;">
                             </div>
                             
                             <div class="col-md-7">
@@ -55,7 +55,10 @@
                                             <%= number_to_currency @order.calculated_price %>
                                             <br>
                                             <span style="font-size: 12px !important;" class="text-muted">
-                                                <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
+                                                <span id="days">
+                                                    (<%= number_to_currency @order.item.rental_price %> x
+                                                    <%= pluralize @order.days_requested, "day" %>)
+                                                </span>
                                             </span>
                                         </p>
                                     </div>
@@ -189,6 +192,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="col-md-12">
+                                    <%= render "payment" %>
+                                </div>
                             </div>
                         </div>
                         
@@ -260,7 +267,7 @@
             elem.removeAttribute('onclick');
         }
         
-        $(`#${current}`).fadeOut();
+        $(`#${current}`).hide();
         $(`#${prev}`).fadeIn();
         
         toggleCheckIcon(nextCount);
@@ -278,12 +285,12 @@
     }
     
     nextAction = (elem, current, next) => {
-        if (current == "pickup-details" && nextCount == 0) {
-            showSpinner(elem);
-            btn.click(); // update order with pickup details
+        // if (current == "pickup-details" && nextCount == 0) {
+        //     showSpinner(elem);
+        //     btn.click(); // update order with pickup details
             
-            return
-        }
+        //     return
+        // }
         
         if (nextCount < 3) {
             // making sure that the server-side js is in sync w/ client side
@@ -302,7 +309,7 @@
             return
         }
         
-        $(`#${current}`).fadeOut();
+        $(`#${current}`).hide();
         $(`#${next}`).fadeIn();
         
         toggleCheckIcon(nextCount);

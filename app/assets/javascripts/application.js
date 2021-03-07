@@ -73,4 +73,13 @@ $(document).on("turbolinks:load", function() {
             </div>
         `;
     }
+    
+    showAlert = (type, text) => {
+        let alertBar = document.querySelector('.alert');
+        let msg = document.querySelector('.alert span');
+        
+        alertBar.classList.add(`alert-${type}`);
+        msg.innerHTML = text;
+        alertBar.style.display = 'block';
+    }
 });

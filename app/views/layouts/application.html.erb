@@ -24,9 +24,7 @@
   <body>
     <%= render navbar %>
     <div id="main-body-wrapper" style="">
-      <% if notice.present? %>
-        <%= render partial: "common/notice", locals: { message: flash[:notice] } %>
-      <% end %>
+      <%= render "common/notice" %>
       <%= render body %>
     </div>
     <%= render "layouts/footer" %>

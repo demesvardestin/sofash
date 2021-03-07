@@ -13,13 +13,15 @@
 <div class="input-daterange input-group row" id="datepicker">
   <div class="col-md-6">
     <input type="text" class="input-sm form-control" name="start"
-      placeholder="Pickup" id="checkin" style="color: var(--main-font-color);"
+      placeholder="<%= @order.rental_start.present? ? @order.rental_start : "Pickup" %>"
+      id="checkin" style="color: var(--main-font-color);"
       onclick="trackClicks('checkin')" onchange="updateRentalPeriod(this)">
   </div>
   
   <div class="col-md-6">
     <input type="text" class="input-sm form-control" name="end"
-      placeholder="Dropoff" id="checkout" style="color: var(--main-font-color);"
+      placeholder="<%= @order.rental_end.present? ? @order.rental_end : "Dropoff" %>"
+      id="checkout" style="color: var(--main-font-color);"
       onclick="trackClicks('checkout')" onchange="updateRentalPeriod(this)">
   </div>
 </div>
@@ -120,7 +122,11 @@
       // client-side validation
       if (checkInClickCount > 0 && checkOutClickCount > 0) {
         if (invalidRentalPeriod(checkIn, checkOut)) {
-          return toastr["warning"](`The rental period must be more than 1 day. Please select a return date of ${validCheckoutDate(checkIn)} or later`);
+          checkInDisplay.text("<%= @order.rental_start %>");
+          checkOutDisplay.text("<%= @order.rental_end %>");
+          
+          let text = `The rental period must be more than 1 day. Please select a return date of ${validCheckoutDate(checkIn)} or later`
+          return showAlert('warning', text);
         };
         
         submitForm();

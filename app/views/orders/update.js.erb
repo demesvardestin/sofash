@@ -2,7 +2,7 @@ $('#checkout-snapshot').html(`
     <div class="row">
         <div class="col-md-5">
             <img src="<%= @order.item.image.first_source %>" alt="<%= @order.item.item_name %>"
-                height="120">
+                style="width: 100%; height: auto;">
         </div>
         
         <div class="col-md-7">
@@ -49,7 +49,10 @@ $('#checkout-snapshot').html(`
                     <%= number_to_currency @order.calculated_price %>
                     <br>
                     <span style="font-size: 12px !important;" class="text-muted">
-                        <span id="days">(<%= pluralize @order.days_requested, "day" %>)</span>
+                        <span id="days">
+                            (<%= number_to_currency @order.item.rental_price %> x
+                            <%= pluralize @order.days_requested, "day" %>)
+                        </span>
                     </span>
                 </p>
             </div>
@@ -94,7 +97,3 @@ $('#checkout-snapshot').html(`
         </div>
     </div>
 `);
-
-$('#next-button').text('Continue');
-nextCount++;
-<!--nextAction(document.querySelector('#next-button'), 'pickup-details', 'payment-details');-->
