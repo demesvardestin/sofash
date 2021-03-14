@@ -5,8 +5,8 @@ class ItemOwners::ItemOwnersController < ApplicationController
   def dashboard; end
   
   def update
-    if params[:registration_completed].present?
-      params[:registration_completed] = true
+    if params[:item_owner][:registration_completed].present?
+      params[:item_owner][:registration_completed] = true
     end
     
     @io.update(item_owners_params)
@@ -37,6 +37,7 @@ class ItemOwners::ItemOwnersController < ApplicationController
     .permit(
       :first_name,
       :last_name,
+      :username,
       :street_address,
       :city,
       :state,

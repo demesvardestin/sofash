@@ -14,7 +14,7 @@ class ItemOwner < ApplicationRecord
   end
   
   def has_completed_registration
-    registration_completed
+    registration_completed == true
   end
   
   def has_not_completed_registration
@@ -31,5 +31,9 @@ class ItemOwner < ApplicationRecord
   
   def has_transactions
     
+  end
+  
+  def has_stripe_account
+    false
   end
 end

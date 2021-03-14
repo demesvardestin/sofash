@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     get '/lister/register', to: 'devise/registrations#new'
     get '/lister/security', to: 'authentication/item_owners/registrations#edit'
     get '/lister/retrieve-password', to: 'devise/passwords#new'
+    get '/lister/dashboard', to: 'item_owners/item_owners#dashboard'
+    get '/lister/settings/payments', to: 'item_owners/item_owners#payments'
   end
   authenticated :item_owner do
     root 'item_owners/item_owners#dashboard', as: :authenticated_item_owner_root
@@ -61,6 +63,14 @@ Rails.application.routes.draw do
   
   resources :listing_reports, only: :create
   resources :orders, only: [:create, :update]
+  
+  ## Stripe webhooks
+  
+  post '/stripe/account', to: 'stripe_webhooks#account'
+  post '/stripe/charge', to: 'stripe_webhooks#charge'
+  post '/stripe/payout', to: 'stripe_webhooks#payout'
+  
+  ## end Stripe webhooks
   
   get '/browse', to: 'pages#browse'
   get '/orders', to: 'orders#index'

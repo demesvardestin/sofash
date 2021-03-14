@@ -1,29 +1,49 @@
 <section id="io-dashboard-section">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body" style="height: 500px;">
-                        <% if current_item_owner.has_live_orders %>
-                            <%= render partial: "orders/_orders", locals: { orders: ccurrent_item_owner.live_orders } %>
-                        <% else %>
-                            <%= render "no_live_orders" %>
-                        <% end %>
+        <% if current_item_owner.has_stripe_account %>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body" style="height: 500px;">
+                            <% if current_item_owner.has_live_orders %>
+                                <%= render partial: "orders/_orders", locals: { orders: ccurrent_item_owner.live_orders } %>
+                            <% else %>
+                                <%= render "no_live_orders" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body" style="height: 500px;">
+                            <% if current_item_owner.has_transactions %>
+                                <%= render partial: "transactions", locals: { transactions: [] } %>
+                            <% else %>
+                                <%= render "no_transaction_history" %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body" style="height: 500px;">
-                        <% if current_item_owner.has_transactions %>
-                            <%= render partial: "transactions", locals: { transactions: [] } %>
-                        <% else %>
-                            <%= render "no_transaction_history" %>
-                        <% end %>
+        <% else %>
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <div class="card">
+                        <div class="card-body" align="center">
+                            <i class="fas fa-exclamation-circle" style="font-size: 35px; margin-bottom: 20px;"></i>
+                            
+                            <h6 style="margin-bottom: 25px;">
+                                In order to start processing orders, you must first set up your payment account
+                            </h6>
+                            
+                            <button type="button" class="btn btn-primary">
+                                Set up payment account
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <% end %>
     </div>
 </div>
